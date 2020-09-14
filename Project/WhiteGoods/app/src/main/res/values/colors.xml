@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#fff</color>
-    <color name="colorPrimaryDark">#0075FF</color>
-    <color name="colorAccent">#0075FF</color>
+    <color name="white">#fff</color>
     <color name="main">#0075FF</color>
     <color name="secondary">#B9C2CB</color>
     <color name="font">#0E457A</color>
     <color name="elements">#F2F6FC</color>
-    <color name="sanky">#ABCDEF</color>
 </resources>

@@ -1,0 +1,338 @@
+[
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_employee_nav.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_employee_nav.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_edit_profile.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_edit_profile.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_home_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_bolditalic.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_bolditalic.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_lock_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_lock_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_dashboard.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register_employee.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_register_employee.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_dashboard_black_24dp.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_semibold.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_semibold.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_inventory_detail.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_inventory_detail.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_extrabold.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_extrabold.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_notifications_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_lock_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_lock_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_lock_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_lock_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_bold.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_bold.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_notifications.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_lock_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_lock_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_product_request.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_product_request.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_view_employee_list.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_view_employee_list.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_home_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_home_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_notifications_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_product_report.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_product_report.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_home_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_light.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_light.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_mail_outline_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_mail_outline_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_select_employee.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_select_employee.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_home_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_home_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_notifications_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable_input_unfocused.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\drawable\\input_unfocused.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\drawable\\button.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable_input_focused.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\drawable\\input_focused.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_lock_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_lock_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_dashboard_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_notifications_black_24dp.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_regular.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_regular.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable_input.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\drawable\\input.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_notifications_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_home_black_24dp.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_lock_24.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_lock_24.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_italic.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_italic.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_mail_outline_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_mail_outline_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_lock_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_lock_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_dashboard_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_dashboard_black_24dp.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_lightitalic.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_lightitalic.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_extrabolditalic.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_extrabolditalic.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_mail_outline_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_mail_outline_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_create_request.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\layout\\activity_create_request.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_mail_outline_24.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_mail_outline_24.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\font_opensans_semibolditalic.ttf.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\font\\opensans_semibolditalic.ttf"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_mail_outline_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_mail_outline_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_launcher_background.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_mail_outline_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_baseline_mail_outline_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_mail_outline_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_mail_outline_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_home_black_24dp.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_home_black_24dp.png"
+    }
+]
