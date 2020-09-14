@@ -5,4 +5,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_manager_nav">MainActivity</string>
+    <string name="login">Login</string>
+    <string name="welcome">Welcome</string>
+    <string name="enter_your_credentials">Enter Your Credentials</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
 </resources>
