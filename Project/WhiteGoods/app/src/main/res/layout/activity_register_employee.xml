@@ -110,6 +110,18 @@
             android:drawablePadding="10dp" />
 
         <EditText
+            android:id="@+id/pincode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:fontFamily="@font/opensans_regular"
+            android:textColor="@color/font"
+            android:hint="@string/pincode"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:paddingHorizontal="15dp"
+            android:drawablePadding="10dp" />
+        <EditText
             android:id="@+id/phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
