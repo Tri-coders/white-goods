@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
     <EditText
         android:id="@+id/editText2"
@@ -14,6 +15,7 @@
         android:background="@drawable/input_xhdpi"
         android:fontFamily="@font/opensans_regular"
         android:textColor="@color/font"
+        android:textSize="16sp"
         android:hint="@string/password"
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:paddingHorizontal="15dp"
@@ -31,6 +33,7 @@
         android:background="@drawable/input_xhdpi"
         android:fontFamily="@font/opensans_regular"
         android:textColor="@color/font"
+        android:textSize="16sp"
         android:hint="@string/username"
         android:drawableStart="@drawable/ic_baseline_mail_outline_24"
         android:paddingHorizontal="15dp"
@@ -68,14 +71,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="40dp"
         android:text="@string/login"
         android:background="@drawable/button_xhdpi"
         android:textColor="#fff"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:fontFamily="@font/opensans_semibold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

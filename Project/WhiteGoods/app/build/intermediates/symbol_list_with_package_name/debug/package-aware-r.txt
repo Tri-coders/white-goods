@@ -1175,6 +1175,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id address
 id alertTitle
 id all
 id always
@@ -1193,6 +1194,7 @@ id chains
 id checkbox
 id checked
 id chronometer
+id city
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1249,6 +1251,7 @@ id line1
 id line3
 id listMode
 id list_item
+id login
 id masked
 id message
 id middle
@@ -1257,6 +1260,7 @@ id mobile_navigation
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name
 id nav_controller_view_tag
 id nav_host_fragment
 id nav_view
@@ -1279,6 +1283,7 @@ id parent
 id parentPanel
 id parent_matrix
 id percent
+id phone
 id pin
 id progress_circular
 id progress_horizontal
@@ -1500,11 +1505,15 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string address
+string all_the_details_are_mandatory
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
+string city
+string email
 string enter_your_credentials
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -1512,6 +1521,7 @@ string hide_bottom_view_on_scroll_behavior
 string inventory
 string login
 string mtrl_chip_close_icon_content_description
+string name
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string password

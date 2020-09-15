@@ -12,4 +12,9 @@
     <string name="password">Password</string>
     <string name="inventory">Inventory</string>
     <string name="profile">Profile</string>
+    <string name="all_the_details_are_mandatory">All the details are mandatory</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
 </resources>
