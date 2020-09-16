@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void reg(){
-        Intent i = new Intent(this, RegisterEmployee.class);
+        Intent i = new Intent(this, EmployeeNav.class);
         startActivity(i);
     }
 }

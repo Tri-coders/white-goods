@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Wed Sep 16 19:58:58 IST 2020
+#Wed Sep 16 20:49:43 IST 2020
 base.0=E\:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-=======
-#Wed Sep 16 20:33:46 IST 2020
-base.0=/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
->>>>>>> 792a77fed89efde5a8f63c4afa2e6e2d616dda20
 path.0=classes.dex
 renamed.0=classes.dex

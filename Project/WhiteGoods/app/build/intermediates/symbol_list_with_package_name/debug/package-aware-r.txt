@@ -1079,6 +1079,7 @@ drawable ic_baseline_mail_outline_24
 drawable ic_baseline_person_24
 drawable ic_baseline_phone_24
 drawable ic_baseline_pin_drop_24
+drawable ic_baseline_storefront_24
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
