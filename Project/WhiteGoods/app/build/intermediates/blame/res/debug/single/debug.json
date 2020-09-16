@@ -56,12 +56,12 @@
         "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_lock_24.png"
     },
     {
-        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_pin_drop_24.png.flat",
-        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_pin_drop_24.png"
-    },
-    {
         "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_phone_24.png.flat",
         "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_phone_24.png"
+    },
+    {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_baseline_pin_drop_24.png.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_baseline_pin_drop_24.png"
     },
     {
         "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_phone_24.xml.flat",
