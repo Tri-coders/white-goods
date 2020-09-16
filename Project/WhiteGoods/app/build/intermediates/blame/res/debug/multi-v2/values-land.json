@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Afif\\.gradle\\caches\\transforms-2\\files-2.1\\bf96d2b5a86ecd602a621e7e96856420\\appcompat-1.2.0\\res\\values-land\\values-land.xml",
+                    "source": "/home/sanket/.gradle/caches/transforms-2/files-2.1/bf96d2b5a86ecd602a621e7e96856420/appcompat-1.2.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Afif\\.gradle\\caches\\transforms-2\\files-2.1\\d9fe90b20373e53cda14cf70a3a9d6b6\\material-1.0.0\\res\\values-land\\values-land.xml",
+                    "source": "/home/sanket/.gradle/caches/transforms-2/files-2.1/d9fe90b20373e53cda14cf70a3a9d6b6/material-1.0.0/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

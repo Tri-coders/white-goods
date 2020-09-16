@@ -22,22 +22,27 @@
         <activity android:name="com.example.whitegoods.SelectEmployee" />
         <activity android:name="com.example.whitegoods.ProductReport" />
         <activity android:name="com.example.whitegoods.CreateRequest" />
-        <activity
-            android:name="com.example.whitegoods.ManagerNav"
-            android:label="@string/title_activity_manager_nav" />
         <activity android:name="com.example.whitegoods.RegisterEmployee" />
         <activity android:name="com.example.whitegoods.ViewEmployeeList" />
         <activity android:name="com.example.whitegoods.InventoryDetail" />
         <activity android:name="com.example.whitegoods.EditProfile" />
         <activity
             android:name="com.example.whitegoods.EmployeeNav"
-            android:label="@string/title_activity_employee_nav" />
-        <activity android:name="com.example.whitegoods.MainActivity" >
+            android:label="@string/title_activity_employee_nav" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.example.whitegoods.MainActivity" >
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
 
         <provider
