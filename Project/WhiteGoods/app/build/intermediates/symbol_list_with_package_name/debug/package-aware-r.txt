@@ -1091,6 +1091,7 @@ drawable input_unfocused_xhdpi
 drawable input_xhdpi
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable nav_selector
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg

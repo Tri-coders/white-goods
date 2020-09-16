@@ -4,12 +4,12 @@
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/layout/activity_edit_profile.xml"
     },
     {
-        "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable_input_unfocused.xml.flat",
-        "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/drawable/input_unfocused.xml"
-    },
-    {
         "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_notifications_black_24dp.png.flat",
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/generated/res/pngs/debug/drawable-hdpi/ic_notifications_black_24dp.png"
+    },
+    {
+        "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable_input_unfocused.xml.flat",
+        "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/drawable/input_unfocused.xml"
     },
     {
         "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/layout_activity_inventory_detail.xml.flat",
@@ -64,6 +64,10 @@
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_baseline_person_24.xml"
     },
     {
+        "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable_nav_selector.xml.flat",
+        "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/drawable/nav_selector.xml"
+    },
+    {
         "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
     },
@@ -88,12 +92,12 @@
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_notifications_black_24dp.xml.flat",
-        "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_notifications_black_24dp.xml"
-    },
-    {
         "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_home_black_24dp.png.flat",
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_home_black_24dp.png"
+    },
+    {
+        "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_notifications_black_24dp.xml.flat",
+        "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_notifications_black_24dp.xml"
     },
     {
         "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_local_grocery_store_24.png.flat",
@@ -124,12 +128,12 @@
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/layout/activity_register_employee.xml"
     },
     {
-        "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/font_opensans_extrabold.ttf.flat",
-        "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/font/opensans_extrabold.ttf"
-    },
-    {
         "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_baseline_lock_24.png.flat",
         "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_baseline_lock_24.png"
+    },
+    {
+        "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/font_opensans_extrabold.ttf.flat",
+        "source": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/src/main/res/font/opensans_extrabold.ttf"
     },
     {
         "merged": "/home/sanket/Documents/Sanket_sem_7/Android_Lab/white-goods/Project/WhiteGoods/app/build/intermediates/res/merged/debug/drawable_button_xhdpi.xml.flat",
