@@ -12,9 +12,6 @@
         <activity android:name=".SelectEmployee"></activity>
         <activity android:name=".ProductReport" />
         <activity android:name=".CreateRequest" />
-        <activity
-            android:name=".ManagerNav"
-            android:label="@string/title_activity_manager_nav" />
         <activity android:name=".RegisterEmployee" />
         <activity android:name=".ViewEmployeeList" />
         <activity android:name=".InventoryDetail" />

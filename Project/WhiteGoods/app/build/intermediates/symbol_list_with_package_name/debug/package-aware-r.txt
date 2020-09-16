@@ -1095,6 +1095,7 @@ drawable input_unfocused_xhdpi
 drawable input_xhdpi
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable nav_selector
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1260,7 +1261,6 @@ id masked
 id message
 id middle
 id mini
-id mobile_navigation
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
@@ -1268,10 +1268,10 @@ id name
 id nav_controller_view_tag
 id nav_host_fragment
 id nav_view
-id navigation_dashboard
 id navigation_header_container
 id navigation_home
-id navigation_notifications
+id navigation_inventory
+id navigation_profile
 id never
 id none
 id normal
@@ -1355,10 +1355,10 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
-id text_dashboard
 id text_home
 id text_input_password_toggle
-id text_notifications
+id text_inventory
+id text_profile
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -1464,9 +1464,9 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fragment_dashboard
 layout fragment_home
-layout fragment_notifications
+layout fragment_inventory
+layout fragment_profile
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1482,7 +1482,6 @@ layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
-navigation mobile_navigation
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
