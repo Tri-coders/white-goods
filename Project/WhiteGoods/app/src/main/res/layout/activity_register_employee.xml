@@ -23,7 +23,7 @@
             android:gravity="center"
             android:text="Fill the details"
             android:textColor="@color/font"
-            android:textSize="40sp"
+            android:textSize="30sp"
             android:fontFamily="@font/opensans_bold" />
 
         <TextView
@@ -35,13 +35,13 @@
             android:text="@string/all_the_details_are_mandatory"
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/input"
             android:fontFamily="@font/opensans_regular"
             android:textColor="@color/font"
@@ -59,55 +59,35 @@
             android:fontFamily="@font/opensans_regular"
             android:textColor="@color/font"
             android:hint="@string/name"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableStart="@drawable/ic_baseline_person_24"
             android:paddingHorizontal="15dp"
             android:drawablePadding="10dp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:orientation="horizontal"
-            android:background="@drawable/input">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginVertical="15dp"
-                android:background="@drawable/ic_home_black_24dp"/>
-
-            <EditText
-                android:id="@+id/address"
-                android:background="@drawable/input"
-                android:layout_width="300dp"
-                android:layout_height="100dp"
-                android:gravity="top"
-                android:paddingHorizontal="12dp"
-                android:paddingVertical="12dp"
-                android:scrollbars="vertical"
-                android:scrollbarStyle="insideOverlay"
-                android:scrollbarSize="5dp"
-                android:isScrollContainer="true"
-                android:inputType="textMultiLine"
-                android:fontFamily="@font/opensans_regular"
-                android:textColor="@color/font"
-                android:hint="@string/address" />
-
-        </LinearLayout>
-
         <EditText
-            android:id="@+id/city"
+            android:id="@+id/address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/input"
             android:fontFamily="@font/opensans_regular"
             android:textColor="@color/font"
-            android:hint="@string/city"
+            android:hint="@string/address"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:paddingHorizontal="15dp"
             android:drawablePadding="10dp" />
+
+        <EditText
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/input"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/font"
+        android:hint="@string/city"
+        android:drawableStart="@drawable/ic_baseline_location_city_24"
+        android:paddingHorizontal="15dp"
+        android:drawablePadding="10dp" />
 
         <EditText
             android:id="@+id/pincode"
@@ -118,7 +98,7 @@
             android:fontFamily="@font/opensans_regular"
             android:textColor="@color/font"
             android:hint="@string/pincode"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableStart="@drawable/ic_baseline_pin_drop_24"
             android:paddingHorizontal="15dp"
             android:drawablePadding="10dp" />
         <EditText
@@ -130,9 +110,18 @@
             android:fontFamily="@font/opensans_regular"
             android:textColor="@color/font"
             android:hint="Phone No"
-            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
             android:paddingHorizontal="15dp"
             android:drawablePadding="10dp" />
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="@string/role"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/opensans_regular"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"/>
 
         <LinearLayout
             android:layout_height="wrap_content"
@@ -143,12 +132,17 @@
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Demo Instructor"/>
+                android:text="Demo Instructor"
+                android:background="@drawable/checkbox"
+                android:paddingHorizontal="10dp"/>
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Installer"/>
+                android:text="Installer"
+                android:background="@drawable/checkbox"
+                android:paddingHorizontal="10dp"
+                android:layout_marginStart="10dp"/>
 
          </LinearLayout>
         <LinearLayout
@@ -160,12 +154,17 @@
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Inventory handler"/>
+                android:text="Inventory handler"
+                android:background="@drawable/checkbox"
+                android:paddingHorizontal="10dp"/>
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upgradator" />
+                android:text="Upgradator"
+                android:background="@drawable/checkbox"
+                android:paddingHorizontal="10dp"
+                android:layout_marginStart="10dp"/>
 
         </LinearLayout>
         <Button
@@ -181,3 +180,37 @@
 
     </LinearLayout>
 </ScrollView>
+
+
+<!--<LinearLayout-->
+<!--android:layout_width="wrap_content"-->
+<!--android:layout_height="wrap_content"-->
+<!--android:layout_marginTop="30dp"-->
+<!--android:orientation="horizontal"-->
+<!--android:background="@drawable/input">-->
+
+<!--<ImageView-->
+<!--    android:layout_width="wrap_content"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_marginStart="15dp"-->
+<!--    android:layout_marginVertical="15dp"-->
+<!--    android:background="@drawable/ic_home_black_24dp"/>-->
+
+<!--<EditText-->
+<!--    android:id="@+id/address"-->
+<!--    android:background="@drawable/input"-->
+<!--    android:layout_width="300dp"-->
+<!--    android:layout_height="100dp"-->
+<!--    android:gravity="top"-->
+<!--    android:paddingHorizontal="12dp"-->
+<!--    android:paddingVertical="12dp"-->
+<!--    android:scrollbars="vertical"-->
+<!--    android:scrollbarStyle="insideOverlay"-->
+<!--    android:scrollbarSize="5dp"-->
+<!--    android:isScrollContainer="true"-->
+<!--    android:inputType="textMultiLine"-->
+<!--    android:fontFamily="@font/opensans_regular"-->
+<!--    android:textColor="@color/font"-->
+<!--    android:hint="@string/address" />-->
+
+<!--</LinearLayout>-->

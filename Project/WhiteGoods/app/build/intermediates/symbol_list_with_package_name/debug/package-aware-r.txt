@@ -1065,6 +1065,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button
 drawable button_xhdpi
+drawable checkbox
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1072,9 +1073,12 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_baseline_local_grocery_store_24
+drawable ic_baseline_location_city_24
 drawable ic_baseline_lock_24
 drawable ic_baseline_mail_outline_24
 drawable ic_baseline_person_24
+drawable ic_baseline_phone_24
+drawable ic_baseline_pin_drop_24
 drawable ic_dashboard_black_24dp
 drawable ic_home_black_24dp
 drawable ic_launcher_background
@@ -1285,6 +1289,7 @@ id parent_matrix
 id percent
 id phone
 id pin
+id pincode
 id progress_circular
 id progress_horizontal
 id radio
@@ -1530,7 +1535,9 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pincode
 string profile
+string role
 string search_menu_title
 string status_bar_notification_info_overflow
 string title_activity_employee_nav
