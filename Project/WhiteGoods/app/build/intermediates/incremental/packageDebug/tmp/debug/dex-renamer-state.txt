@@ -1,4 +1,4 @@
-#Thu Sep 17 19:29:44 IST 2020
+#Mon Sep 21 20:06:12 IST 2020
 base.0=E\:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
