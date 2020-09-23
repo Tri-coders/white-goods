@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/edit/baseline_edit_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/arrow_back/baseline_arrow_back_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="0075ff" />
-                            <entry key="outputName" value="ic_baseline_edit_24" />
+                            <entry key="color" value="b9c2cb" />
+                            <entry key="outputName" value="ic_baseline_arrow_back_24" />
                             <entry key="sourceFile" value="E:\SEM7\Practicals\Android Lab\white-goods\Project\WhiteGoods" />
                           </map>
                         </option>
