@@ -19,4 +19,7 @@
     <string name="city">City</string>
     <string name="pincode">Pincode</string>
     <string name="role">Role</string>
+    <string name="employees">Employees</string>
+    <string name="requests">Requests</string>
+    <string name="discount">Discount</string>
 </resources>
