@@ -71,14 +71,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_regular"
-                android:text="Username: "
-                android:textColor="@color/font"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="@string/username"
+                android:textColor="@color/secondary"
                 android:textSize="16sp" />
 
             <TextView
@@ -87,6 +87,7 @@
                 android:fontFamily="@font/opensans_semibold"
                 android:text="Rahul Sinha"
                 android:textColor="@color/font"
+                android:layout_marginStart="20sp"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -95,14 +96,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_regular"
-                android:text="Email: "
-                android:textColor="@color/font"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="@string/email"
+                android:textColor="@color/secondary"
                 android:textSize="16sp" />
 
             <TextView
@@ -111,7 +112,8 @@
                 android:fontFamily="@font/opensans_semibold"
                 android:text="rahulsinha@gmail.com"
                 android:textColor="@color/font"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:layout_marginStart="20sp"/>
 
         </LinearLayout>
 
@@ -119,14 +121,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_regular"
-                android:text="Phone No: "
-                android:textColor="@color/font"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Phone No"
+                android:textColor="@color/secondary"
                 android:textSize="16sp" />
 
             <TextView
@@ -135,7 +137,8 @@
                 android:fontFamily="@font/opensans_semibold"
                 android:text="9632015478"
                 android:textColor="@color/font"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:layout_marginStart="20sp"/>
 
         </LinearLayout>
 
@@ -151,26 +154,13 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_regular"
+                    android:fontFamily="@font/opensans_semibold"
                     android:text="ROLE"
-                    android:textColor="@color/font"
+                    android:textColor="@color/secondary"
                     android:textSize="16sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -178,43 +168,58 @@
                     android:fontFamily="@font/opensans_semibold"
                     android:text="Demo Instructor"
                     android:textColor="@color/font"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:layout_marginStart="20sp"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_regular"
-                    android:text="Installater"
-                    android:layout_marginStart="10dp"
-                    android:textColor="@color/secondary"
-                    android:textSize="16sp" />
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:orientation="horizontal">-->
 
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/opensans_semibold"-->
+<!--                    android:text="Demo Instructor"-->
+<!--                    android:textColor="@color/font"-->
+<!--                    android:textSize="16sp" />-->
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/opensans_regular"-->
+<!--                    android:text="Installater"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:textColor="@color/secondary"-->
+<!--                    android:textSize="16sp" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_regular"
-                    android:text="Inventory handler"
-                    android:textColor="@color/secondary"
-                    android:textSize="16sp" />
+<!--            </LinearLayout>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_regular"
-                    android:layout_marginStart="10dp"
-                    android:text="Upgradator"
-                    android:textColor="@color/secondary"
-                    android:textSize="16sp" />
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:orientation="horizontal">-->
 
-            </LinearLayout>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/opensans_regular"-->
+<!--                    android:text="Inventory handler"-->
+<!--                    android:textColor="@color/secondary"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:fontFamily="@font/opensans_regular"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:text="Upgradator"-->
+<!--                    android:textColor="@color/secondary"-->
+<!--                    android:textSize="16sp" />-->
+
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 
@@ -225,23 +230,25 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/input"
             android:gravity="start"
-            android:padding="20dp">
+            android:padding="20dp"
+            android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/opensans_regular"
-                    android:text="Address: "
-                    android:textColor="@color/font"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="@string/address"
+                    android:textColor="@color/secondary"
                     android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy"
-                android:fontFamily="@font/opensans_semibold"
-                android:textColor="@color/font"
-                android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:textColor="@color/font"
+                    android:textSize="16sp"
+                    android:layout_marginStart="20sp"/>
 
         </LinearLayout>
 
