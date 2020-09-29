@@ -459,6 +459,7 @@ attr radioButtonStyle
 attr ratingBarStyle
 attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
+attr recyclerViewStyle
 attr reverseLayout
 attr rippleColor
 attr scrimAnimationDuration
@@ -1075,8 +1076,10 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable fridge
+drawable fridge2
 drawable ic_baseline_arrow_back_24
 drawable ic_baseline_edit_24
+drawable ic_baseline_group_24
 drawable ic_baseline_local_grocery_store_24
 drawable ic_baseline_location_city_24
 drawable ic_baseline_lock_24
@@ -1087,13 +1090,16 @@ drawable ic_baseline_pin_drop_24
 drawable ic_baseline_save_24
 drawable ic_baseline_storefront_24
 drawable ic_dashboard_black_24dp
+drawable ic_filter
 drawable ic_home_black_24dp
+drawable ic_icon_awesome_percent
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notifications_black_24dp
+drawable ic_outline_av_timer_24
 drawable input
 drawable input_focused
 drawable input_focused_xhdpi
@@ -1118,6 +1124,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable oven
 drawable potrait
+drawable selection_band_overlay
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable wm
@@ -1252,6 +1259,7 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id fridge
 id ghost_view
 id gone
 id group_divider
@@ -1287,10 +1295,13 @@ id name
 id nav_controller_view_tag
 id nav_host_fragment
 id nav_view
+id navigation_discount
+id navigation_emp
 id navigation_header_container
 id navigation_home
 id navigation_inventory
 id navigation_profile
+id navigation_req
 id never
 id none
 id normal
@@ -1307,14 +1318,18 @@ id parentPanel
 id parent_matrix
 id percent
 id phone
+id pimage
 id pin
 id pincode
 id progress_circular
 id progress_horizontal
+id quantiity
 id radio
+id recyclerview
 id right
 id right_icon
 id right_side
+id save
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1494,11 +1509,13 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout recycler_cards
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu bottom_nav_menu
+menu bottom_nav_menu2
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -1536,7 +1553,9 @@ string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
 string city
+string discount
 string email
+string employees
 string enter_your_credentials
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -1555,6 +1574,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string pincode
 string profile
+string requests
 string role
 string search_menu_title
 string status_bar_notification_info_overflow
@@ -2136,7 +2156,7 @@ styleable Navigator android_label android_id
 styleable PopupWindow android_popupBackground android_popupAnimationStyle overlapAnchor
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
-styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
