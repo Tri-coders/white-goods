@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 23, 2020 at 02:22 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Host: localhost
+-- Generation Time: Sep 30, 2020 at 04:32 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -60,7 +60,7 @@ CREATE TABLE `inventory` (
   `product_name` varchar(100) NOT NULL,
   `brand` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `price` int(10) NOT NULL,
   `quantity` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -76,6 +76,13 @@ CREATE TABLE `login_details` (
   `password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `login_details`
+--
+
+INSERT INTO `login_details` (`user_id`, `password`) VALUES
+(1, '$2b$10$2ofB.UxNRXWzTNUgY2Pj9.yz.UF15Ws4dtU4dIpBaCK7a9GT2nhFS');
+
 -- --------------------------------------------------------
 
 --
@@ -86,7 +93,7 @@ CREATE TABLE `request` (
   `request_id` int(10) NOT NULL,
   `user_id` int(4) NOT NULL,
   `title` varchar(20) NOT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `name` varchar(35) NOT NULL,
   `address` varchar(75) NOT NULL,
   `city` varchar(15) NOT NULL,
@@ -128,6 +135,13 @@ CREATE TABLE `user_details` (
   `role` int(1) NOT NULL,
   `image` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_details`
+--
+
+INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`) VALUES
+(1, 'Sanket', 'Bhandup (West)', 'Mumbai', '400078', '9702717188', 'sanketdeshmukh880@gmail.com', 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -197,7 +211,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `user_details`
 --
 ALTER TABLE `user_details`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
