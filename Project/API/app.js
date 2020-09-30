@@ -14,7 +14,7 @@ var con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "whitegood"
+    database: "whitegoods"
 });
 con.connect(function (err) {
     if (err) throw err;
@@ -24,13 +24,12 @@ con.connect(function (err) {
 
 //login API
 app.post('/login', (req, res) => {
-    console.log("login called");
     var id = req.body.id;
     var password = req.body.password;
 
     var hash1 = bcrypt.hashSync(password, saltRounds);
 
-    var sql = "SELECT from login_details WHERE user_id='" + id + "';";
+    var sql = "SELECT from login_details WHERE user_id='" + user_id + "';";
     con.query(sql, function (err, result) {
         if (err) throw err;
         if(hash1 === result[0].password) {
