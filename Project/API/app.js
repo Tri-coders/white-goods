@@ -21,6 +21,9 @@ con.connect(function (err) {
     console.log("Connected!");
 })
 
+app.get('/', (req, res) => {
+    console.log("server started")
+});
 
 //login API
 app.post('/login', (req, res) => {
