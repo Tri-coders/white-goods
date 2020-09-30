@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme2">
         <activity android:name=".SelectEmployee"></activity>
-
         <activity android:name=".ProductReport" />
         <activity android:name=".CreateRequest" />
         <activity android:name=".RegisterEmployee" />
