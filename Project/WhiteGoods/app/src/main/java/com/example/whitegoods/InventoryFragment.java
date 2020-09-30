@@ -11,26 +11,52 @@ import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-public class InventoryFragment extends Fragment {
-    CardView fridge;
+public class InventoryFragment extends Fragment implements View.OnClickListener {
+    CardView fridge, ac, wm, oven;
+    Intent i;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_inventory, container, false);
-        fridge = root.findViewById(R.id.fridge);
-        fridge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openFridge();
 
-            }
-        });
+        fridge = root.findViewById(R.id.fridge);
+        ac = root.findViewById(R.id.ac);
+        wm = root.findViewById(R.id.wm);
+        oven = root.findViewById(R.id.oven);
+
+        setClickListener();
         return root;
     }
 
-    public void openFridge(){
-        Intent i = new Intent(getActivity(), InventoryDetail.class);
-        startActivity(i);
-     }
+    public void setClickListener() {
+        fridge.setOnClickListener(this);
+        ac.setOnClickListener(this);
+        wm.setOnClickListener(this);
+        oven.setOnClickListener(this);
+    }
+
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.fridge:
+                i = new Intent(getActivity(), InventoryDetail.class);
+                startActivity(i);
+                break;
+            case R.id.ac:
+                i = new Intent(getActivity(), InventoryDetail.class);
+                startActivity(i);
+                break;
+            case R.id.wm:
+                i = new Intent(getActivity(), InventoryDetail.class);
+                startActivity(i);
+                break;
+            case R.id.oven:
+                i = new Intent(getActivity(), InventoryDetail.class);
+                startActivity(i);
+                break;
+        }
+    }
+
 }

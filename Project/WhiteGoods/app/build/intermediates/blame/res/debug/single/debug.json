@@ -412,6 +412,10 @@
         "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\drawable\\circle.xml"
     },
     {
+        "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button2.xml.flat",
+        "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\src\\main\\res\\drawable\\button2.xml"
+    },
+    {
         "merged": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_storefront_24.png.flat",
         "source": "E:\\SEM7\\Practicals\\Android Lab\\white-goods\\Project\\WhiteGoods\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_storefront_24.png"
     },
