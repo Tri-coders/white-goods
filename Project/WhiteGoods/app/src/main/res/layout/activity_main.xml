@@ -7,25 +7,9 @@
     tools:context=".MainActivity"
     android:background="@color/white">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/input"
-        android:fontFamily="@font/opensans_regular"
-        android:textColor="@color/font"
-        android:hint="@string/password"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:paddingHorizontal="15dp"
-        android:drawablePadding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/view_email_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
@@ -39,6 +23,24 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/view_password_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/input"
+        android:fontFamily="@font/opensans_regular"
+        android:textColor="@color/font"
+        android:inputType="textPassword"
+        android:hint="@string/password"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:paddingHorizontal="15dp"
+        android:drawablePadding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_email_login" />
 
     <TextView
         android:id="@+id/textView"
@@ -81,7 +83,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/view_password_login"
         app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
