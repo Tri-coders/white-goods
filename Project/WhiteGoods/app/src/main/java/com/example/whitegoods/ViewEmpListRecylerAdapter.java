@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ExampleViewHolder> {
-    private ArrayList<RecyclerCards> mExampleList;
+public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListRecylerAdapter.ExampleViewHolder> {
+    private ArrayList<ViewEmpListRecylerCards> mExampleList;
 
     public static class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
@@ -29,13 +29,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
 
     }
 
-
-    public RecyclerAdapter(ArrayList<RecyclerCards> exampleList) {
+    public ViewEmpListRecylerAdapter(ArrayList<ViewEmpListRecylerCards> exampleList) {
         mExampleList = exampleList;
     }
 
     @Override
-    public ExampleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_cards, parent, false);
         ExampleViewHolder evh = new ExampleViewHolder(v);
         return evh;
@@ -43,7 +42,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
 
     @Override
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
-        RecyclerCards currentItem = mExampleList.get(position);
+        ViewEmpListRecylerCards currentItem = mExampleList.get(position);
         holder.mImageView.setImageResource(currentItem.getImageResource());
         holder.mTextView1.setText(currentItem.getText1());
         holder.mTextView2.setText(currentItem.getText2());
