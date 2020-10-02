@@ -78,12 +78,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 try {
+                    Log.i("VolleyABC", error.toString());
                     Log.i("VolleyABC", Integer.toString(error.networkResponse.statusCode));
                     Toast.makeText(MainActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
 
                     error.printStackTrace();
                 }
                 catch (Exception e) {
+                    Log.i("VolleyABC", e.toString());
                     Toast.makeText(MainActivity.this, "Check Network", Toast.LENGTH_SHORT).show();
                 }
             }
