@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 03, 2020 at 04:29 PM
+-- Generation Time: Oct 03, 2020 at 07:55 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -130,7 +130,7 @@ CREATE TABLE `user_details` (
   `name` varchar(35) NOT NULL,
   `address` varchar(75) NOT NULL,
   `city` varchar(15) NOT NULL,
-  `pin` varchar(6) NOT NULL,
+  `pin` varchar(8) NOT NULL,
   `contact` varchar(10) NOT NULL,
   `email` varchar(50) NOT NULL,
   `role` int(1) NOT NULL,
