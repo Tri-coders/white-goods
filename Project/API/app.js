@@ -88,7 +88,7 @@ app.post('/register', (req, res) => {
 
     //insert all user details into DB
     var sql = "INSERT INTO user_details (name, address, city, pin, contact, email, role) VALUES ('" + name + "', '" + address + "', '" + city + "', '" + pin + "', '" + mobile + "', '" + email + "', '2');";
-    // console.log(sql);
+    console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
