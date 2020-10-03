@@ -70,7 +70,7 @@ app.post('/login', (req, res) => {
 
 //register API
 app.post('/register', (req, res) => {
-    console.log("register called")
+    console.log("register called", req.body);
     //get al user details
     var name = req.body.name;
     var mobile = req.body.mobile;
