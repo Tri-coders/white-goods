@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText email, password;
     private static String server_url = "http://128.199.30.114:9000/login";
 
+    int UROLE = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +74,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.i("VolleyABC", "got response " + response);
+                try {
+                    JSONObject jsonObject1 = new JSONObject(response);
+                    // Log.i("tracking uid","main Activity "+UID);
+                    UROLE = jsonObject1.getInt("role");
+
+                    if(UROLE == 0) {
+                        Intent viewEmployeeList = new Intent(MainActivity.this, ViewEmployeeList.class);
+                        startActivity(viewEmployeeList);
+                    }
+                    else {
+                        Intent employeeNav = new Intent(MainActivity.this, EmployeeNav.class);
+                        employeeNav.putExtra("role", UROLE);
+                        startActivity(employeeNav);
+                    }
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 Toast.makeText(MainActivity.this, "Logged IN", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
