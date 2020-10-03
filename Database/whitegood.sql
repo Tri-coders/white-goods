@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 30, 2020 at 04:32 PM
+-- Generation Time: Oct 03, 2020 at 04:29 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -44,9 +44,9 @@ CREATE TABLE `billing` (
 CREATE TABLE `employee_role` (
   `user_id` int(4) NOT NULL,
   `install` varchar(1) NOT NULL,
-  `fix` varchar(1) NOT NULL,
+  `inventory` varchar(1) NOT NULL,
   `demo` varchar(1) NOT NULL,
-  `installation` varchar(1) NOT NULL
+  `upgrade` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -81,7 +81,8 @@ CREATE TABLE `login_details` (
 --
 
 INSERT INTO `login_details` (`user_id`, `password`) VALUES
-(1, '$2b$10$2ofB.UxNRXWzTNUgY2Pj9.yz.UF15Ws4dtU4dIpBaCK7a9GT2nhFS');
+(8, '$2b$10$jwj/rz0sj7kw6LgFG7d6WeyWJiixq6qKcgQreznr1ShrlgtjcnQf.'),
+(9, '$2b$10$HYZ6BlJ8v63gDQUthubUx.MAj.3gkDNSUHg.7Rcr5pSFMjq./EgaO');
 
 -- --------------------------------------------------------
 
@@ -141,7 +142,8 @@ CREATE TABLE `user_details` (
 --
 
 INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`) VALUES
-(1, 'Sanket', 'Bhandup (West)', 'Mumbai', '400078', '9702717188', 'sanketdeshmukh880@gmail.com', 1, NULL);
+(8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL),
+(9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL);
 
 --
 -- Indexes for dumped tables
@@ -211,7 +213,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `user_details`
 --
 ALTER TABLE `user_details`
-  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
