@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -18,6 +22,15 @@ public class ViewEmployeeList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_employee_list);
+
+        FloatingActionButton newEmployee = findViewById(R.id.add_button);
+        newEmployee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent registerEmployee = new Intent(ViewEmployeeList.this, RegisterEmployee.class);
+                startActivity(registerEmployee);
+            }
+        });
 
         ArrayList<ViewEmpListRecylerCards> exampleList = new ArrayList<>();
         exampleList.add(new ViewEmpListRecylerCards(R.drawable.fridge, "Employee 1", "Line 2"));

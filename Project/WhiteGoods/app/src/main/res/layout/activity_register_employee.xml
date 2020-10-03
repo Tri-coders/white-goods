@@ -38,7 +38,7 @@
             android:textSize="15sp" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -67,7 +67,7 @@
             android:textColor="@color/font" />
 
         <EditText
-            android:id="@+id/phone"
+            android:id="@+id/mobile"
             android:inputType="phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -138,6 +138,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/demo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/checkbox"
@@ -145,6 +146,7 @@
                 android:text="Demo Instructor" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/install"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -161,6 +163,7 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/inventory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/checkbox"
@@ -168,6 +171,7 @@
                 android:text="Inventory handler" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/upgrade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -178,7 +182,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/register_emp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
