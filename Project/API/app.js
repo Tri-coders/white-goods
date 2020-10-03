@@ -30,10 +30,10 @@ con.connect(function (err) {
 app.get('/', (req, res) => {
     console.log("server started");
 
-    var password = "Sanket@2000"
+    var password = "Manager@123"
 
     var hash1 = bcrypt.hashSync(password, saltRounds);
-    var sql = "INSERT INTO login_details (user_id, password) VALUES ('1', '" + hash1 + "');";
+    var sql = "INSERT INTO login_details (user_id, password) VALUES (9, '" + hash1 + "');";
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
@@ -87,7 +87,7 @@ app.post('/register', (req, res) => {
     fname = fname[0]
 
     //insert all user details into DB
-    var sql = "INSERT INTO user_details (name, address, city, pin, contact, email, role) VALUES ('" + name + "', '" + address + "', '" + city + "', '" + pin + "', '" + mobile + "', '" + email + "', '1');";
+    var sql = "INSERT INTO user_details (name, address, city, pin, contact, email, role) VALUES ('" + name + "', '" + address + "', '" + city + "', '" + pin + "', '" + mobile + "', '" + email + "', '2');";
     // console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
