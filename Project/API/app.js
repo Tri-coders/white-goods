@@ -51,7 +51,7 @@ app.post('/login', (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
-    var sql = "SELECT login_details.password FROM login_details INNER JOIN user_details ON login_details.user_id = user_details.user_id WHERE user_details.email='" + email + "';";
+    var sql = "SELECT login_details.password, user_details.role FROM login_details INNER JOIN user_details ON login_details.user_id = user_details.user_id WHERE user_details.email='" + email + "';";
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log(result)
@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
             res.status(404).send({ "error": "No user exists with this email" })
         }
         else if (bcrypt.compareSync(password, result[0].password)) {
-            res.sendStatus(200);
+            res.status(200).send({"role":result[0].role});
         }
         else {
             res.status(400).send({ "error": "Username or Password is incorrect" })
