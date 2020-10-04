@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,9 +27,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
-    private Button login;
-    private EditText email, password;
-    private static String server_url = "http://128.199.30.114:9000/login";
+    Button login;
+    EditText email, password;
+    ProgressBar progressBar;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String server_url = "http://128.199.30.114:9000/login";
 
     int UROLE = -1;
 
@@ -40,8 +43,14 @@ public class MainActivity extends AppCompatActivity {
         email = findViewById(R.id.view_email_login);
         password = findViewById(R.id.view_password_login);
         login = findViewById(R.id.login);
+        progressBar=findViewById(R.id.progressBar_login_page);
 
-        login.setOnClickListener(view -> loginUser());
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loginUser();
+            }
+        });
     }
 
     public void loginUser() {
@@ -50,10 +59,28 @@ public class MainActivity extends AppCompatActivity {
         Log.i("sankey", "login clicked");
 //        login.setVisibility(View.GONE);
 
-        final String email = this.email.getText().toString();
-        final String password = this.password.getText().toString();
+        String email = this.email.getText().toString();
+        String password = this.password.getText().toString();
+        login.setEnabled(false);
+        progressBar.setVisibility(View.VISIBLE);
 
-        func(email, password);
+        if(email.length()>0 && email.matches(emailPattern)){
+            if(password.length()>0){
+                func(email, password);
+            }else {
+                Toast.makeText(MainActivity.this, "Enter the password!!", Toast.LENGTH_SHORT).show();
+                login.setEnabled(true);
+                progressBar.setVisibility(View.INVISIBLE);
+                //return;
+            }
+        }else{
+            Toast.makeText(MainActivity.this, "Inavlid Email ID!!", Toast.LENGTH_SHORT).show();
+            login.setEnabled(true);
+            progressBar.setVisibility(View.INVISIBLE);
+            //return;
+        }
+
+
 //        login.setVisibility(View.VISIBLE);
     }
 
@@ -74,6 +101,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Log.i("VolleyABC", "got response " + response);
+                login.setEnabled(true);
+                progressBar.setVisibility(View.INVISIBLE);
                 try {
                     JSONObject jsonObject1 = new JSONObject(response);
                     // Log.i("tracking uid","main Activity "+UID);
@@ -97,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                login.setEnabled(true);
+                progressBar.setVisibility(View.INVISIBLE);
                 try {
                     Log.i("VolleyABC", error.toString());
                     Log.i("VolleyABC", Integer.toString(error.networkResponse.statusCode));
@@ -132,30 +163,4 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest); // get response from server
     }
 
-    private void func1(String email, String password) {
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url,
-                response -> {
-
-                    //Toast.makeText(getApplicationContext(),response,Toast.LENGTH_LONG).show();
-                    if (response.equals("ok")) {
-                        Intent i = new Intent(getApplicationContext(), RegisterEmployee.class);
-                        startActivity(i);
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Not Valid User!!", Toast.LENGTH_LONG).show();
-
-                    }
-                },
-                error -> Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show()) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
-                params.put("email", email);
-                params.put("pass", password);
-                return params;
-            }
-        };
-        requestQueue.add(stringRequest);
-    }
 }
