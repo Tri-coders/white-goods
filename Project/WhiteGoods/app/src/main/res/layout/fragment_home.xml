@@ -7,15 +7,18 @@
     android:background="@color/white"
     tools:context=".HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+    <org.florescu.android.rangeseekbar.RangeSeekBar
+        xmlns:rsb="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/seekbar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
+        rsb:activeColor="@color/main"
+        rsb:defaultColor="@color/main"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
