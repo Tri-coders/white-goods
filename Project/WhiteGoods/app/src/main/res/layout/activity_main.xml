@@ -10,7 +10,7 @@
 
     <EditText
         android:id="@+id/view_email_login"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:background="@drawable/input"
@@ -27,7 +27,7 @@
 
     <EditText
         android:id="@+id/view_password_login"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/input"

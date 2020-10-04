@@ -15,6 +15,7 @@
         android:orientation="vertical"
         android:paddingVertical="10dp">
 
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -37,11 +38,23 @@
             android:textColor="@color/font"
             android:textSize="15sp" />
 
+
+        <ProgressBar
+            android:id="@+id/progressBar_register_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             android:background="@drawable/input"
             android:drawableStart="@drawable/ic_baseline_mail_outline_24"
             android:drawablePadding="10dp"
@@ -192,22 +205,6 @@
             android:textColor="#fff"
             android:textSize="20sp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteY="1048dp">
-
-            <ProgressBar
-                android:id="@+id/progressBar_register_page"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 </ScrollView>
