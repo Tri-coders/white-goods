@@ -3,12 +3,14 @@ package com.example.whitegoods;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -24,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.concurrent.TimeUnit;
 
 public class RegisterEmployee extends AppCompatActivity {
 
@@ -31,6 +34,9 @@ public class RegisterEmployee extends AppCompatActivity {
     CheckBox demo, install, upgrade, inventory;
     char isDemo, isInstall, isUpgrade, isInventory;
     Button regEmployee;
+    ProgressBar progressBar;
+
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
     String server_url = "http://128.199.30.114:9000/register";
 
@@ -51,17 +57,23 @@ public class RegisterEmployee extends AppCompatActivity {
         inventory = findViewById(R.id.inventory);
         upgrade = findViewById(R.id.upgrade);
 
+        progressBar = findViewById(R.id.progressBar_register_page);
+
         regEmployee = findViewById(R.id.register_emp);
         regEmployee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerEmployee();
+                try {
+                    registerEmployee();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
     }
 
-    private void registerEmployee() {
+    private void registerEmployee() throws InterruptedException {
         if(demo.isChecked()) {
             isDemo = '1';
         } else {
@@ -93,7 +105,67 @@ public class RegisterEmployee extends AppCompatActivity {
         String cityText = String.valueOf(city.getText());
         String pinText = String.valueOf(pin.getText());
 
+        progressBar.setVisibility(View.VISIBLE);
+        regEmployee.setEnabled(false);
+        //regEmployee.setBackgroundColor(Color.parseColor("#0E457A"));
+
+        if(emailText.matches(emailPattern) && emailText.length()>0){
+            if(nameText.length()>0){
+                if(mobileText.length()==10){
+                    if(addressText.length()>0){
+                        if(cityText.length()>0){
+                            if(pinText.length()==6){
+                                if(isDemo=='1' || isInstall=='1' || isInventory=='1' || isUpgrade=='1'){
+                                    func(emailText,nameText,mobileText,addressText,cityText,pinText,isDemo,isInstall,isInventory,isUpgrade);
+                                }else{
+                                    Toast.makeText(RegisterEmployee.this,"Select the Role!!",Toast.LENGTH_SHORT).show();
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                    regEmployee.setEnabled(true);
+                                    //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+                                }
+                            }else{
+                                Toast.makeText(RegisterEmployee.this,"Enter the Pin-code!!",Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.INVISIBLE);
+                                regEmployee.setEnabled(true);
+                                //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+                            }
+                        }else{
+                            Toast.makeText(RegisterEmployee.this,"Enter the City!!",Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
+                            regEmployee.setEnabled(true);
+                            //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+                        }
+                    }else{
+                        Toast.makeText(RegisterEmployee.this,"Enter the Address!!",Toast.LENGTH_SHORT).show();
+                        progressBar.setVisibility(View.INVISIBLE);
+                        regEmployee.setEnabled(true);
+                        //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+                    }
+                }else {
+                    Toast.makeText(RegisterEmployee.this, "Enter the Phone number!!", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.INVISIBLE);
+                    regEmployee.setEnabled(true);
+                    //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+                }
+            }else{
+                Toast.makeText(RegisterEmployee.this,"Enter the Name!!",Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.INVISIBLE);
+                regEmployee.setEnabled(true);
+                //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+            }
+        }else{
+            Toast.makeText(RegisterEmployee.this,"Invalid Email ID!!",Toast.LENGTH_SHORT).show();
+            progressBar.setVisibility(View.INVISIBLE);
+            regEmployee.setEnabled(true);
+            //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+        }
+
+        }
+
+    private void func(String emailText, String nameText, String mobileText, String addressText, String cityText, String pinText, char isDemo, char isInstall, char isInventory, char isUpgrade) {
         Log.i("volleyABC", nameText + " " + emailText + " " + mobileText + " " + addressText + " " + cityText + " " + pinText + " " + isDemo + " " + isInventory + " " + isUpgrade + " " + isInstall);
+
+
 
         final JSONObject jsonObject = new JSONObject();
         try {
@@ -120,11 +192,18 @@ public class RegisterEmployee extends AppCompatActivity {
             public void onResponse(String response) {
                 Log.i("VolleyABC", "got response " + response);
 
+                progressBar.setVisibility(View.INVISIBLE);
+                regEmployee.setEnabled(true);
+                //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+
                 Toast.makeText(RegisterEmployee.this, "Success", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressBar.setVisibility(View.INVISIBLE);
+                regEmployee.setEnabled(true);
+                //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
                 try {
                     Log.i("VolleyABC", error.toString());
                     Log.i("VolleyABC", Integer.toString(error.networkResponse.statusCode));
@@ -163,5 +242,8 @@ public class RegisterEmployee extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest); // get response from server
+
     }
+
+
 }
