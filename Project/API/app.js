@@ -192,6 +192,19 @@ app.get('/email', (req, res) => {
     });
 });
 
+app.post('/get_employee', (req, res) => {
+    var sql = "SELECT * FROM user_details WHERE NOT role = '0'";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        if (result) {
+            res.status(200).send(result);
+        }
+        else {
+            res.status(400).send({ "error": "Username or Password is incorrect" })
+        }
+    });
+});
+
 //Port Listenings
 app.listen(9000, (req, res) => {
     console.log("Listening on 9000");
