@@ -159,11 +159,6 @@ app.post('/register', (req, res) => {
                     res.status(400).send({ "error": "Unable to get user_id from DB for given email" })
                 }
             });
-
-            var password = "123456789"
-
-            var hash1 = bcrypt.hashSync(password, saltRounds);
-            var sql = "INSERT INTO login_details (user_id, password) VALUES ('1', '" + hash1 + "');";
         }
         else {
             res.status(400).send({ "error": "Unable to insert user details into DB" })
