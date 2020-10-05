@@ -28,6 +28,10 @@ con.connect(function (err) {
 })
 
 app.get('/', (req, res) => {
+    res.sendStatus(200)
+})
+
+app.get('/some', (req, res) => {
     console.log("server started");
 
     var password = "Manager@123"
