@@ -48,5 +48,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation "com.google.android.material:material:1.2.1"
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+    implementation "com.squareup.picasso:picasso:2.71828"
+    implementation "org.florescu.android.rangeseekbar:rangeseekbar-library:0.4.0"
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 }

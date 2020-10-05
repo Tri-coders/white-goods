@@ -1,17 +1,17 @@
 // Inventory Detail Recycler Adapter
 package com.example.whitegoods;
 public class ViewEmpListRecylerCards {
-    private int mImageResource;
+    private String mImageResource;
     private String mText1;
     private String mText2;
 
-    public ViewEmpListRecylerCards(int imageResource, String text1, String text2) {
+    public ViewEmpListRecylerCards(String imageResource, String text1, String text2) {
         mImageResource = imageResource;
         mText1 = text1;
         mText2 = text2;
     }
 
-    public int getImageResource() {
+    public String getImageResource() {
         return mImageResource;
     }
 
