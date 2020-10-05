@@ -51,18 +51,23 @@ app.post('/login', (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
-    var sql = "SELECT login_details.password, user_details.role FROM login_details INNER JOIN user_details ON login_details.user_id = user_details.user_id WHERE user_details.email='" + email + "';";
+    var sql = "SELECT login_details.password, user_details.role, user_details.is_deleted FROM login_details INNER JOIN user_details ON login_details.user_id = user_details.user_id WHERE user_details.email='" + email + "';";
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log(result)
         if (result.length == 0) {
             res.status(404).send({ "error": "No user exists with this email" })
         }
-        else if (bcrypt.compareSync(password, result[0].password)) {
-            res.status(200).send({"role":result[0].role});
-        }
         else {
-            res.status(400).send({ "error": "Username or Password is incorrect" })
+            if(result[0].is_deleted == "1"){
+                res.send(404).send({ "error": "No user exists with this email" });
+            }
+            else if (bcrypt.compareSync(password, result[0].password)) {
+                res.status(200).send({ "role": result[0].role });
+            }
+            else {
+                res.status(400).send({ "error": "Username or Password is incorrect" })
+            }
         }
     });
 
@@ -87,7 +92,7 @@ app.post('/register', (req, res) => {
     fname = fname[0]
 
     //insert all user details into DB
-    var sql = "INSERT INTO user_details (name, address, city, pin, contact, email, role) VALUES ('" + name + "', '" + address + "', '" + city + "', '" + pin + "', '" + mobile + "', '" + email + "', '2');";
+    var sql = "INSERT INTO user_details (name, address, city, pin, contact, email, role, is_deleted) VALUES ('" + name + "', '" + address + "', '" + city + "', '" + pin + "', '" + mobile + "', '" + email + "', '2', '0');";
     console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -193,16 +198,66 @@ app.get('/email', (req, res) => {
 });
 
 app.post('/get_employee', (req, res) => {
-    var sql = "SELECT * FROM user_details WHERE NOT role = '0'";
+    var sql = "SELECT * FROM user_details WHERE NOT role = '0' AND NOT is_deleted = '1'";
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
             res.status(200).send(result);
         }
         else {
+            res.status(400).send({ "error": "Username or Password is incorrect" });
+        }
+    });
+});
+
+app.post('/edit_employee_admin', (req, res) => {
+    var user_id = req.body.user_id;
+    var name = req.body.name;
+    var address = req.body.address;
+    var city = req.body.city;
+    var pin = req.body.pin;
+    var contact = req.body.contact;
+    var email = req.body.email;
+    var install = req.body.install;
+    var demo = req.body.demo;
+    var upgrade = req.body.upgrade;
+    var inventory = req.body.inventory;
+
+    var sql = "UPDATE user_details SET name='" + name + "', address='" + address + "', city='" + city + "', pin='" + pin + "', contact='" + contact + "', email='" + email + "' WHERE user_id='" + user_id + "';";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        if (result) {
+            var sql = "UPDATE employee_role SET install='" + install + "', inventory='" + inventory + "', demo='" + demo + "', upgrade='" + upgrade + "' WHERE user_id='" + user_id + "';";
+            con.query(sql, function (err, result) {
+                if (err) throw err;
+                if (result) {
+                    res.status(200).send({ "msg": "Record Updated" })
+                }
+                else {
+                    res.status(400).send({ "error": "Username or Password is incorrect" })
+                }
+            });
+        }
+        else {
             res.status(400).send({ "error": "Username or Password is incorrect" })
         }
     });
+});
+
+app.post('/del_employee', (req, res) => {
+    var user_id = req.body.user_id;
+
+    var sql = "Update user_details SET is_deleted='1' WHERE user_id='" + user_id + "';";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        if (result) {
+            res.status(200).send({ "msg": "Record Deleted" })
+        }
+        else {
+            res.status(400).send({ "error": "Username or Password is incorrect" })
+        }
+    });
+
 });
 
 //Port Listenings
