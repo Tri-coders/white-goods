@@ -52,7 +52,7 @@ public class HomeFragment extends Fragment {
                 if (dateClicked.toString().compareTo("Tue Oct 06 09:00:00 AST 2020)") ==0 ) {
                     Toast.makeText(context, "Microwave Oven Repiar", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(context, "Microwave Oven Repiar",Toast.LENGTH_SHORT ).show();
+                    Toast.makeText(context, "No Scheduled Work",Toast.LENGTH_SHORT ).show();
                 }
             }
             @Override
