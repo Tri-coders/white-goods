@@ -7,24 +7,43 @@
     android:background="@color/white"
     tools:context=".HomeFragment">
 
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/barChart"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.github.sundeepk.compactcalendarview.CompactCalendarView
+        android:id="@+id/compactcalendar_view"
+        android:layout_width="fill_parent"
+        android:layout_height="210dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        app:flow_verticalAlign="bottom"
+        app:compactCalendarBackgroundColor="@color/main"
+        app:compactCalendarCurrentDayBackgroundColor="@color/secondary"
+        app:compactCalendarCurrentSelectedDayBackgroundColor="@color/secondary"
+        app:compactCalendarMultiEventIndicatorColor="#fff"
+        app:compactCalendarTargetHeight="250dp"
+        app:compactCalendarTextColor="#fff"
+        app:compactCalendarTextSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-<!--    <org.florescu.android.rangeseekbar.RangeSeekBar-->
-<!--        android:id="@+id/seekbar"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textAlignment="center"-->
-<!--        android:textSize="20sp"-->
-<!--        app:activeColor="@color/main"-->
-<!--        app:defaultColor="@color/main"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <com.github.mikephil.charting.charts.BarChart-->
+    <!--        android:id="@+id/barChart"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="400dp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    <org.florescu.android.rangeseekbar.RangeSeekBar-->
+    <!--        android:id="@+id/seekbar"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:textSize="20sp"-->
+    <!--        app:activeColor="@color/main"-->
+    <!--        app:defaultColor="@color/main"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
