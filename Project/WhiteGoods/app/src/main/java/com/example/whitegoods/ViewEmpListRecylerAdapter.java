@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -18,8 +19,17 @@ import java.util.ArrayList;
 public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListRecylerAdapter.ExampleViewHolder> {
     private Context mContext;
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
+    private OnItemClickListener mListener;
 
-    public static class ExampleViewHolder extends RecyclerView.ViewHolder {
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
+
+    public class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
         public TextView mTextView1;
         public TextView mTextView2;
@@ -29,6 +39,18 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
             mImageView = itemView.findViewById(R.id.pimage);
             mTextView1 = itemView.findViewById(R.id.name);
             mTextView2 = itemView.findViewById(R.id.quantiity);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
 
     }

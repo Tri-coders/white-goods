@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
-public class ViewEmployeeList extends AppCompatActivity {
+public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRecylerAdapter.OnItemClickListener {
 
     private RecyclerView mRecyclerView;
     private ViewEmpListRecylerAdapter mAdapter;
@@ -98,7 +98,7 @@ public class ViewEmployeeList extends AppCompatActivity {
                     mAdapter = new ViewEmpListRecylerAdapter(ViewEmployeeList.this, mExampleList);
 //                    mAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(mAdapter);
-//                    mAdapter.setOnItemClickListener(MinuteManager.this);
+                    mAdapter.setOnItemClickListener(ViewEmployeeList.this);
                 }
                 catch (JSONException e) {
                     e.printStackTrace();
@@ -141,5 +141,17 @@ public class ViewEmployeeList extends AppCompatActivity {
 
         requestQueue.add(stringRequest); // get response from server
 
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Intent detailView = new Intent(this, AdminViewEmployeeProfile.class);
+        ViewEmpListRecylerCards clickedCard = mExampleList.get(position);
+
+        detailView.putExtra("imageUrl", clickedCard.getImageResource());
+        detailView.putExtra("empName", clickedCard.getText1());
+        detailView.putExtra("empRole", clickedCard.getText2());
+
+        startActivity(detailView);
     }
 }
