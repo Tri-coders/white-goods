@@ -31,14 +31,19 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
 
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
-        public TextView mTextView1;
-        public TextView mTextView2;
+        public TextView mUserId, mName, mRole, mEmail, mPhone, mAddress, mCity, mPin;
 
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView = itemView.findViewById(R.id.pimage);
-            mTextView1 = itemView.findViewById(R.id.name);
-            mTextView2 = itemView.findViewById(R.id.quantiity);
+            mUserId = itemView.findViewById(R.id.user_id);
+            mName = itemView.findViewById(R.id.name);
+            mRole = itemView.findViewById(R.id.quantity);
+            mEmail = itemView.findViewById(R.id.email);
+            mPhone = itemView.findViewById(R.id.ph_no);
+            mAddress = itemView.findViewById(R.id.address);
+            mCity = itemView.findViewById(R.id.city);
+            mPin = itemView.findViewById(R.id.pin_code);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,8 +76,14 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
     @Override
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
         ViewEmpListRecylerCards currentItem = mExampleList.get(position);
-        holder.mTextView1.setText(currentItem.getText1());
-        holder.mTextView2.setText(currentItem.getText2());
+        holder.mUserId.setText(currentItem.getUserId());
+        holder.mName.setText(currentItem.getName());
+        holder.mRole.setText(currentItem.getRole());
+        holder.mEmail.setText(currentItem.getEmail());
+        holder.mPhone.setText(currentItem.getPhone());
+        holder.mAddress.setText(currentItem.getAddress());
+        holder.mCity.setText(currentItem.getCity());
+        holder.mPin.setText(currentItem.getPin());
 
         Picasso.get().load(currentItem.getImageResource()).into(holder.mImageView);
     }

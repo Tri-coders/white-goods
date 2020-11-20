@@ -24,7 +24,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Exampl
             super(itemView);
             mImageView = itemView.findViewById(R.id.pimage);
             mTextView1 = itemView.findViewById(R.id.name);
-            mTextView2 = itemView.findViewById(R.id.quantiity);
+            mTextView2 = itemView.findViewById(R.id.quantity);
         }
 
     }

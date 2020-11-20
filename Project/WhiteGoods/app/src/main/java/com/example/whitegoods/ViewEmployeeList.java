@@ -92,7 +92,7 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
                         String role = minutes.getString("role");
                         String image = minutes.getString("image");
 
-                        mExampleList.add(new ViewEmpListRecylerCards(image, name, role));
+                        mExampleList.add(new ViewEmpListRecylerCards(userId, image, name, role, email, contact, address,city, pin));
                     }
 
                     mAdapter = new ViewEmpListRecylerAdapter(ViewEmployeeList.this, mExampleList);
@@ -148,9 +148,15 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
         Intent detailView = new Intent(this, AdminViewEmployeeProfile.class);
         ViewEmpListRecylerCards clickedCard = mExampleList.get(position);
 
+        detailView.putExtra("userId", clickedCard.getUserId());
         detailView.putExtra("imageUrl", clickedCard.getImageResource());
-        detailView.putExtra("empName", clickedCard.getText1());
-        detailView.putExtra("empRole", clickedCard.getText2());
+        detailView.putExtra("empName", clickedCard.getName());
+        detailView.putExtra("empRole", clickedCard.getRole());
+        detailView.putExtra("email", clickedCard.getEmail());
+        detailView.putExtra("phone", clickedCard.getPhone());
+        detailView.putExtra("address", clickedCard.getAddress());
+        detailView.putExtra("city", clickedCard.getCity());
+        detailView.putExtra("pinCode", clickedCard.getPin());
 
         startActivity(detailView);
     }
