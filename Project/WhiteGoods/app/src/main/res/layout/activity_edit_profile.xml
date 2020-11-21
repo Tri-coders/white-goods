@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".EditProfile"
-    android:background="@color/white">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".EditProfile">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,8 +42,8 @@
             android:id="@+id/cardView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="20dp"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            app:cardCornerRadius="20dp">
 
             <ImageButton
                 android:layout_width="wrap_content"
@@ -58,28 +58,26 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/user_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
                 android:background="@drawable/input"
-                android:drawableStart="@drawable/ic_baseline_mail_outline_24"
+                android:drawableStart="@drawable/ic_baseline_vpn_key_24"
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/opensans_regular"
-                android:hint="@string/email"
+                android:hint="@string/user_id"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/font" />
 
-
             <EditText
-                android:id="@+id/name"
-                android:inputType="text"
+                android:id="@+id/editText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -88,12 +86,26 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/opensans_regular"
                 android:hint="@string/name"
+                android:inputType="text"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/font" />
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/input"
+                android:drawableStart="@drawable/ic_baseline_person_24"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/opensans_regular"
+                android:hint="@string/name"
+                android:inputType="text"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/font" />
 
             <EditText
                 android:id="@+id/phone"
-                android:inputType="phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -102,13 +114,13 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/opensans_regular"
                 android:hint="Phone No"
+                android:inputType="phone"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/font" />
 
             <EditText
                 android:id="@+id/address"
                 android:layout_width="wrap_content"
-                android:inputType="textPostalAddress"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/input"
@@ -116,12 +128,12 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/opensans_regular"
                 android:hint="@string/address"
+                android:inputType="textPostalAddress"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/font" />
 
             <EditText
                 android:id="@+id/city"
-                android:inputType="text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -130,12 +142,12 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/opensans_regular"
                 android:hint="@string/city"
+                android:inputType="text"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/font" />
 
             <EditText
                 android:id="@+id/pincode"
-                android:inputType="number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -144,6 +156,7 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/opensans_regular"
                 android:hint="@string/pincode"
+                android:inputType="number"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/font" />
         </LinearLayout>

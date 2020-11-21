@@ -64,10 +64,24 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/email_admin"
+                android:id="@+id/user_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="100dp"
+                android:background="@drawable/input"
+                android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/opensans_regular"
+                android:hint="@string/user_id"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="15dp"
+                android:textColor="@color/font" />
+
+            <EditText
+                android:id="@+id/email_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/input"
                 android:drawableStart="@drawable/ic_baseline_mail_outline_24"
                 android:drawablePadding="10dp"
