@@ -227,6 +227,7 @@ app.post('/edit_employee_admin', (req, res) => {
     var inventory = req.body.inventory;
 
     var sql = "UPDATE user_details SET name='" + name + "', address='" + address + "', city='" + city + "', pin='" + pin + "', contact='" + contact + "', email='" + email + "' WHERE user_id='" + user_id + "';";
+    console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
