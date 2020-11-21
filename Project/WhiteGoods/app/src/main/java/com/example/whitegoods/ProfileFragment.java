@@ -29,5 +29,7 @@ public class ProfileFragment extends Fragment {
     public void edit_profile(){
         Intent i = new Intent(getActivity(), EditProfile.class);
         startActivity(i);
+
+//        Before redirecting to edit page... please send a data with key:- "is_admin" and value: - "0"(it is string not int)
     }
     }

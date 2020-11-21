@@ -89,8 +89,42 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
                         String pin = minutes.getString("pin");
                         String contact = minutes.getString("contact");
                         String email = minutes.getString("email");
-                        String role = minutes.getString("role");
+                        String roleTop = minutes.getString("role");
                         String image = minutes.getString("image");
+
+                        String install = minutes.getString("install");
+                        String inventory = minutes.getString("inventory");
+                        String demo = minutes.getString("demo");
+                        String upgrade = minutes.getString("upgrade");
+
+                        String role = "";
+                        if(roleTop.equals("1")) {
+                            role = "Manager";
+                        } else {
+                            if(install.equals("1")) {
+                                role += "Install";
+                            }
+                            if(inventory.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Inventory";
+                            }
+                            if(demo.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Demo";
+                            }
+                            if(upgrade.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Upgrade";
+                            }
+
+                            role = role.replace(" ", ", ");
+                        }
 
                         mExampleList.add(new ViewEmpListRecylerCards(userId, image, name, role, email, contact, address,city, pin));
                     }

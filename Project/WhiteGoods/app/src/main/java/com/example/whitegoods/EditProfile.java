@@ -2,6 +2,7 @@ package com.example.whitegoods;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -23,6 +24,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +37,7 @@ public class EditProfile extends AppCompatActivity {
     EditText email,name,phone,address,city,pincode;
     CheckBox demo,install,inventory,upgrade;
     Button saveEdit;
+    ImageButton editPic;
 
     ProgressBar progressBar;
     char isDemo,isInstall,isUpgrade,isInventory;
@@ -41,11 +45,16 @@ public class EditProfile extends AppCompatActivity {
 
     String server_url = "";
 
+    String empUserID, imageUrl, empName, empRole, empEmail, empContact, empAddress, empCity, empPin, is_admin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int role=1;
-        if(role==1){
+
+        getIntentData();
+
+        if(is_admin.equals("1")){
+
             setContentView(R.layout.activity_admin_edit_profile);
 
             email=findViewById(R.id.email_admin);
@@ -58,6 +67,9 @@ public class EditProfile extends AppCompatActivity {
             install=findViewById(R.id.install_admin);
             inventory=findViewById(R.id.inventory_admin);
             upgrade=findViewById(R.id.upgrade_admin);
+            editPic = findViewById(R.id.edit_pic);
+
+            setIntentData();
 
             progressBar=findViewById(R.id.progressBar_admin);
             saveEdit=findViewById(R.id.saveEdit_admin);
@@ -89,6 +101,58 @@ public class EditProfile extends AppCompatActivity {
                 bottomSheetDialog.show();
             });
         }
+
+    }
+
+    private void getIntentData() {
+
+        Intent intent = getIntent();
+
+        empUserID = intent.getStringExtra("userId");
+        imageUrl = intent.getStringExtra("imageUrl");
+        empName = intent.getStringExtra("empName");
+        empRole = intent.getStringExtra("empRole");
+        empEmail = intent.getStringExtra("email");
+        empContact = intent.getStringExtra("phone");
+        empAddress = intent.getStringExtra("address");
+        empCity = intent.getStringExtra("city");
+        empPin = intent.getStringExtra("pinCode");
+        is_admin = intent.getStringExtra("is_admin");
+
+    }
+
+    private void setIntentData() {
+
+        email.setText(empEmail);
+        name.setText(empName);
+        phone.setText(empContact);
+        address.setText(empAddress);
+        city.setText(empCity);
+        pincode.setText(empPin);
+        if(empRole.contains("Install")) {
+            install.setChecked(true);
+        }
+        if(empRole.contains("Inventory")) {
+            inventory.setChecked(true);
+        }
+        if(empRole.contains("Demo")) {
+            demo.setChecked(true);
+        }
+        if(empRole.contains("Upgrade")) {
+            upgrade.setChecked(true);
+        }
+
+        Picasso.get().load(imageUrl).error(R.drawable.ic_baseline_person_24).into(editPic, new Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.i("picasso", "" + e);
+            }
+        });
 
     }
 
