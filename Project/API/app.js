@@ -200,7 +200,8 @@ app.get('/email', (req, res) => {
 });
 
 app.post('/get_employee', (req, res) => {
-    var sql = "SELECT * FROM user_details WHERE NOT role = '0' AND NOT is_deleted = '1'";
+    var sql = "SELECT * FROM `employee_role` as e INNER JOIN user_details as u ON e.user_id=u.user_id;"
+    // var sql = "SELECT * FROM user_details WHERE NOT role = '0' AND NOT is_deleted = '1'";
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
