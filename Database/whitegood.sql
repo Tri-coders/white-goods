@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 18, 2020 at 06:37 PM
+-- Generation Time: Nov 21, 2020 at 09:08 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -54,9 +54,9 @@ CREATE TABLE `employee_role` (
 --
 
 INSERT INTO `employee_role` (`user_id`, `install`, `inventory`, `demo`, `upgrade`) VALUES
+(9, '0', '0', '0', '0'),
 (10, '1', '0', '1', '1'),
 (11, '0', '0', '0', '1'),
-(9, '0', '0', '0', '0'),
 (12, '0', '0', '1', '0');
 
 -- --------------------------------------------------------
