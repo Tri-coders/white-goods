@@ -34,7 +34,7 @@ import java.io.UnsupportedEncodingException;
 
 public class EditProfile extends AppCompatActivity {
 
-    EditText email,name,phone,address,city,pincode;
+    EditText email,name,phone,address,city,pincode, userId;
     CheckBox demo,install,inventory,upgrade;
     Button saveEdit;
     ImageButton editPic;
@@ -43,7 +43,7 @@ public class EditProfile extends AppCompatActivity {
     char isDemo,isInstall,isUpgrade,isInventory;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    String server_url = "";
+    String server_url = "http://128.199.30.114:9000/edit_employee_admin";
 
     String empUserID, imageUrl, empName, empRole, empEmail, empContact, empAddress, empCity, empPin, is_admin;
 
@@ -57,6 +57,7 @@ public class EditProfile extends AppCompatActivity {
 
             setContentView(R.layout.activity_admin_edit_profile);
 
+            userId = findViewById(R.id.user_id);
             email=findViewById(R.id.email_admin);
             name=findViewById(R.id.name_admin);
             phone=findViewById(R.id.phone_admin);
@@ -123,6 +124,7 @@ public class EditProfile extends AppCompatActivity {
 
     private void setIntentData() {
 
+        userId.setText(empUserID);
         email.setText(empEmail);
         name.setText(empName);
         phone.setText(empContact);
@@ -181,6 +183,7 @@ public class EditProfile extends AppCompatActivity {
             isUpgrade = '0';
         }
 
+        String idText = String.valueOf(userId.getText());
         String nameText = String.valueOf(name.getText());
         String emailText = String.valueOf(email.getText());
         String mobileText = String.valueOf(phone.getText());
@@ -199,7 +202,7 @@ public class EditProfile extends AppCompatActivity {
                         if(cityText.length()>0){
                             if(pinText.length()==6){
                                 if(isDemo=='1' || isInstall=='1' || isInventory=='1' || isUpgrade=='1'){
-                                    func(emailText,nameText,mobileText,addressText,cityText,pinText,isDemo,isInstall,isInventory,isUpgrade);
+                                    func(idText,emailText,nameText,mobileText,addressText,cityText,pinText,isDemo,isInstall,isInventory,isUpgrade);
                                 }else{
                                     Toast.makeText(EditProfile.this,"Select the Role!!",Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.INVISIBLE);
@@ -245,23 +248,26 @@ public class EditProfile extends AppCompatActivity {
 
     }
 
-    private void func(String emailText, String nameText, String mobileText, String addressText, String cityText, String pinText, char isDemo, char isInstall, char isInventory, char isUpgrade) {
+    private void func(String idText, String emailText, String nameText, String mobileText, String addressText, String cityText, String pinText, char isDemo, char isInstall, char isInventory, char isUpgrade) {
         Log.i("volleyABC", nameText + " " + emailText + " " + mobileText + " " + addressText + " " + cityText + " " + pinText + " " + isDemo + " " + isInventory + " " + isUpgrade + " " + isInstall);
 
 
 
         final JSONObject jsonObject = new JSONObject();
         try {
+            jsonObject.put("user_id", idText);
             jsonObject.put("name", nameText);
             jsonObject.put("email", emailText);
-            jsonObject.put("mobile", mobileText);
+            jsonObject.put("contact", mobileText);
             jsonObject.put("address", addressText);
             jsonObject.put("city", cityText);
-            jsonObject.put("pincode", pinText);
+            jsonObject.put("pin", pinText);
             jsonObject.put("install", "" + isInstall);
             jsonObject.put("demo", "" + isDemo);
             jsonObject.put("inventory", "" + isInventory);
             jsonObject.put("upgrade", "" + isUpgrade);
+
+            Log.i("checkdata", jsonObject.toString());
         }
         catch (JSONException e) {
             e.printStackTrace();
