@@ -179,7 +179,7 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
 
     @Override
     public void onItemClick(int position) {
-        Intent detailView = new Intent(this, AdminViewEmployeeProfile.class);
+        Intent detailView = new Intent(this, EditProfile.class);
         ViewEmpListRecylerCards clickedCard = mExampleList.get(position);
 
         detailView.putExtra("userId", clickedCard.getUserId());
@@ -191,6 +191,7 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
         detailView.putExtra("address", clickedCard.getAddress());
         detailView.putExtra("city", clickedCard.getCity());
         detailView.putExtra("pinCode", clickedCard.getPin());
+        detailView.putExtra("is_admin", "1");
 
         startActivity(detailView);
     }

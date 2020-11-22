@@ -1,8 +1,10 @@
 package com.example.whitegoods;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -34,16 +36,20 @@ import java.io.UnsupportedEncodingException;
 
 public class EditProfile extends AppCompatActivity {
 
+    int save_or_edit = 0; // 0 = view state, 1 = edit state
+
     EditText email,name,phone,address,city,pincode, userId;
     CheckBox demo,install,inventory,upgrade;
-    Button saveEdit;
+    ImageButton saveEditTop;
+    Button saveEditBottom, delEmployee;
     ImageButton editPic;
 
     ProgressBar progressBar;
     char isDemo,isInstall,isUpgrade,isInventory;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    String server_url = "http://128.199.30.114:9000/edit_employee_admin";
+    String server_url_edit = "http://128.199.30.114:9000/edit_employee_admin";
+    String server_url_delete = "http://128.199.30.114:9000/del_employee";
 
     String empUserID, imageUrl, empName, empRole, empEmail, empContact, empAddress, empCity, empPin, is_admin;
 
@@ -73,15 +79,66 @@ public class EditProfile extends AppCompatActivity {
             setIntentData();
 
             progressBar=findViewById(R.id.progressBar_admin);
-            saveEdit=findViewById(R.id.saveEdit_admin);
+            saveEditBottom=findViewById(R.id.saveEdit_admin);
+            saveEditTop = findViewById(R.id.saveProfile);
+            delEmployee = findViewById(R.id.delete);
 
-            saveEdit.setOnClickListener(new View.OnClickListener() {
+            delEmployee.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    try {
-                        editAdmin();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                    deleteEmployee();
+                }
+            });
+
+            saveEditTop.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    saveEditBottom.performClick();
+                }
+            });
+
+            saveEditBottom.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(save_or_edit == 0) {
+                        save_or_edit = 1;
+
+                        userId.setEnabled(true);
+                        email.setEnabled(true);
+                        name.setEnabled(true);
+                        phone.setEnabled(true);
+                        address.setEnabled(true);
+                        city.setEnabled(true);
+                        pincode.setEnabled(true);
+                        demo.setEnabled(true);
+                        install.setEnabled(true);
+                        inventory.setEnabled(true);
+                        upgrade.setEnabled(true);
+
+                        saveEditTop.setBackgroundResource(R.drawable.ic_baseline_save_24);
+
+                    } else {
+                        save_or_edit = 0;
+
+                        userId.setEnabled(false);
+                        email.setEnabled(false);
+                        name.setEnabled(false);
+                        phone.setEnabled(false);
+                        address.setEnabled(false);
+                        city.setEnabled(false);
+                        pincode.setEnabled(false);
+                        demo.setEnabled(false);
+                        install.setEnabled(false);
+                        inventory.setEnabled(false);
+                        upgrade.setEnabled(false);
+
+                        saveEditTop.setBackgroundResource(R.drawable.ic_baseline_edit_24);
+
+                        try {
+                            editAdmin();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             });
@@ -103,6 +160,77 @@ public class EditProfile extends AppCompatActivity {
             });
         }
 
+    }
+
+    private void deleteEmployee() {
+        Log.i("volleyABC", "id: - " + empUserID);
+
+
+
+        final JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("user_id", empUserID);
+
+            Log.i("checkdata", jsonObject.toString());
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        final String requestBody = jsonObject.toString();
+        Log.i("VolleyABC", requestBody);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url_delete, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("VolleyABC", "got response " + response);
+
+                finish();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+//                progressBar.setVisibility(View.INVISIBLE);
+//                saveEditBottom.setEnabled(true);
+                //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
+                try {
+                    Log.i("VolleyABC", error.toString());
+                    Log.i("VolleyABC", Integer.toString(error.networkResponse.statusCode));
+                    Toast.makeText(EditProfile.this, "Server Error", Toast.LENGTH_SHORT).show();
+
+                    error.printStackTrace();
+                }
+                catch (Exception e) {
+                    Log.i("VolleyABC", e.toString());
+                    Toast.makeText(EditProfile.this, "Check Network", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }) {
+            //sending JSONObject String to server starts
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+        };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(6000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        //sending JSONObject String to server ends
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest); // get response from server
     }
 
     private void getIntentData() {
@@ -192,7 +320,7 @@ public class EditProfile extends AppCompatActivity {
         String pinText = String.valueOf(pincode.getText());
 
         progressBar.setVisibility(View.VISIBLE);
-        saveEdit.setEnabled(false);
+        saveEditBottom.setEnabled(false);
         //regEmployee.setBackgroundColor(Color.parseColor("#0E457A"));
 
         if(emailText.matches(emailPattern) && emailText.length()>0){
@@ -206,43 +334,43 @@ public class EditProfile extends AppCompatActivity {
                                 }else{
                                     Toast.makeText(EditProfile.this,"Select the Role!!",Toast.LENGTH_SHORT).show();
                                     progressBar.setVisibility(View.INVISIBLE);
-                                    saveEdit.setEnabled(true);
+                                    saveEditBottom.setEnabled(true);
                                     //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
                                 }
                             }else{
                                 Toast.makeText(EditProfile.this,"Enter the Pin-code!!",Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.INVISIBLE);
-                                saveEdit.setEnabled(true);
+                                saveEditBottom.setEnabled(true);
                                 //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
                             }
                         }else{
                             Toast.makeText(EditProfile.this,"Enter the City!!",Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.INVISIBLE);
-                            saveEdit.setEnabled(true);
+                            saveEditBottom.setEnabled(true);
                             //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
                         }
                     }else{
                         Toast.makeText(EditProfile.this,"Enter the Address!!",Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.INVISIBLE);
-                        saveEdit.setEnabled(true);
+                        saveEditBottom.setEnabled(true);
                         //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
                     }
                 }else {
                     Toast.makeText(EditProfile.this, "Enter the Phone number!!", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.INVISIBLE);
-                    saveEdit.setEnabled(true);
+                    saveEditBottom.setEnabled(true);
                     //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
                 }
             }else{
                 Toast.makeText(EditProfile.this,"Enter the Name!!",Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.INVISIBLE);
-                saveEdit.setEnabled(true);
+                saveEditBottom.setEnabled(true);
                 //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
             }
         }else{
             Toast.makeText(EditProfile.this,"Invalid Email ID!!",Toast.LENGTH_SHORT).show();
             progressBar.setVisibility(View.INVISIBLE);
-            saveEdit.setEnabled(true);
+            saveEditBottom.setEnabled(true);
             //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
         }
 
@@ -276,13 +404,13 @@ public class EditProfile extends AppCompatActivity {
         final String requestBody = jsonObject.toString();
         Log.i("VolleyABC", requestBody);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url, new Response.Listener<String>() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url_edit, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.i("VolleyABC", "got response " + response);
 
                 progressBar.setVisibility(View.INVISIBLE);
-                saveEdit.setEnabled(true);
+                saveEditBottom.setEnabled(true);
                 //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
 
                 Toast.makeText(EditProfile.this, "Success", Toast.LENGTH_SHORT).show();
@@ -291,7 +419,7 @@ public class EditProfile extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressBar.setVisibility(View.INVISIBLE);
-                saveEdit.setEnabled(true);
+                saveEditBottom.setEnabled(true);
                 //regEmployee.setBackgroundColor(Color.parseColor("#0075FF"));
                 try {
                     Log.i("VolleyABC", error.toString());
