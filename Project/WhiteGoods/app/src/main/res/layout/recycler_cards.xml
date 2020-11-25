@@ -17,12 +17,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            app:cardBackgroundColor="@color/elements"
+            android:layout_margin="5dp"
             app:cardCornerRadius="10dp">
 
             <ImageView
                 android:id="@+id/pimage"
                 android:layout_width="100dp"
-                android:layout_height="100dp" />
+                android:layout_height="100dp"
+                android:scaleType="centerCrop" />
 
         </androidx.cardview.widget.CardView>
 
@@ -82,7 +85,7 @@
                 android:text="@string/phone_no"
                 android:textColor="@color/secondary"
                 android:textSize="18sp"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/address"
@@ -115,8 +118,7 @@
                 android:text="@string/pincode"
                 android:textColor="@color/secondary"
                 android:textSize="18sp"
-                android:visibility="gone"/>
-
+                android:visibility="gone" />
 
 
         </LinearLayout>
