@@ -2,12 +2,14 @@
 package com.example.whitegoods;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,8 +35,10 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
         public ImageView mImageView;
         public TextView mUserId, mName, mRole, mEmail, mPhone, mAddress, mCity, mPin;
 
+        CardView container;
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
+            container = itemView.findViewById(R.id.box);
             mImageView = itemView.findViewById(R.id.pimage);
             mUserId = itemView.findViewById(R.id.user_id);
             mName = itemView.findViewById(R.id.name);
@@ -86,6 +90,10 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
         holder.mPin.setText(currentItem.getPin());
 
         Picasso.get().load(currentItem.getImageResource()).into(holder.mImageView);
+
+        //animation code
+        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation_recycler));
+
     }
 
     @Override
