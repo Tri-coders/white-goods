@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else {
                         Intent employeeNav = new Intent(MainActivity.this, EmployeeNav.class);
-                        employeeNav.putExtra("role", UROLE);
+                        employeeNav.putExtra("role", Integer.toString(UROLE));
                         startActivity(employeeNav);
                     }
                 }
