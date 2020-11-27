@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2020 at 05:23 AM
+-- Generation Time: Nov 27, 2020 at 06:41 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -141,6 +141,22 @@ CREATE TABLE `model` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `parts`
+--
+
+CREATE TABLE `parts` (
+  `part_id` int(11) NOT NULL,
+  `part_no` int(11) NOT NULL,
+  `part_name` varchar(100) NOT NULL,
+  `part_price` varchar(50) NOT NULL,
+  `part_img` text NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `whitegoodcategory_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `request`
 --
 
@@ -268,6 +284,14 @@ ALTER TABLE `model`
   ADD KEY `whitegoodcategory_id` (`whitegoodcategory_id`);
 
 --
+-- Indexes for table `parts`
+--
+ALTER TABLE `parts`
+  ADD PRIMARY KEY (`part_id`),
+  ADD KEY `brand_id` (`brand_id`),
+  ADD KEY `whitegoodcategory_id` (`whitegoodcategory_id`);
+
+--
 -- Indexes for table `request`
 --
 ALTER TABLE `request`
@@ -354,6 +378,13 @@ ALTER TABLE `login_details`
 ALTER TABLE `model`
   ADD CONSTRAINT `model_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`brand_id`),
   ADD CONSTRAINT `model_ibfk_2` FOREIGN KEY (`whitegoodcategory_id`) REFERENCES `whitegoodcategory` (`good_id`);
+
+--
+-- Constraints for table `parts`
+--
+ALTER TABLE `parts`
+  ADD CONSTRAINT `parts_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`brand_id`),
+  ADD CONSTRAINT `parts_ibfk_2` FOREIGN KEY (`whitegoodcategory_id`) REFERENCES `whitegoodcategory` (`good_id`);
 
 --
 -- Constraints for table `request`
