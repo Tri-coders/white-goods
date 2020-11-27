@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2020 at 06:41 AM
+-- Generation Time: Nov 27, 2020 at 06:56 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -130,7 +130,7 @@ INSERT INTO `login_details` (`user_id`, `password`) VALUES
 
 CREATE TABLE `model` (
   `model_id` int(11) NOT NULL,
-  `model_no` int(11) NOT NULL,
+  `model_no` varchar(11) NOT NULL,
   `model_name` varchar(100) NOT NULL,
   `model_price` varchar(100) NOT NULL,
   `model_img` text NOT NULL,
@@ -146,7 +146,7 @@ CREATE TABLE `model` (
 
 CREATE TABLE `parts` (
   `part_id` int(11) NOT NULL,
-  `part_no` int(11) NOT NULL,
+  `part_no` varchar(50) NOT NULL,
   `part_name` varchar(100) NOT NULL,
   `part_price` varchar(50) NOT NULL,
   `part_img` text NOT NULL,
@@ -331,6 +331,18 @@ ALTER TABLE `billing`
 --
 ALTER TABLE `brand`
   MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `model`
+--
+ALTER TABLE `model`
+  MODIFY `model_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `parts`
+--
+ALTER TABLE `parts`
+  MODIFY `part_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `request`
