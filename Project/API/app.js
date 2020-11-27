@@ -262,6 +262,22 @@ app.post('/del_employee', (req, res) => {
 
 });
 
+app.post('/user_details', (req,res)=>{
+	var user_id = req.body.user_id;
+	
+	var sql = "Select * from user_details WHERE user_id='"+ user_id + "';";
+	con.query(sql, function(err, result) {
+		if(err) throw err;
+		if(result) {
+			res.status(200).send(result)
+		}else{
+			res.status(400).send({ "error": "No user found" });
+		}
+	});
+});
+
+
+
 //Port Listenings
 app.listen(9000, (req, res) => {
     console.log("Listening on 9000");
