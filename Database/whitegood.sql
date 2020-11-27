@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 21, 2020 at 09:08 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 27, 2020 at 05:23 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,27 @@ CREATE TABLE `billing` (
   `product_id` varchar(15) NOT NULL,
   `quantity` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brand`
+--
+
+CREATE TABLE `brand` (
+  `brand_id` int(11) NOT NULL,
+  `brand_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `brand`
+--
+
+INSERT INTO `brand` (`brand_id`, `brand_name`) VALUES
+(1, 'Samsung'),
+(2, 'LG'),
+(3, 'Godrej'),
+(4, 'Whirlpool');
 
 -- --------------------------------------------------------
 
@@ -70,7 +91,7 @@ CREATE TABLE `inventory` (
   `product_name` varchar(100) NOT NULL,
   `brand` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `price` int(10) NOT NULL,
   `quantity` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -104,6 +125,22 @@ INSERT INTO `login_details` (`user_id`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `model`
+--
+
+CREATE TABLE `model` (
+  `model_id` int(11) NOT NULL,
+  `model_no` int(11) NOT NULL,
+  `model_name` varchar(100) NOT NULL,
+  `model_price` varchar(100) NOT NULL,
+  `model_img` text NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `whitegoodcategory_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `request`
 --
 
@@ -111,7 +148,7 @@ CREATE TABLE `request` (
   `request_id` int(10) NOT NULL,
   `user_id` int(4) NOT NULL,
   `title` varchar(20) NOT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `name` varchar(35) NOT NULL,
   `address` varchar(75) NOT NULL,
   `city` varchar(15) NOT NULL,
@@ -166,6 +203,27 @@ INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contac
 (11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0'),
 (12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `whitegoodcategory`
+--
+
+CREATE TABLE `whitegoodcategory` (
+  `good_id` int(11) NOT NULL,
+  `good_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `whitegoodcategory`
+--
+
+INSERT INTO `whitegoodcategory` (`good_id`, `good_name`) VALUES
+(1, 'AC'),
+(2, 'Refrigerator'),
+(3, 'Oven'),
+(4, 'WashingMachine');
+
 --
 -- Indexes for dumped tables
 --
@@ -176,6 +234,12 @@ INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contac
 ALTER TABLE `billing`
   ADD PRIMARY KEY (`billing_id`),
   ADD KEY `request_id` (`request_id`);
+
+--
+-- Indexes for table `brand`
+--
+ALTER TABLE `brand`
+  ADD PRIMARY KEY (`brand_id`);
 
 --
 -- Indexes for table `employee_role`
@@ -194,6 +258,14 @@ ALTER TABLE `inventory`
 --
 ALTER TABLE `login_details`
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `model`
+--
+ALTER TABLE `model`
+  ADD PRIMARY KEY (`model_id`),
+  ADD KEY `brand_id` (`brand_id`),
+  ADD KEY `whitegoodcategory_id` (`whitegoodcategory_id`);
 
 --
 -- Indexes for table `request`
@@ -215,6 +287,12 @@ ALTER TABLE `user_details`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `whitegoodcategory`
+--
+ALTER TABLE `whitegoodcategory`
+  ADD PRIMARY KEY (`good_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -223,6 +301,12 @@ ALTER TABLE `user_details`
 --
 ALTER TABLE `billing`
   MODIFY `billing_id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `brand`
+--
+ALTER TABLE `brand`
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `request`
@@ -235,6 +319,12 @@ ALTER TABLE `request`
 --
 ALTER TABLE `user_details`
   MODIFY `user_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `whitegoodcategory`
+--
+ALTER TABLE `whitegoodcategory`
+  MODIFY `good_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
@@ -257,6 +347,13 @@ ALTER TABLE `employee_role`
 --
 ALTER TABLE `login_details`
   ADD CONSTRAINT `login_details_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user_details` (`user_id`);
+
+--
+-- Constraints for table `model`
+--
+ALTER TABLE `model`
+  ADD CONSTRAINT `model_ibfk_1` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`brand_id`),
+  ADD CONSTRAINT `model_ibfk_2` FOREIGN KEY (`whitegoodcategory_id`) REFERENCES `whitegoodcategory` (`good_id`);
 
 --
 -- Constraints for table `request`
