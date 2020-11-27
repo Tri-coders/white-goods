@@ -89,10 +89,44 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
                         String pin = minutes.getString("pin");
                         String contact = minutes.getString("contact");
                         String email = minutes.getString("email");
-                        String role = minutes.getString("role");
+                        String roleTop = minutes.getString("role");
                         String image = minutes.getString("image");
 
-                        mExampleList.add(new ViewEmpListRecylerCards(image, name, role));
+                        String install = minutes.getString("install");
+                        String inventory = minutes.getString("inventory");
+                        String demo = minutes.getString("demo");
+                        String upgrade = minutes.getString("upgrade");
+
+                        String role = "";
+                        if(roleTop.equals("1")) {
+                            role = "Manager";
+                        } else {
+                            if(install.equals("1")) {
+                                role += "Install";
+                            }
+                            if(inventory.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Inventory";
+                            }
+                            if(demo.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Demo";
+                            }
+                            if(upgrade.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Upgrade";
+                            }
+
+                            role = role.replace(" ", ", ");
+                        }
+
+                        mExampleList.add(new ViewEmpListRecylerCards(userId, image, name, role, email, contact, address,city, pin));
                     }
 
                     mAdapter = new ViewEmpListRecylerAdapter(ViewEmployeeList.this, mExampleList);
@@ -145,12 +179,19 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
 
     @Override
     public void onItemClick(int position) {
-        Intent detailView = new Intent(this, AdminViewEmployeeProfile.class);
+        Intent detailView = new Intent(this, EditProfile.class);
         ViewEmpListRecylerCards clickedCard = mExampleList.get(position);
 
+        detailView.putExtra("userId", clickedCard.getUserId());
         detailView.putExtra("imageUrl", clickedCard.getImageResource());
-        detailView.putExtra("empName", clickedCard.getText1());
-        detailView.putExtra("empRole", clickedCard.getText2());
+        detailView.putExtra("empName", clickedCard.getName());
+        detailView.putExtra("empRole", clickedCard.getRole());
+        detailView.putExtra("email", clickedCard.getEmail());
+        detailView.putExtra("phone", clickedCard.getPhone());
+        detailView.putExtra("address", clickedCard.getAddress());
+        detailView.putExtra("city", clickedCard.getCity());
+        detailView.putExtra("pinCode", clickedCard.getPin());
+        detailView.putExtra("is_admin", "1");
 
         startActivity(detailView);
     }
