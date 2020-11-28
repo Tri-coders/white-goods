@@ -278,6 +278,31 @@ app.post('/user_details', (req,res)=>{
 	});
 });
 
+app.post('/request', (req,res)=>{
+    var user_id = req.body.user_id;
+    var title = req.body.title;
+    var description = req.body.description;
+    var name = req.body.name;
+    var address = req.body.address;
+    var city = req.body.city;
+    var pin = req.body.pin;
+    var contact = req.body.contact;
+    var email = req.body.email;
+    var date = req.body.date;
+    var time = req.body.time;
+    var status = req.body.status;
+    var otp = req.body.otp;
+
+    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `status`, `otp`) VALUES ("+user_id+",'"+title+"','"+description+"','"+name+"','"+address+"','"+city+"','"+pin+"','"+contact+"','"+email+"','"+date+"','"+time+"',"+status+","+otp+")";
+    con.query(sql,function(err,result){
+        if(err) throw err;
+        if(result){
+            res.status(200).send("OK")
+        }else{
+            res.status(400).send({"error":"Something went wrong"});
+        }
+    });
+});
 
 
 //Port Listenings
