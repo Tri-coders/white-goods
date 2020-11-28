@@ -38,12 +38,14 @@ public class RegisterEmployee extends AppCompatActivity {
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    String server_url = getString(R.string.host_url) + "/register";
+    String server_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_employee);
+
+        server_url = getString(R.string.host_url) + "/register";
 
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);

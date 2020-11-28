@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     EditText email, password;
     ProgressBar progressBar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    String server_url = getString(R.string.host_url) + "/login";
+    String server_url;
 
     int UROLE = -1;
 
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        server_url = getString(R.string.host_url) + "/login";
 
         Log.i("host", getString(R.string.host_url));
 

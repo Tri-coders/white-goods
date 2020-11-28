@@ -33,12 +33,14 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
     private RequestQueue requestQueue;
 
-    String server_url = getString(R.string.host_url) + "/get_employee";
+    String server_url;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_employee_list);
+
+        server_url = getString(R.string.host_url) + "/get_employee";
 
         FloatingActionButton newEmployee = findViewById(R.id.add_button);
         newEmployee.setOnClickListener(new View.OnClickListener() {

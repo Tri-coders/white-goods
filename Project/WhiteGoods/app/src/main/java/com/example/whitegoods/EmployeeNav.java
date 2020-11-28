@@ -29,15 +29,19 @@ public class EmployeeNav extends AppCompatActivity {
             case "1":
                 Toast.makeText(this, "Manager", Toast.LENGTH_SHORT).show();
                 navView.inflateMenu(R.menu.bottom_nav_menu2);
+                navView.setSelectedItemId(R.id.navigation_home);
+                navView.setOnNavigationItemSelectedListener(navListener);
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new ManagerHomeFragment()).commit();
                 break;
             case "2":
                 Toast.makeText(this, "Employee", Toast.LENGTH_SHORT).show();
                 navView.inflateMenu(R.menu.bottom_nav_menu);
-        }
-        navView.setSelectedItemId(R.id.navigation_home);
-        navView.setOnNavigationItemSelectedListener(navListener);
+                navView.setSelectedItemId(R.id.navigation_home);
+                navView.setOnNavigationItemSelectedListener(navListener);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new HomeFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, new HomeFragment()).commit();
+        }
 
     }
 

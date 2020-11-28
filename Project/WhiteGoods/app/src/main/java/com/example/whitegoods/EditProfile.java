@@ -48,14 +48,17 @@ public class EditProfile extends AppCompatActivity {
     char isDemo,isInstall,isUpgrade,isInventory;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    String server_url_edit = getString(R.string.host_url) + "/edit_employee_admin";
-    String server_url_delete = getString(R.string.host_url) + "/del_employee";
+    String server_url_edit;
+    String server_url_delete;
 
     String empUserID, imageUrl, empName, empRole, empEmail, empContact, empAddress, empCity, empPin, is_admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        server_url_edit = getString(R.string.host_url) + "/edit_employee_admin";
+        server_url_delete = getString(R.string.host_url) + "/del_employee";
 
         getIntentData();
 
