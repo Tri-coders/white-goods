@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.florescu.android.rangeseekbar:rangeseekbar-library:0.4.0@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/81ad540eb3610c6e78d0f1e182da4979/jetified-rangeseekbar-library-0.4.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/81ad540eb3610c6e78d0f1e182da4979/jetified-rangeseekbar-library-0.4.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/81ad540eb3610c6e78d0f1e182da4979/jetified-rangeseekbar-library-0.4.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af0b1ecd1d1bef649b2b294b04071c58/jetified-rangeseekbar-library-0.4.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af0b1ecd1d1bef649b2b294b04071c58/jetified-rangeseekbar-library-0.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/af0b1ecd1d1bef649b2b294b04071c58/jetified-rangeseekbar-library-0.4.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.florescu.android.rangeseekbar/rangeseekbar-library/0.4.0/22619d7126c5721dc8f28d117f696c2721050aaf/rangeseekbar-library-0.4.0-javadoc.jar!/" />
