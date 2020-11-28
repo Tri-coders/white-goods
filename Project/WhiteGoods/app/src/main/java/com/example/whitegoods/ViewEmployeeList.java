@@ -33,7 +33,7 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
     private RequestQueue requestQueue;
 
-    String server_url = "http://128.199.30.114:9000/get_employee";
+    String server_url = getString(R.string.host_url) + "/get_employee";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

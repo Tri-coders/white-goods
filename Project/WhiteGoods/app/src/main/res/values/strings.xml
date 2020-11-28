@@ -25,4 +25,5 @@
     <string name="logout">Logout</string>
     <string name="phone_no">Phone No</string>
     <string name="user_id">User Id</string>
+    <string name="host_url">http://128.199.30.114:9000</string>
 </resources>

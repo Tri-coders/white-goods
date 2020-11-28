@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     EditText email, password;
     ProgressBar progressBar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    String server_url = "http://128.199.30.114:9000/login";
+    String server_url = getString(R.string.host_url) + "/login";
 
     int UROLE = -1;
 
@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.i("host", getString(R.string.host_url));
 
         email = findViewById(R.id.view_email_login);
         password = findViewById(R.id.view_password_login);
@@ -114,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else {
                         Intent employeeNav = new Intent(MainActivity.this, EmployeeNav.class);
-                        employeeNav.putExtra("role", UROLE);
+                        employeeNav.putExtra("role", Integer.toString(UROLE));
                         startActivity(employeeNav);
                     }
                 }

@@ -48,8 +48,8 @@ public class EditProfile extends AppCompatActivity {
     char isDemo,isInstall,isUpgrade,isInventory;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    String server_url_edit = "http://128.199.30.114:9000/edit_employee_admin";
-    String server_url_delete = "http://128.199.30.114:9000/del_employee";
+    String server_url_edit = getString(R.string.host_url) + "/edit_employee_admin";
+    String server_url_delete = getString(R.string.host_url) + "/del_employee";
 
     String empUserID, imageUrl, empName, empRole, empEmail, empContact, empAddress, empCity, empPin, is_admin;
 
