@@ -90,4 +90,11 @@ public class EmployeeNav extends AppCompatActivity {
         }
     };
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        finishAffinity();
+    }
+
 }

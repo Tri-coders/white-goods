@@ -3,6 +3,7 @@ package com.example.whitegoods;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,7 +34,15 @@ public class MainActivity extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String server_url;
 
-    int UROLE = -1;
+    int UROLE = -1, USER_ID;
+
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_NAME = "mypref";
+    private static final String KEY_EMAIL = "email";
+    private static final String KEY_PASSWORD = "password";
+    private static final String KEY_ROLE = "role";
+    private static final String KEY_ID = "user_id";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +64,25 @@ public class MainActivity extends AppCompatActivity {
                 loginUser();
             }
         });
+
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+        //When open activity first check shared preferences data available or not
+
+        String email = sharedPreferences.getString(KEY_EMAIL, null);
+
+        if(email != null) {
+            String urole = sharedPreferences.getString(KEY_ROLE, null);
+
+            if(urole.equals("0")) {
+                Intent viewEmployeeList = new Intent(MainActivity.this, ViewEmployeeList.class);
+                startActivity(viewEmployeeList);
+            }
+            else {
+                Intent employeeNav = new Intent(MainActivity.this, EmployeeNav.class);
+                employeeNav.putExtra("role", urole);
+                startActivity(employeeNav);
+            }
+        }
     }
 
     public void loginUser() {
@@ -110,7 +138,17 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject1 = new JSONObject(response);
                     // Log.i("tracking uid","main Activity "+UID);
+
                     UROLE = jsonObject1.getInt("role");
+                    USER_ID = jsonObject1.getInt("user_id");
+
+                    //writing data into shared preferences
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(KEY_EMAIL, email);
+                    editor.putString(KEY_PASSWORD, password);
+                    editor.putString(KEY_ROLE, Integer.toString(UROLE));
+                    editor.putString(KEY_ID, Integer.toString(USER_ID));
+                    editor.apply();
 
                     if(UROLE == 0) {
                         Intent viewEmployeeList = new Intent(MainActivity.this, ViewEmployeeList.class);

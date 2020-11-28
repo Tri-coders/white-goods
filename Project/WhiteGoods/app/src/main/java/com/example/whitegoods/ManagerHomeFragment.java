@@ -1,10 +1,12 @@
 package com.example.whitegoods;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,11 +20,21 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class ManagerHomeFragment extends Fragment {
     BarChart barChart;
+    View root;
+
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_NAME = "mypref";
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_manager_home, container, false);
+        root = inflater.inflate(R.layout.fragment_manager_home, container, false);
+
+        LogOut();
 
         barChart = root.findViewById(R.id.barChart);
 
@@ -50,5 +62,19 @@ public class ManagerHomeFragment extends Fragment {
 
 
         return root;
+    }
+
+    private void LogOut() {
+        ImageButton logOut = root.findViewById(R.id.log_out);
+
+        logOut.setOnClickListener(view -> {
+            sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            getActivity().finish();
+
+        });
     }
 }

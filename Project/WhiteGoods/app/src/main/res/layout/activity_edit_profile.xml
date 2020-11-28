@@ -74,7 +74,8 @@
                 android:hint="@string/user_id"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font" />
+                android:textColor="@color/font"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/editText"
