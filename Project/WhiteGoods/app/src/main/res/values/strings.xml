@@ -29,4 +29,5 @@
     <string name="suspended">Suspended</string>
     <string name="rescheduled">Rescheduled</string>
     <string name="newest">New</string>
+    <string name="host_url">http://128.199.30.114:9000</string>
 </resources>
