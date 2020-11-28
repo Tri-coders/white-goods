@@ -1,11 +1,13 @@
 package com.example.whitegoods;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,15 +29,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class HomeFragment extends Fragment {
 //    RangeSeekBar rangeSeekBar;
     CompactCalendarView compactCalendar;
+    View root;
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_NAME = "mypref";
+
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMM - yyyy", Locale.getDefault());
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        LogOut();
 
         compactCalendar = (CompactCalendarView) root.findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
@@ -80,5 +91,19 @@ public class HomeFragment extends Fragment {
 //        });
 
         return root;
+    }
+
+    private void LogOut() {
+        ImageButton logOut = root.findViewById(R.id.log_out);
+
+        logOut.setOnClickListener(view -> {
+            sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            getActivity().finish();
+
+        });
     }
 }

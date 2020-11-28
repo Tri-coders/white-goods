@@ -51,7 +51,7 @@ public class EditProfile extends AppCompatActivity {
     String server_url_edit;
     String server_url_delete;
 
-    String empUserID, imageUrl, empName, empRole, empEmail, empContact, empAddress, empCity, empPin, is_admin;
+    String empUserID, imageUrl, empName, empRole, empEmail, empContact, empAddress, empCity, empPin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,107 +62,87 @@ public class EditProfile extends AppCompatActivity {
 
         getIntentData();
 
-        if(is_admin.equals("1")){
+        setContentView(R.layout.activity_admin_edit_profile);
 
-            setContentView(R.layout.activity_admin_edit_profile);
+        userId = findViewById(R.id.user_id);
+        email=findViewById(R.id.email_admin);
+        name=findViewById(R.id.name_admin);
+        phone=findViewById(R.id.phone_admin);
+        address=findViewById(R.id.address_admin);
+        city=findViewById(R.id.city_admin);
+        pincode=findViewById(R.id.pincode_admin);
+        demo=findViewById(R.id.demo_admin);
+        install=findViewById(R.id.install_admin);
+        inventory=findViewById(R.id.inventory_admin);
+        upgrade=findViewById(R.id.upgrade_admin);
+        editPic = findViewById(R.id.edit_pic);
 
-            userId = findViewById(R.id.user_id);
-            email=findViewById(R.id.email_admin);
-            name=findViewById(R.id.name_admin);
-            phone=findViewById(R.id.phone_admin);
-            address=findViewById(R.id.address_admin);
-            city=findViewById(R.id.city_admin);
-            pincode=findViewById(R.id.pincode_admin);
-            demo=findViewById(R.id.demo_admin);
-            install=findViewById(R.id.install_admin);
-            inventory=findViewById(R.id.inventory_admin);
-            upgrade=findViewById(R.id.upgrade_admin);
-            editPic = findViewById(R.id.edit_pic);
+        setIntentData();
 
-            setIntentData();
+        progressBar=findViewById(R.id.progressBar_admin);
+        saveEditBottom=findViewById(R.id.saveEdit_admin);
+        saveEditTop = findViewById(R.id.saveProfile);
+        delEmployee = findViewById(R.id.delete);
 
-            progressBar=findViewById(R.id.progressBar_admin);
-            saveEditBottom=findViewById(R.id.saveEdit_admin);
-            saveEditTop = findViewById(R.id.saveProfile);
-            delEmployee = findViewById(R.id.delete);
+        delEmployee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteEmployee();
+            }
+        });
 
-            delEmployee.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    deleteEmployee();
-                }
-            });
+        saveEditTop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveEditBottom.performClick();
+            }
+        });
 
-            saveEditTop.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    saveEditBottom.performClick();
-                }
-            });
+        saveEditBottom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(save_or_edit == 0) {
+                    save_or_edit = 1;
 
-            saveEditBottom.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(save_or_edit == 0) {
-                        save_or_edit = 1;
+                    userId.setEnabled(true);
+                    email.setEnabled(true);
+                    name.setEnabled(true);
+                    phone.setEnabled(true);
+                    address.setEnabled(true);
+                    city.setEnabled(true);
+                    pincode.setEnabled(true);
+                    demo.setEnabled(true);
+                    install.setEnabled(true);
+                    inventory.setEnabled(true);
+                    upgrade.setEnabled(true);
 
-                        userId.setEnabled(true);
-                        email.setEnabled(true);
-                        name.setEnabled(true);
-                        phone.setEnabled(true);
-                        address.setEnabled(true);
-                        city.setEnabled(true);
-                        pincode.setEnabled(true);
-                        demo.setEnabled(true);
-                        install.setEnabled(true);
-                        inventory.setEnabled(true);
-                        upgrade.setEnabled(true);
+                    saveEditTop.setBackgroundResource(R.drawable.ic_baseline_save_24);
 
-                        saveEditTop.setBackgroundResource(R.drawable.ic_baseline_save_24);
+                } else {
+                    save_or_edit = 0;
 
-                    } else {
-                        save_or_edit = 0;
+                    userId.setEnabled(false);
+                    email.setEnabled(false);
+                    name.setEnabled(false);
+                    phone.setEnabled(false);
+                    address.setEnabled(false);
+                    city.setEnabled(false);
+                    pincode.setEnabled(false);
+                    demo.setEnabled(false);
+                    install.setEnabled(false);
+                    inventory.setEnabled(false);
+                    upgrade.setEnabled(false);
 
-                        userId.setEnabled(false);
-                        email.setEnabled(false);
-                        name.setEnabled(false);
-                        phone.setEnabled(false);
-                        address.setEnabled(false);
-                        city.setEnabled(false);
-                        pincode.setEnabled(false);
-                        demo.setEnabled(false);
-                        install.setEnabled(false);
-                        inventory.setEnabled(false);
-                        upgrade.setEnabled(false);
+                    saveEditTop.setBackgroundResource(R.drawable.ic_baseline_edit_24);
 
-                        saveEditTop.setBackgroundResource(R.drawable.ic_baseline_edit_24);
-
-                        try {
-                            editAdmin();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                    try {
+                        editAdmin();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
-            });
-
-        }else{
-            setContentView(R.layout.activity_edit_profile);
-            ImageButton buttonShow = findViewById(R.id.saveProfile);
-            buttonShow.setOnClickListener((View.OnClickListener) view -> {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        EditProfile.this, R.style.BottomSheetDialogTheme
-                );
-
-                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                        R.layout.layout_bottom_sheet,
-                        (LinearLayout)findViewById(R.id.bottomSheetContainer)
-                );
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
-            });
-        }
-
+            }
+        });
     }
 
     private void deleteEmployee() {
@@ -249,7 +229,6 @@ public class EditProfile extends AppCompatActivity {
         empAddress = intent.getStringExtra("address");
         empCity = intent.getStringExtra("city");
         empPin = intent.getStringExtra("pinCode");
-        is_admin = intent.getStringExtra("is_admin");
 
     }
 

@@ -5,9 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -35,10 +37,16 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
 
     String server_url;
 
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_NAME = "mypref";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_employee_list);
+
+        LogOut();
 
         server_url = getString(R.string.host_url) + "/get_employee";
 
@@ -196,5 +204,24 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
         detailView.putExtra("is_admin", "1");
 
         startActivity(detailView);
+    }
+
+    private void LogOut() {
+        ImageButton logOut = findViewById(R.id.log_out);
+
+        logOut.setOnClickListener(view -> {
+            sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            finish();
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 }
