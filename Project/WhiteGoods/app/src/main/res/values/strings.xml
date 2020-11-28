@@ -30,4 +30,7 @@
     <string name="rescheduled">Rescheduled</string>
     <string name="newest">New</string>
     <string name="host_url">http://128.199.30.114:9000</string>
+    <string name="location">Location</string>
+    <string name="product_name">Product Name</string>
+    <string name="request_date">Request Date</string>
 </resources>
