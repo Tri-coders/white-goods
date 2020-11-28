@@ -248,6 +248,21 @@ app.post('/edit_employee_admin', (req, res) => {
     });
 });
 
+app.post('/get_user_details', (req, res) => {
+    var user_id = req.body.user_id;
+
+    var sql = "SELECT * FROM user_details as u INNER JOIN `employee_role` as e ON e.user_id=u.user_id AND u.user_id='" + user_id + "';"
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        if (result) {
+            res.status(200).send(result)
+        }
+        else {
+            res.status(400).send({ "error": "Username or Password is incorrect" })
+        }
+    });
+});
+
 app.post('/del_employee', (req, res) => {
     var user_id = req.body.user_id;
 
