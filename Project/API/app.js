@@ -70,7 +70,7 @@ app.post('/login', (req, res) => {
                 res.send(404).send({ "error": "No user exists with this email" });
             }
             else if (bcrypt.compareSync(password, result[0].password)) {
-                res.status(200).send({ "role": result[0].role });
+                res.status(200).send({ "role": result[0].role, "user_id": result[0].user_id });
             }
             else {
                 res.status(400).send({ "error": "Username or Password is incorrect" })
