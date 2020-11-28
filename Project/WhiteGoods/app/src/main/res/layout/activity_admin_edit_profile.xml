@@ -76,7 +76,8 @@
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="15dp"
                 android:textColor="@color/font"
-                android:enabled="false" />
+                android:enabled="false"
+                android:visibility="gone"/>
 
             <EditText
                 android:id="@+id/email_admin"

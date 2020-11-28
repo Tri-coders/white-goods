@@ -102,6 +102,7 @@ public class EditProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(save_or_edit == 0) {
+                    saveEditBottom.setText("Save");
                     save_or_edit = 1;
 
                     userId.setEnabled(true);
@@ -119,6 +120,7 @@ public class EditProfile extends AppCompatActivity {
                     saveEditTop.setBackgroundResource(R.drawable.ic_baseline_save_24);
 
                 } else {
+                    saveEditBottom.setText("Edit");
                     save_or_edit = 0;
 
                     userId.setEnabled(false);
