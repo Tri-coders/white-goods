@@ -58,7 +58,7 @@ app.post('/login', (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
-    var sql = "SELECT login_details.password, user_details.role, user_details.is_deleted FROM login_details INNER JOIN user_details ON login_details.user_id = user_details.user_id WHERE user_details.email='" + email + "';";
+    var sql = "SELECT login_details.password, user_details.role, user_details.is_deleted, user_details.user_id FROM login_details INNER JOIN user_details ON login_details.user_id = user_details.user_id WHERE user_details.email='" + email + "';";
     con.query(sql, function (err, result) {
         if (err) throw err;
         console.log(result)
