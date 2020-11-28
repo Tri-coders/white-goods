@@ -33,4 +33,5 @@
     <string name="location">Location</string>
     <string name="product_name">Product Name</string>
     <string name="request_date">Request Date</string>
+    <string name="product_report">Product Report</string>
 </resources>

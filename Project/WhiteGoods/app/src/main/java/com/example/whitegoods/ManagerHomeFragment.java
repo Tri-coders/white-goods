@@ -1,11 +1,13 @@
 package com.example.whitegoods;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -24,6 +26,7 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class ManagerHomeFragment extends Fragment {
     BarChart barChart;
+    Button button1;
     View root;
 
     SharedPreferences sharedPreferences;
@@ -35,7 +38,26 @@ public class ManagerHomeFragment extends Fragment {
         root = inflater.inflate(R.layout.fragment_manager_home, container, false);
 
         LogOut();
+        BarGraph();
+        button_onclick();
+        return root;
+    }
 
+    private void LogOut() {
+        ImageButton logOut = root.findViewById(R.id.log_out);
+
+        logOut.setOnClickListener(view -> {
+            sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.clear();
+            editor.apply();
+            getActivity().finish();
+
+        });
+    }
+
+    private void BarGraph(){
         barChart = root.findViewById(R.id.barChart);
 
         ArrayList<BarEntry> visitors = new ArrayList<>();
@@ -60,21 +82,15 @@ public class ManagerHomeFragment extends Fragment {
         barChart.getDescription().setText("Bar Chart Example");
         barChart.animateY(2000);
 
-
-        return root;
     }
 
-    private void LogOut() {
-        ImageButton logOut = root.findViewById(R.id.log_out);
+    private void button_onclick(){
+        button1 = root.findViewById(R.id.productReport);
 
-        logOut.setOnClickListener(view -> {
-            sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
-
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.clear();
-            editor.apply();
-            getActivity().finish();
-
+        button1.setOnClickListener(view -> {
+            Intent i = new Intent(getActivity(), ProductReport.class);
+            startActivity(i);
         });
     }
+
 }
