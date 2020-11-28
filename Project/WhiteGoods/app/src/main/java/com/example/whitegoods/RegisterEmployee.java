@@ -38,7 +38,7 @@ public class RegisterEmployee extends AppCompatActivity {
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
-    String server_url = "http://128.199.30.114:9000/register";
+    String server_url = getString(R.string.host_url) + "/register";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
