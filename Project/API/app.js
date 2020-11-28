@@ -255,7 +255,7 @@ app.post('/get_user_details', (req, res) => {
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
-            res.status(200).send(result)
+            res.status(200).send(result[0])
         }
         else {
             res.status(400).send({ "error": "Username or Password is incorrect" })
