@@ -29,7 +29,6 @@ import java.util.Locale;
 
 public class HomeFragment extends Fragment {
 //    RangeSeekBar rangeSeekBar;
-//    BarChart barChart;
     CompactCalendarView compactCalendar;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMM - yyyy", Locale.getDefault());
     @Nullable
@@ -60,6 +59,7 @@ public class HomeFragment extends Fragment {
 
             }
         });
+
 //        rangeSeekBar = root.findViewById(R.id.seekbar);
 //
 //
@@ -78,32 +78,6 @@ public class HomeFragment extends Fragment {
 //
 //            }
 //        });
-
-//        barChart = root.findViewById(R.id.barChart);
-//
-//        ArrayList<BarEntry> visitors = new ArrayList<>();
-//        visitors.add(new BarEntry(2014, 420));
-//        visitors.add(new BarEntry(2015, 700));
-//        visitors.add(new BarEntry(2016, 940));
-//        visitors.add(new BarEntry(2017, 380));
-//        visitors.add(new BarEntry(2018, 260));
-//        visitors.add(new BarEntry(2019, 640));
-//        visitors.add(new BarEntry(2019, 640));
-//
-//        BarDataSet barDataSet = new BarDataSet(visitors, "visitors");
-//        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-//        barDataSet.setValueTextColor(Color.BLACK);
-//        barDataSet.setValueTextSize(16f);
-//
-//
-//        BarData barData = new BarData(barDataSet);
-//
-//        barChart.setFitBars(true);
-//        barChart.setData(barData);
-//        barChart.getDescription().setText("Bar Chart Example");
-//        barChart.animateY(2000);
-
-
 
         return root;
     }
