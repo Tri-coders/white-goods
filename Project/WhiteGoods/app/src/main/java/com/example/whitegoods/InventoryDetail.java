@@ -59,11 +59,6 @@ public class InventoryDetail extends AppCompatActivity {
 
             View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_bottom_sheet, (LinearLayout) findViewById(R.id.bottomSheetContainer));
 
-            bottomSheetView.findViewById(R.id.confirm_button).setOnClickListener((View v1) -> {
-                Toast.makeText(InventoryDetail.this, "Filter Is working", Toast.LENGTH_SHORT).show();
-                bottomSheetDialog.dismiss();
-            });
-
             bottomSheetDialog.setContentView(bottomSheetView);
             bottomSheetDialog.show();
         });

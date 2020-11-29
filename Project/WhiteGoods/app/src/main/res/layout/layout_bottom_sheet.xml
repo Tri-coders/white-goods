@@ -6,32 +6,140 @@
     android:background="@drawable/bottom_sheet_background"
     android:orientation="vertical">
 
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_margin="20dp"-->
+    <!--            android:gravity="center_horizontal"-->
+    <!--            android:orientation="horizontal">-->
+
+    <!--            <Button-->
+    <!--                android:id="@+id/confirm_button"-->
+    <!--                android:layout_width="150dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:background="@drawable/button"-->
+    <!--                android:fontFamily="@font/opensans_semibold"-->
+    <!--                android:text="Confirm"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="18sp" />-->
+
+    <!--            <Button-->
+    <!--                android:layout_width="150dp"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginStart="20dp"-->
+    <!--                android:background="@drawable/button2"-->
+    <!--                android:fontFamily="@font/opensans_semibold"-->
+    <!--                android:text="Cancel"-->
+    <!--                android:textColor="#FF0000"-->
+    <!--                android:textSize="18sp" />-->
+
+    <!--        </LinearLayout>-->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/opensans_bold"
+        android:gravity="center"
+        android:text="Filter/Sort"
+        android:textColor="@color/font"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:text="Quantity"
+        android:textColor="@color/font"
+        android:textSize="22sp" />
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp">
 
-        <Button
-            android:id="@+id/confirm_button"
-            android:layout_width="150dp"
+        <RadioGroup
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button"
-            android:fontFamily="@font/opensans_semibold"
-            android:text="Confirm"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:orientation="vertical">
 
-        <Button
-            android:layout_width="150dp"
+            <RadioButton
+                android:id="@+id/radio_pirates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low to High" />
+
+            <RadioButton
+                android:id="@+id/radio_ninjas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="High to low" />
+
+            <RadioButton
+                android:id="@+id/inStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Stock" />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:text="Brand"
+        android:textColor="@color/font"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp">
+
+        <CheckBox
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:background="@drawable/button2"
-            android:fontFamily="@font/opensans_semibold"
-            android:text="Cancel"
-            android:textColor="#FF0000"
-            android:textSize="18sp" />
+            android:background="@drawable/checkbox"
+            android:paddingHorizontal="10dp"
+            android:text="Samsung" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/checkbox"
+            android:paddingHorizontal="10dp"
+            android:text="Sony" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="10dp">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/checkbox"
+            android:paddingHorizontal="10dp"
+            android:text="Whirlpool" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/checkbox"
+            android:paddingHorizontal="10dp"
+            android:text="LG" />
 
     </LinearLayout>
 
