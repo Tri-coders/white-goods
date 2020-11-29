@@ -66,7 +66,7 @@ app.post('/login', (req, res) => {
             res.status(404).send({ "error": "No user exists with this email" })
         }
         else {
-            if(result[0].is_deleted == "1"){
+            if (result[0].is_deleted == "1") {
                 res.send(404).send({ "error": "No user exists with this email" });
             }
             else if (bcrypt.compareSync(password, result[0].password)) {
@@ -279,21 +279,21 @@ app.post('/del_employee', (req, res) => {
 
 });
 
-app.post('/user_details', (req,res)=>{
-	var user_id = req.body.user_id;
-	
-	var sql = "Select * from user_details WHERE user_id='"+ user_id + "';";
-	con.query(sql, function(err, result) {
-		if(err) throw err;
-		if(result) {
-			res.status(200).send(result)
-		}else{
-			res.status(400).send({ "error": "No user found" });
-		}
-	});
+app.post('/user_details', (req, res) => {
+    var user_id = req.body.user_id;
+
+    var sql = "Select * from user_details WHERE user_id='" + user_id + "';";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        if (result) {
+            res.status(200).send(result)
+        } else {
+            res.status(400).send({ "error": "No user found" });
+        }
+    });
 });
 
-app.post('/request', (req,res)=>{
+app.post('/request', (req, res) => {
     var user_id = req.body.user_id;
     var title = req.body.title;
     var description = req.body.description;
@@ -308,17 +308,56 @@ app.post('/request', (req,res)=>{
     var status = req.body.status;
     var otp = req.body.otp;
 
-    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `status`, `otp`) VALUES ("+user_id+",'"+title+"','"+description+"','"+name+"','"+address+"','"+city+"','"+pin+"','"+contact+"','"+email+"','"+date+"','"+time+"',"+status+","+otp+")";
-    con.query(sql,function(err,result){
-        if(err) throw err;
-        if(result){
+    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `status`, `otp`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "'," + status + "," + otp + ")";
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        if (result) {
             res.status(200).send("OK")
-        }else{
-            res.status(400).send({"error":"Something went wrong"});
+        } else {
+            res.status(400).send({ "error": "Something went wrong" });
         }
     });
 });
 
+//get data for inventory acc to filters
+app.post('/inventory', (req, res) => {
+    var wh_good_category = req.body.wh_good_category;
+    var lower_price = req.body.lower_price;
+    var higher_price = req.body.higher_price;
+
+    var q_avail = req.body.q_avail;
+
+    var brand_range = req.body.brand;
+
+    var sql = "SELECT * FROM model WHERE whitegoodcategory_id = " + wh_good_category + " AND brand_id IN(" + brand_range + ") AND model_price BETWEEN " + lower_price + " AND " + higher_price;
+
+    if (q_avail == "1") {
+        sql += " AND quantity > 0";
+    }
+    con.query(sql, function (err, result) {
+        if (err) throw err;
+        if (result) {
+
+            var sql = "SELECT * FROM parts WHERE whitegoodcategory_id = " + wh_good_category + " AND brand_id IN(" + brand_range + ") AND part_price BETWEEN " + lower_price + " AND " + higher_price;
+
+            if (q_avail == "1") {
+                sql += " AND quantity > 0";
+            }
+            con.query(sql, function (err, result1) {
+                if (err) throw err;
+                if (result1) {
+                    res.status(200).send({"model":result, "parts":result1})
+                } else {
+                    res.status(400).send({ "error": "Something went wrong" });
+                }
+            });
+
+        } else {
+            res.status(400).send({ "error": "Something went wrong" });
+        }
+    });
+
+});
 
 //Port Listenings
 app.listen(9000, (req, res) => {
