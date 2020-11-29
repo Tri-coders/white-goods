@@ -5,6 +5,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
+import org.florescu.android.rangeseekbar.RangeSeekBar;
 
 import java.util.ArrayList;
 
@@ -12,6 +21,7 @@ public class InventoryDetail extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    ImageButton filterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +44,29 @@ public class InventoryDetail extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
 
+
+        filter();
+
     }
+
+    private void filter() {
+        filterButton = findViewById(R.id.filter);
+
+        Toast.makeText(InventoryDetail.this, "Filter Is working", Toast.LENGTH_SHORT).show();
+
+        filterButton.setOnClickListener((View v) -> {
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(InventoryDetail.this, R.style.BottomSheetDialogTheme);
+
+            View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_bottom_sheet, (LinearLayout) findViewById(R.id.bottomSheetContainer));
+
+            bottomSheetView.findViewById(R.id.confirm_button).setOnClickListener((View v1) -> {
+                Toast.makeText(InventoryDetail.this, "Filter Is working", Toast.LENGTH_SHORT).show();
+                bottomSheetDialog.dismiss();
+            });
+
+            bottomSheetDialog.setContentView(bottomSheetView);
+            bottomSheetDialog.show();
+        });
+    }
+
 }

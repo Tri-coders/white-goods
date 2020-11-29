@@ -26,7 +26,7 @@
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
             android:layout_toStartOf="@+id/filter"
-            android:layout_toEndOf="@+id/back"
+            android:layout_toEndOf="@+id/log_out"
             android:fontFamily="@font/opensans_bold"
             android:gravity="center"
             android:text="@string/title_home"
@@ -61,6 +61,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+        <org.florescu.android.rangeseekbar.RangeSeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:activeColor="@color/main"
+            app:defaultColor="@color/main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 </LinearLayout>
 
 <!--        <com.github.mikephil.charting.charts.BarChart-->
@@ -72,14 +83,3 @@
 <!--            app:layout_constraintStart_toStartOf="parent"-->
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
 
-    <!--    <org.florescu.android.rangeseekbar.RangeSeekBar-->
-    <!--        android:id="@+id/seekbar"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:textAlignment="center"-->
-    <!--        android:textSize="20sp"-->
-    <!--        app:activeColor="@color/main"-->
-    <!--        app:defaultColor="@color/main"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
