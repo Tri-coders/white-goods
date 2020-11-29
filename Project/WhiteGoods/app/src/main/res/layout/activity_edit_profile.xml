@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/input"
-                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawableStart="@drawable/ic_home_black_24dp"
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/opensans_regular"
                 android:hint="@string/address"
