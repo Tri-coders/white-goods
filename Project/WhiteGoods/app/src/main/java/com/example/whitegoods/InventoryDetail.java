@@ -27,9 +27,10 @@ public class InventoryDetail extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    ImageButton filterButton;
+    ImageButton filterButton, backButton;
     SimpleRangeView rangeBar;
     TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class InventoryDetail extends AppCompatActivity {
 
 
         filter();
+        backButton();
 
     }
 
@@ -106,6 +108,11 @@ public class InventoryDetail extends AppCompatActivity {
                 return String.valueOf(i);
             }
         });
+    }
+
+    private void backButton(){
+        backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(view -> finish());
     }
 
 }
