@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "557292030285",
+    "firebase_url": "https://white-goods-96394.firebaseio.com",
+    "project_id": "white-goods-96394",
+    "storage_bucket": "white-goods-96394.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557292030285:android:a2eb6b60e29ca9a21a0f04",
+        "android_client_info": {
+          "package_name": "com.example.whitegoods"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557292030285-3vsf22clfkgn2r53bq15q2d18gd1hr9o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7xEVSXfSi4Khj2yO_EvQylyAc1nBGLTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557292030285-3vsf22clfkgn2r53bq15q2d18gd1hr9o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

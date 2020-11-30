@@ -3,6 +3,7 @@ package com.example.whitegoods;
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
@@ -378,6 +379,7 @@ public class EditProfile extends AppCompatActivity {
             jsonObject.put("demo", "" + isDemo);
             jsonObject.put("inventory", "" + isInventory);
             jsonObject.put("upgrade", "" + isUpgrade);
+            jsonObject.put("token", "" + getSharedPreferences("mypref", Context.MODE_PRIVATE).getString("token",null));
 
             Log.i("checkdata", jsonObject.toString());
         }

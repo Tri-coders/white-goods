@@ -19,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.whitegoods.fcmservice.FcmTokenReceiver;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -149,6 +150,9 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString(KEY_ROLE, Integer.toString(UROLE));
                     editor.putString(KEY_ID, Integer.toString(USER_ID));
                     editor.apply();
+
+                    Intent intent = new Intent(MainActivity.this, FcmTokenReceiver.class);
+                    startService(intent);
 
                     if(UROLE == 0) {
                         Intent viewEmployeeList = new Intent(MainActivity.this, ViewEmployeeList.class);

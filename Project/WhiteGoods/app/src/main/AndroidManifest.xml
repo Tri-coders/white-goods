@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.whitegoods">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,6 +21,16 @@
         <activity android:name=".ViewEmployeeList" />
         <activity android:name=".InventoryDetail" />
         <activity android:name=".EditProfile" />
+        <service android:name=".fcmservice.FcmTokenReceiver"
+            tools:ignore="MissingClass" />
+        <service
+            android:name=".fcmservice.FCMMessageReceiver"
+            android:exported="false">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+        </service>
+
         <activity
             android:name=".EmployeeNav"
             android:label="@string/title_activity_employee_nav" />
