@@ -64,19 +64,20 @@
         android:layout_marginTop="20dp">
 
         <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/radio_pirates"
+                android:id="@+id/radio_lh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/main"
                 android:text="Low to High" />
 
             <RadioButton
-                android:id="@+id/radio_ninjas"
+                android:id="@+id/radio_hl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/main"
@@ -165,7 +166,7 @@
         android:textSize="22sp" />
 
     <TextView
-        android:id="@+id/text_view"
+        android:id="@+id/price_range"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_semibold"
