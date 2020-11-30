@@ -329,7 +329,6 @@ app.post('/request', (req, res) => {
     });
 });
 
-<<<<<<< HEAD
 app.post('/token',(req,res)=>{
     var token = req.body.token;
     var user_id = req.body.user_id;
@@ -375,7 +374,6 @@ function requestFCM(token,value){
 
 }
 
-=======
 //get data for inventory acc to filters
 app.post('/inventory', (req, res) => {
     var wh_good_category = req.body.wh_good_category;
@@ -415,7 +413,6 @@ app.post('/inventory', (req, res) => {
     });
 
 });
->>>>>>> 8583cc5a44cada56643a09c12b86b001d9e312c0
 
 //Port Listenings
 app.listen(9000, (req, res) => {
