@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -15,13 +16,14 @@ import java.util.ArrayList;
 
 public class ProductReport extends AppCompatActivity {
     BarChart barChart;
-
+    ImageButton backButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_report);
 
         BarGraph();
+        backButton();
 
     }
 
@@ -50,6 +52,11 @@ public class ProductReport extends AppCompatActivity {
         barChart.getDescription().setText("Bar Chart Example");
         barChart.animateY(2000);
 
+    }
+
+    private void backButton(){
+        backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(view -> finish());
     }
 
 }
