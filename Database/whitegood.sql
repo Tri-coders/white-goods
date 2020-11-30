@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 30, 2020 at 07:44 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 30, 2020 at 09:38 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -91,7 +91,7 @@ CREATE TABLE `inventory` (
   `product_name` varchar(100) NOT NULL,
   `brand` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `price` int(10) NOT NULL,
   `quantity` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -449,7 +449,7 @@ CREATE TABLE `request` (
   `request_id` int(10) NOT NULL,
   `user_id` int(4) NOT NULL,
   `title` varchar(20) NOT NULL,
-  `description` text DEFAULT NULL,
+  `description` text,
   `name` varchar(35) NOT NULL,
   `address` varchar(75) NOT NULL,
   `city` varchar(15) NOT NULL,
@@ -490,19 +490,20 @@ CREATE TABLE `user_details` (
   `email` varchar(50) NOT NULL,
   `role` int(1) NOT NULL,
   `image` varchar(50) DEFAULT NULL,
-  `is_deleted` varchar(1) DEFAULT NULL
+  `is_deleted` varchar(1) DEFAULT NULL,
+  `token` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_details`
 --
 
-INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`, `is_deleted`) VALUES
-(8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0'),
-(9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL, '0'),
-(10, 'Sanket Deshmukh', '2, Jatadhari Chawl, New Sanjay Niwas, Bhandup (West)', 'Mumbai', '400078', '9702717188', 'meetsanket24@gmail.com', 2, 'http://128.199.30.114:9000/images/sanket.jpg', '0'),
-(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0'),
-(12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0');
+INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`, `is_deleted`, `token`) VALUES
+(8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0', 'e_qFpS3eRsaCPyrtaarp6O:APA91bGwu7oQYAMp8IH5dmECHsq1I86XNwU-ZAdSFRKvpRmhr-GO3oAffSeve0SItEwGvhl9TwmGOMS2xQ3evw5zY5gPD-ij3oPU66HOTSRqjBa8kdh4UG9iElQp5v7OW5empambwvQY'),
+(9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL, '0', NULL),
+(10, 'Sanket Deshmukh', '2, Jatadhari Chawl, New Sanjay Niwas, Bhandup (West)', 'Mumbai', '400078', '9702717188', 'meetsanket24@gmail.com', 2, 'http://128.199.30.114:9000/images/sanket.jpg', '0', NULL),
+(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0', 'f-_r7c0vTpOkgbbwErR4Mc:APA91bFeSUilFwvs0uoBEsBlgTM6uTfk2Ox5-Fq95jjgL5CW9ffOra51WMxTlYAf6jhATu6xjrf2SMauuhoD_fEC5A3g4vO6mpdbT--v-L2df4YtPLWyhP0Fim4-hHeLOZVWc016iWBu'),
+(12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0', NULL);
 
 -- --------------------------------------------------------
 
@@ -593,7 +594,8 @@ ALTER TABLE `sells`
 -- Indexes for table `user_details`
 --
 ALTER TABLE `user_details`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `token` (`token`);
 
 --
 -- Indexes for table `whitegoodcategory`
