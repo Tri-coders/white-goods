@@ -171,7 +171,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_semibold"
         android:gravity="center"
-        android:text="0-9K"
+        android:text="0-9"
         android:textColor="@color/font"
         android:textSize="20sp" />
 
