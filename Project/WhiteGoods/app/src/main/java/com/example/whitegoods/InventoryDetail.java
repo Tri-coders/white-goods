@@ -5,23 +5,31 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.service.autofill.TextValueSanitizer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.florescu.android.rangeseekbar.RangeSeekBar;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+
+import me.bendik.simplerangeview.SimpleRangeView;
 
 public class InventoryDetail extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     ImageButton filterButton;
+    SimpleRangeView rangeBar;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +67,44 @@ public class InventoryDetail extends AppCompatActivity {
 
             View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.layout_bottom_sheet, (LinearLayout) findViewById(R.id.bottomSheetContainer));
 
+            rangeBar = bottomSheetView.findViewById(R.id.range_bar);
+            textView = bottomSheetView.findViewById(R.id.text_view);
+
+            //rangeBar Code
+            rangeBar();
+
             bottomSheetDialog.setContentView(bottomSheetView);
             bottomSheetDialog.show();
+        });
+    }
+
+    private void rangeBar() {
+        rangeBar.setOnChangeRangeListener(new SimpleRangeView.OnChangeRangeListener() {
+            @Override
+            public void onRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i, int i1) {
+                textView.setText(String.valueOf(i) + "-" + String.valueOf(i1));
+            }
+        });
+
+        rangeBar.setOnTrackRangeListener(new SimpleRangeView.OnTrackRangeListener() {
+            @Override
+            public void onStartRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i) {
+                textView.setText(String.valueOf(i));
+
+            }
+
+            @Override
+            public void onEndRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i) {
+                textView.setText(String.valueOf(i));
+            }
+        });
+
+        rangeBar.setOnRangeLabelsListener(new SimpleRangeView.OnRangeLabelsListener() {
+            @Nullable
+            @Override
+            public String getLabelTextForPosition(@NotNull SimpleRangeView simpleRangeView, int i, @NotNull SimpleRangeView.State state) {
+                return String.valueOf(i);
+            }
         });
     }
 
