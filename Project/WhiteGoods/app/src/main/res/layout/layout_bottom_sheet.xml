@@ -143,4 +143,32 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/opensans_semibold"
+        android:text="Price"
+        android:textColor="@color/font"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0-9K"
+        android:textColor="@color/font"
+        android:fontFamily="@font/opensans_semibold"
+        android:textSize="20sp" />
+
+    <me.bendik.simplerangeview.SimpleRangeView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/range_bar"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="30dp"
+        app:count="10"
+        app:movable="true" />
 </LinearLayout>
