@@ -1,9 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateRequest">
+    android:background="@color/white"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingVertical="10dp">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/opensans_bold"
+            android:gravity="center"
+            android:text="Fill the Request"
+            android:textColor="@color/font"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:gravity="center"
+            android:text="@string/all_the_details_are_mandatory"
+            android:textColor="@color/font"
+            android:textSize="15sp" />
+
+
+        <ProgressBar
+            android:id="@+id/progressBar_register_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_outline_av_timer_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Title"
+            android:inputType="text"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <EditText
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/input"
+                android:focusable="true"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="start"
+                android:hint="Request Description"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:paddingStart="45dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:scrollbarSize="5dp"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical"
+                android:textColor="@color/font" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="23dp"
+                android:src="@drawable/ic_baseline_description_24" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/cName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_person_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Customer Name"
+            android:inputType="text"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <EditText
+                android:id="@+id/cAddr"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/input"
+                android:focusable="true"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="start"
+                android:hint="Customer Address"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:paddingStart="45dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:scrollbarSize="5dp"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical"
+                android:textColor="@color/font" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="23dp"
+                android:src="@drawable/ic_home_black_24dp" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_location_city_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Customer City"
+            android:inputType="text"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+        <EditText
+            android:id="@+id/pincode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_pin_drop_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Customer Pincode"
+            android:inputType="number"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+        <EditText
+            android:id="@+id/cphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Customer Phone No"
+            android:inputType="phone"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+        <EditText
+            android:id="@+id/cemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_mail_outline_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Customer Email"
+            android:inputType="text"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+        <EditText
+            android:id="@+id/tiime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_access_time_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Schedule Time"
+            android:inputType="time"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+        <Button
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button2"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="Schedule Date"
+            android:textColor="@color/main"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="Date Will be Shown Here"
+            android:textColor="@color/font"
+            android:textSize="14sp">
+
+        </TextView>
+
+
+        <Button
+            android:id="@+id/register_emp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="Register"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+</ScrollView>
+
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="30dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:background="@drawable/input">-->
+
+    <!--<ImageView-->
+    <!--    android:layout_width="wrap_content"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_marginStart="15dp"-->
+    <!--    android:layout_marginVertical="15dp"-->
+    <!--    android:background="@drawable/ic_home_black_24dp"/>-->
+
+    <!--<EditText-->
+    <!--    android:id="@+id/address"-->
+    <!--    android:background="@drawable/input"-->
+    <!--    android:layout_width="300dp"-->
+    <!--    android:layout_height="100dp"-->
+    <!--    android:gravity="top"-->
+    <!--    android:paddingHorizontal="12dp"-->
+    <!--    android:paddingVertical="12dp"-->
+    <!--    android:scrollbars="vertical"-->
+    <!--    android:scrollbarStyle="insideOverlay"-->
+    <!--    android:scrollbarSize="5dp"-->
+    <!--    android:isScrollContainer="true"-->
+    <!--    android:inputType="textMultiLine"-->
+    <!--    android:fontFamily="@font/opensans_regular"-->
+    <!--    android:textColor="@color/font"-->
+    <!--    android:hint="@string/address" />-->
+
+    <!--</LinearLayout>-->
