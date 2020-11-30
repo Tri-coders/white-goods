@@ -106,6 +106,7 @@
         android:layout_marginTop="20dp">
 
         <CheckBox
+            android:id="@+id/samsung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/checkbox"
@@ -113,11 +114,12 @@
             android:text="Samsung" />
 
         <CheckBox
+            android:id="@+id/godrej"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/checkbox"
             android:paddingHorizontal="10dp"
-            android:text="Sony" />
+            android:text="Godrej" />
 
     </LinearLayout>
 
@@ -128,6 +130,7 @@
         android:layout_marginBottom="10dp">
 
         <CheckBox
+            android:id="@+id/whirlpool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/checkbox"
@@ -135,6 +138,7 @@
             android:text="Whirlpool" />
 
         <CheckBox
+            android:id="@+id/lg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/checkbox"
