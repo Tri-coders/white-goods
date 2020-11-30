@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var cors = require('cors')
+var FCM = require('fcm-node');
+
 
 app.use(cors())
 app.use(bodyParser.json());
@@ -225,8 +227,8 @@ app.post('/edit_employee_admin', (req, res) => {
     var demo = req.body.demo;
     var upgrade = req.body.upgrade;
     var inventory = req.body.inventory;
-
-    var sql = "UPDATE user_details SET name='" + name + "', address='" + address + "', city='" + city + "', pin='" + pin + "', contact='" + contact + "', email='" + email + "' WHERE user_id='" + user_id + "';";
+    //var token = req.body.token;
+    var sql = "UPDATE user_details SET name='" + name + "', address='" + address + "', city='" + city + "', pin='" + pin + "', contact='" + contact + "', email='" + email + "' WHERE user_id=" + user_id + ";"
     console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -235,11 +237,19 @@ app.post('/edit_employee_admin', (req, res) => {
             con.query(sql, function (err, result) {
                 if (err) throw err;
                 if (result) {
-                    res.status(200).send({ "msg": "Record Updated" })
+                    var sql1 = "select token from user_details where user_id="+user_id+";";
+                    con.query(sql1,function(err,result){
+                        if(err) throw err;
+                        if(result){
+                            console.log(result[0].token,"Result ithe ala re")
+                            requestFCM(result[0].token,"Your Details has been Updated.");
+                        }
+                    });
                 }
                 else {
                     res.status(400).send({ "error": "Username or Password is incorrect" })
                 }
+                res.status(200).send({ "msg": "Record Updated" })        
             });
         }
         else {
@@ -318,6 +328,51 @@ app.post('/request', (req,res)=>{
         }
     });
 });
+
+app.post('/token',(req,res)=>{
+    var token = req.body.token;
+    var user_id = req.body.user_id;
+    var sql = "Update user_details set token='"+token+"' where user_id="+user_id;
+    console.log(sql)
+    con.query(sql,function(err,result){
+        if(err) throw err;
+        if(result){
+            res.status(200).send("OK")
+        }else{
+            res.status(400).send({"error":"Something went wrong"});
+        }
+    });
+});
+
+function requestFCM(token,value){
+    var serverKey = 'AAAAgcExiU0:APA91bFtRBSrBOsyMovDzNQTpswkPHfN1EQdBKtNMmDM4-pVSSATXNk9POS1U9_p8FLR4L1dPyOa0HDkp8fr_u7Vm5MssqSG2SBM5t-rso7qjr-auPQ0CPRmU9tqsEeVDlXRAerIZO48';
+    var fcm = new FCM(serverKey);
+
+    console.log(token)
+ 
+    var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+        to: token, 
+        collapse_key: "ABCD",
+        
+        notification: {
+            title: 'Title of your push notification', 
+            body: 'Body of your push notification' 
+        },
+        
+        data: {  //you can send only notification or only data(or include both)
+            update_phone: value,
+        }
+    };
+    
+    fcm.send(message, function(err, response){
+        if (err) {
+            console.log("Something has gone wrong!");
+        } else {
+            console.log("Successfully sent with response: ", response);
+        }
+    });
+
+}
 
 
 //Port Listenings
