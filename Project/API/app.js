@@ -401,7 +401,7 @@ app.post('/inventory', (req, res) => {
             con.query(sql, function (err, result1) {
                 if (err) throw err;
                 if (result1) {
-                    consol.log({"model":result, "parts":result1})
+                    console.log({"model":result, "parts":result1})
                     res.status(200).send({"model":result, "parts":result1})
                 } else {
                     res.status(400).send({ "error": "Something went wrong" });
