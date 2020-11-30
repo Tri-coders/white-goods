@@ -57,10 +57,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/input"
-            android:drawableStart="@drawable/ic_outline_av_timer_24"
+            android:drawableStart="@drawable/ic_baseline_title_24"
             android:drawablePadding="10dp"
             android:fontFamily="@font/opensans_regular"
-            android:hint="Title"
+            android:hint="Request Title"
             android:inputType="text"
             android:paddingHorizontal="15dp"
             android:textColor="@color/font" />
