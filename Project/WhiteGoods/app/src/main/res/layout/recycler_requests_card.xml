@@ -20,21 +20,13 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_semibold"
-                android:text="Request Title: "
-                android:textColor="@color/font"
-                android:textSize="20sp" />
-
-            <TextView
                 android:id="@+id/rTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/opensans_semibold"
                 android:text="Example Title"
                 android:textColor="@color/font"
-                android:textSize="20sp" />
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -42,18 +34,17 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_semibold"
-                android:text="Emp Name: "
-                android:textColor="@color/secondary"
-                android:textSize="18sp" />
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_person_24" />
 
             <TextView
                 android:id="@+id/eName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:fontFamily="@font/opensans_semibold"
                 android:text="Rahul Sinha"
                 android:textColor="@color/secondary"
@@ -65,57 +56,56 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_semibold"
-                android:text="Date Time: "
-                android:textColor="@color/secondary"
-                android:textSize="18sp" />
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_access_time_24" />
 
             <TextView
                 android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:fontFamily="@font/opensans_semibold"
                 android:gravity="start"
                 android:text="12 Dec 2020"
                 android:textColor="@color/secondary"
                 android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:fontFamily="@font/opensans_semibold"
                 android:gravity="start"
-                android:layout_marginStart="5dp"
                 android:text="08:00:AM"
                 android:textColor="@color/secondary"
                 android:textSize="18sp" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/opensans_semibold"
-            android:text="City: "
-            android:textColor="@color/secondary"
-            android:textSize="18sp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/city"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/opensans_semibold"
-            android:text="Mumbai"
-            android:textColor="@color/secondary"
-            android:textSize="18sp" />
-    </LinearLayout>
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_location_city_24" />
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Mumbai"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/secondary"
+                android:textSize="18sp" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/id"
