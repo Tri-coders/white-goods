@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 30, 2020 at 07:31 PM
+-- Generation Time: Dec 01, 2020 at 06:59 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -458,6 +458,12 @@ CREATE TABLE `request` (
   `email` varchar(50) NOT NULL,
   `date` varchar(10) NOT NULL,
   `time` varchar(8) NOT NULL,
+  `service_charge` int(11) NOT NULL,
+  `item_cost` int(11) NOT NULL,
+  `is_discount` varchar(1) NOT NULL,
+  `discount_percent` varchar(5) NOT NULL,
+  `total_amount` int(11) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` int(11) NOT NULL,
   `otp` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
