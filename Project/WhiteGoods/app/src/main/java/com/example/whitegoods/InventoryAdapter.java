@@ -5,10 +5,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Callback;
@@ -58,6 +61,9 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Inve
                 Log.i("picasso", "" + e);
             }
         });
+
+        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation_recycler));
+
     }
 
     @Override
@@ -67,11 +73,13 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Inve
 
     public class InventoryVIewHolder extends RecyclerView.ViewHolder {
 
+        LinearLayout container;
         public ImageView mProdImage;
         public TextView mProdName, mProdQuantity, mProdPrice;
 
         public InventoryVIewHolder(@NonNull View itemView) {
             super(itemView);
+            container = itemView.findViewById(R.id.container);
             mProdImage = itemView.findViewById(R.id.pimage);
             mProdName = itemView.findViewById(R.id.prod_name);
             mProdPrice = itemView.findViewById(R.id.prod_price);

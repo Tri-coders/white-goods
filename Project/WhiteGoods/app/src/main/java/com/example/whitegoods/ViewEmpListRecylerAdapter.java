@@ -13,6 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
@@ -80,7 +81,7 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
         public ImageView mImageView;
         public TextView mUserId, mName, mRole, mEmail, mPhone, mAddress, mCity, mPin;
 
-        CardView container;
+        LinearLayout container;
         public ExampleViewHolder(@NonNull View itemView) {
             super(itemView);
             container = itemView.findViewById(R.id.box);
