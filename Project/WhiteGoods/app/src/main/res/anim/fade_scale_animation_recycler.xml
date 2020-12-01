@@ -11,4 +11,9 @@
             android:toYScale="1.0"
             android:duration="700"
             android:fillBefore="false" />
+
+    <translate
+        android:fromXDelta="-100%"
+        android:toXDelta="0%"
+        android:duration="700" />
 </set>
