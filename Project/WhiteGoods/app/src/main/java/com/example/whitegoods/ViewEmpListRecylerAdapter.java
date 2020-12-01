@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,10 +20,53 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListRecylerAdapter.ExampleViewHolder> {
+public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListRecylerAdapter.ExampleViewHolder> implements Filterable {
     private Context mContext;
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
+    private ArrayList<ViewEmpListRecylerCards> mExampleFilteredList;
     private OnItemClickListener mListener;
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String Key = charSequence.toString();
+                if (Key.isEmpty()) {
+
+                    mExampleFilteredList = mExampleList ;
+
+                }
+                else {
+                    ArrayList<ViewEmpListRecylerCards> lstFiltered = new ArrayList<>();
+                    for (ViewEmpListRecylerCards row : mExampleList) {
+
+                        if (row.getName().toLowerCase().contains(Key.toLowerCase())){
+                            lstFiltered.add(row);
+                        }
+
+                    }
+
+                    mExampleFilteredList = lstFiltered;
+
+                }
+
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values= mExampleFilteredList;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+
+
+                mExampleFilteredList = (ArrayList<ViewEmpListRecylerCards>) filterResults.values;
+                notifyDataSetChanged();
+
+            }
+        };
+    }
 
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -67,6 +112,7 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
     public ViewEmpListRecylerAdapter(Context context, ArrayList<ViewEmpListRecylerCards> exampleList) {
         mContext = context;
         mExampleList = exampleList;
+        mExampleFilteredList = exampleList;
     }
 
     @Override
@@ -79,7 +125,7 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
 
     @Override
     public void onBindViewHolder(@NonNull ExampleViewHolder holder, int position) {
-        ViewEmpListRecylerCards currentItem = mExampleList.get(position);
+        ViewEmpListRecylerCards currentItem = mExampleFilteredList.get(position);
         holder.mUserId.setText(currentItem.getUserId());
         holder.mName.setText(currentItem.getName());
         holder.mRole.setText(currentItem.getRole());
@@ -98,6 +144,6 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
 
     @Override
     public int getItemCount() {
-        return mExampleList.size();
+        return mExampleFilteredList.size();
     }
 }
