@@ -41,7 +41,7 @@ public class ViewEmpListRecylerAdapter extends RecyclerView.Adapter<ViewEmpListR
                     ArrayList<ViewEmpListRecylerCards> lstFiltered = new ArrayList<>();
                     for (ViewEmpListRecylerCards row : mExampleList) {
 
-                        if (row.getName().toLowerCase().contains(Key.toLowerCase())){
+                        if (row.getName().toLowerCase().contains(Key.toLowerCase()) || row.getRole().toLowerCase().contains(Key.toLowerCase()) ){
                             lstFiltered.add(row);
                         }
 
