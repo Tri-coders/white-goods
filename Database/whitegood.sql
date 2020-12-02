@@ -2,17 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
-<<<<<<< HEAD
--- Host: 127.0.0.1
--- Generation Time: Dec 02, 2020 at 06:34 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
-=======
 -- Host: localhost
--- Generation Time: Dec 01, 2020 at 06:59 AM
+-- Generation Time: Dec 02, 2020 at 08:26 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
->>>>>>> a0911cdc057b3fd48b2136170537dcb9aecca048
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -465,19 +458,14 @@ CREATE TABLE `request` (
   `email` varchar(50) NOT NULL,
   `date` varchar(10) NOT NULL,
   `time` varchar(8) NOT NULL,
-<<<<<<< HEAD
-  `status` varchar(5) NOT NULL,
-  `otp` int(6) DEFAULT NULL
-=======
   `service_charge` int(11) NOT NULL,
   `item_cost` int(11) NOT NULL,
   `is_discount` varchar(1) NOT NULL,
   `discount_percent` varchar(5) NOT NULL,
   `total_amount` int(11) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status` int(11) NOT NULL,
-  `otp` int(6) NOT NULL
->>>>>>> a0911cdc057b3fd48b2136170537dcb9aecca048
+  `status` varchar(5) NOT NULL,
+  `otp` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -508,28 +496,20 @@ CREATE TABLE `user_details` (
   `email` varchar(50) NOT NULL,
   `role` int(1) NOT NULL,
   `image` varchar(50) DEFAULT NULL,
-  `is_deleted` varchar(1) DEFAULT NULL
+  `is_deleted` varchar(1) DEFAULT NULL,
+  `token` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_details`
 --
 
-<<<<<<< HEAD
 INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`, `is_deleted`, `token`) VALUES
-(8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0', 'e_qFpS3eRsaCPyrtaarp6O:APA91bGwu7oQYAMp8IH5dmECHsq1I86XNwU-ZAdSFRKvpRmhr-GO3oAffSeve0SItEwGvhl9TwmGOMS2xQ3evw5zY5gPD-ij3oPU66HOTSRqjBa8kdh4UG9iElQp5v7OW5empambwvQY'),
+(8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0', NULL),
 (9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL, '0', NULL),
 (10, 'Sanket Deshmukh', '2, Jatadhari Chawl, New Sanjay Niwas, Bhandup (West)', 'Mumbai', '400078', '9702717188', 'meetsanket24@gmail.com', 2, 'http://128.199.30.114:9000/images/sanket.jpg', '0', NULL),
-(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0', 'e_qFpS3eRsaCPyrtaarp6O:APA91bGwu7oQYAMp8IH5dmECHsq1I86XNwU-ZAdSFRKvpRmhr-GO3oAffSeve0SItEwGvhl9TwmGOMS2xQ3evw5zY5gPD-ij3oPU66HOTSRqjBa8kdh4UG9iElQp5v7OW5empambwvQY'),
+(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0', NULL),
 (12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0', NULL);
-=======
-INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`, `is_deleted`) VALUES
-(8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0'),
-(9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL, '0'),
-(10, 'Sanket Deshmukh', '2, Jatadhari Chawl, New Sanjay Niwas, Bhandup (West)', 'Mumbai', '400078', '9702717188', 'meetsanket24@gmail.com', 2, 'http://128.199.30.114:9000/images/sanket.jpg', '0'),
-(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0'),
-(12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0');
->>>>>>> a0911cdc057b3fd48b2136170537dcb9aecca048
 
 -- --------------------------------------------------------
 
