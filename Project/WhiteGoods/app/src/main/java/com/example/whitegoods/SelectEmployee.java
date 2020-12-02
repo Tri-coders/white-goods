@@ -1,14 +1,189 @@
 package com.example.whitegoods;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
-public class SelectEmployee extends AppCompatActivity {
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+
+public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecylerAdapter.OnItemClickListener{
+
+    private RecyclerView mRecyclerView;
+    private ViewEmpListRecylerAdapter mAdapter;
+    private ArrayList<ViewEmpListRecylerCards> mExampleList;
+    private RequestQueue requestQueue;
+
+    String server_url;
+
+    SharedPreferences sharedPreferences;
+
+    private static final String SHARED_PREF_NAME = "mypref";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_employee);
+
+        server_url = getString(R.string.host_url) + "/get_employee";
+
+        mRecyclerView = findViewById(R.id.employeeRecyclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mExampleList = new ArrayList<>();
+
+        requestQueue = Volley.newRequestQueue(this);
+        parseJSON();
+    }
+
+    private void parseJSON() {
+
+        final JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("data", "some");
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        final String requestBody = jsonObject.toString();
+        Log.i("VolleyABC", requestBody);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("VolleyABC", "got response " + response);
+                try {
+                    JSONArray jsonArray = new JSONArray(response);
+
+                    for(int i=0; i< jsonArray.length(); i++) {
+                        JSONObject minutes = jsonArray.getJSONObject(i);
+
+                        String userId = minutes.getString("user_id");
+                        String name = minutes.getString("name");
+                        String address = minutes.getString("address");
+                        String city = minutes.getString("city");
+                        String pin = minutes.getString("pin");
+                        String contact = minutes.getString("contact");
+                        String email = minutes.getString("email");
+                        String roleTop = minutes.getString("role");
+                        String image = minutes.getString("image");
+
+                        String install = minutes.getString("install");
+                        String inventory = minutes.getString("inventory");
+                        String demo = minutes.getString("demo");
+                        String upgrade = minutes.getString("upgrade");
+
+                        String role = "";
+                        if(roleTop.equals("1")) {
+                            role = "Manager";
+                        } else {
+                            if(install.equals("1")) {
+                                role += "Install";
+                            }
+                            if(inventory.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Inventory";
+                            }
+                            if(demo.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Demo";
+                            }
+                            if(upgrade.equals("1")) {
+                                if(!role.equals("")) {
+                                    role += " ";
+                                }
+                                role += "Upgrade";
+                            }
+
+                            role = role.replace(" ", ", ");
+                        }
+
+                        mExampleList.add(new ViewEmpListRecylerCards(userId, image, name, role, email, contact, address,city, pin));
+                    }
+
+                    mAdapter = new ViewEmpListRecylerAdapter(SelectEmployee.this, mExampleList);
+//                    mAdapter.notifyDataSetChanged();
+                    mRecyclerView.setAdapter(mAdapter);
+//                    mAdapter.setOnItemClickListener(SelectEmployee.this);
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Toast.makeText(SelectEmployee.this, "Logged IN", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                try {
+                    Log.i("VolleyABC", error.toString());
+                    Log.i("VolleyABC", Integer.toString(error.networkResponse.statusCode));
+                    Toast.makeText(SelectEmployee.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+
+                    error.printStackTrace();
+                }
+                catch (Exception e) {
+                    Log.i("VolleyABC", e.toString());
+                    Toast.makeText(SelectEmployee.this, "Check Network", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }) {
+            //sending JSONObject String to server starts
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+        };
+        //sending JSONObject String to server ends
+
+        requestQueue.add(stringRequest); // get response from server
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        ViewEmpListRecylerCards clickedCard = mExampleList.get(position);
+
+        String userId = clickedCard.getUserId();
+        String userName = clickedCard.getName();
+
+        openDialog();
+    }
+
+    private void openDialog() {
+
     }
 }
