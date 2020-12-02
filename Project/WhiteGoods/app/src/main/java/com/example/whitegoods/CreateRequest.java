@@ -34,8 +34,8 @@ import android.widget.ImageButton;
 
 public class CreateRequest extends AppCompatActivity {
     ImageButton backButton;
-    EditText title,reqDescription,name,addr,city,pincode,phone,email,time;
-    TextView dateText;
+    EditText title,reqDescription,name,addr,city,pincode,phone,email,time,serviceCharge,cost,discount;
+    TextView dateText,totalCost;
     Button register,date;
     ProgressBar progressBar;
     private static final String SHARED_PREF_NAME = "mypref";
@@ -66,7 +66,11 @@ public class CreateRequest extends AppCompatActivity {
         phone = findViewById(R.id.cphone);
         email=findViewById(R.id.email);
         time = findViewById(R.id.tiime);
+        serviceCharge = findViewById(R.id.serviceCharge);
+        cost = findViewById(R.id.itemCost);
+        discount = findViewById(R.id.discountpercent);
         dateText = findViewById(R.id.dateText);
+        totalCost = findViewById(R.id.totalCost);
 
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         user_id = sharedPreferences.getString(KEY_ID, null);
@@ -103,6 +107,10 @@ public class CreateRequest extends AppCompatActivity {
 
     }
 
+    /*serviceCharge = findViewById(R.id.serviceCharge);
+        cost = findViewById(R.id.itemCost);
+        discount = findViewById(R.id.discountpercent); */
+
     public void registerRequest(){
         progressBar.setVisibility(View.VISIBLE);
 
@@ -116,7 +124,11 @@ public class CreateRequest extends AppCompatActivity {
         String phone = this.phone.getText().toString();
         String email = this.email.getText().toString();
         String time = this.time.getText().toString();
+        int serviceCharge = Integer.parseInt(this.serviceCharge.getText().toString());
+        int itemCost = Integer.parseInt(this.cost.getText().toString());
+        String discount = this.discount.getText().toString();
         String dateText = this.dateText.getText().toString();
+        String totalCost = "Rs. "+String.valueOf((itemCost+serviceCharge) - ((itemCost+serviceCharge)*Double.parseDouble(discount)/100));
 
         if(titleTxt.length()>0){
             if(description.length()>0){
@@ -135,7 +147,7 @@ public class CreateRequest extends AppCompatActivity {
                                     if(hr>=0 && hr<=23 && min>=0 && min<=59){
                                         if(dateText.length()>0){
                                             if(phone.length()>0){
-                                                fun(user_id,titleTxt,description,name,addr,city,pincode,email,time,dateText,phone);
+                                                fun(user_id,titleTxt,description,name,addr,city,pincode,email,time,dateText,phone,serviceCharge,itemCost,discount,totalCost);
                                             }else{
                                                 progressBar.setVisibility(View.GONE);
                                                 return;
@@ -178,84 +190,28 @@ public class CreateRequest extends AppCompatActivity {
         }
     }
 
-    private void fun(String user_id, String titleTxt, String description, String name, String addr, String city, String pincode, String email, String time, String dateText,String phone) {
-        final JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("user_id", user_id);
-            jsonObject.put("title", titleTxt);
-            jsonObject.put("description", description);
-            jsonObject.put("name", name);
-            jsonObject.put("address", addr);
-            jsonObject.put("city", city);
-            jsonObject.put("pin", pincode);
-            jsonObject.put("contact", phone);
-            jsonObject.put("email", email);
-            jsonObject.put("date", dateText);
-            jsonObject.put("time", time);
-            jsonObject.put("status", "00");
-        }
-        catch (JSONException e) {
-            e.printStackTrace();
-        }
+    private void fun(String user_id, String titleTxt, String description, String name, String addr, String city, String pincode, String email, String time, String dateText, String phone, int serviceCharge, int itemCost, String discount, String totalCost) {
+        Intent intent = new Intent(getApplicationContext(), SelectEmployee.class);
+        intent.putExtra("user_id", user_id);
+        intent.putExtra("title", titleTxt);
+        intent.putExtra("description", description);
+        intent.putExtra("name", name);
+        intent.putExtra("address", addr);
+        intent.putExtra("city", city);
+        intent.putExtra("pincode", pincode);
+        intent.putExtra("email", email);
+        intent.putExtra("time", time);
+        intent.putExtra("date", dateText);
+        intent.putExtra("phone", phone);
+        intent.putExtra("serviceCharge", serviceCharge);
+        intent.putExtra("itemCost", itemCost);
+        intent.putExtra("discount", discount);
+        intent.putExtra("totalCost", totalCost);
+        startActivity(intent);
 
-        final String requestBody = jsonObject.toString();
-        Log.i("VolleyABC", requestBody);
-
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.i("VolleyABC", "got response " + response);
-
-                progressBar.setVisibility(View.INVISIBLE);
-                try {
-                    JSONObject jsonObject1 = new JSONObject(response);
-
-                    //Intent intent = new Intent(MainActivity.this, FcmTokenReceiver.class);
-                    //startService(intent);
-                }
-                catch (JSONException e) {
-                    e.printStackTrace();
-                }
-                Toast.makeText(CreateRequest.this, "Request Placed", Toast.LENGTH_SHORT).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                progressBar.setVisibility(View.INVISIBLE);
-                try {
-                    Log.i("VolleyABC", error.toString());
-                    Log.i("VolleyABC", Integer.toString(error.networkResponse.statusCode));
-                    Toast.makeText(CreateRequest.this, "Something went wrong", Toast.LENGTH_SHORT).show();
-
-                    error.printStackTrace();
-                }
-                catch (Exception e) {
-                    Log.i("VolleyABC", e.toString());
-                    Toast.makeText(CreateRequest.this, "Check Network", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }) {
-            //sending JSONObject String to server starts
-            @Override
-            public byte[] getBody() throws AuthFailureError {
-                try {
-                    return requestBody.getBytes("utf-8");
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                    return null;
-                }
-            }
-
-            @Override
-            public String getBodyContentType() {
-                return "application/json; charset=utf-8";
-            }
-        };
-        //sending JSONObject String to server ends
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest); // get response from server
     }
+    //select_employee
+    
 
     private void backButton(){
         backButton = findViewById(R.id.back);
