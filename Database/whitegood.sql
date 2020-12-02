@@ -1,11 +1,18 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
+<<<<<<< HEAD
 -- Host: 127.0.0.1
 -- Generation Time: Dec 02, 2020 at 06:34 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
+=======
+-- Host: localhost
+-- Generation Time: Dec 01, 2020 at 06:59 AM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
+>>>>>>> a0911cdc057b3fd48b2136170537dcb9aecca048
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -91,7 +98,7 @@ CREATE TABLE `inventory` (
   `product_name` varchar(100) NOT NULL,
   `brand` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `price` int(10) NOT NULL,
   `quantity` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -143,7 +150,7 @@ CREATE TABLE `model` (
 --
 
 INSERT INTO `model` (`model_id`, `model_no`, `model_price`, `model_img`, `brand_id`, `whitegoodcategory_id`, `quantity`) VALUES
-(1, 'Samsung 253 LRT28T3032SE/HL ', 20490, 'https://drive.google.com/file/d/1LtkYCwCXY2SN20oUUcZwaaz9VsHMJDe4/view?usp=sharing', 1, 2, '1'),
+(1, 'Samsung 253 LRT28T3032SE/HL ', 20490, 'http://128.199.30.114:9000/model/1.jpg', 1, 2, '1'),
 (2, 'Samsung 324 L RT34T4513S8/HL', 32290, 'https://drive.google.com/file/d/1vA8KNShswY0xLfOyQVIzVPXH6qAuVO5R/view?usp=sharing', 1, 2, '1'),
 (3, 'Samsung 700 L RS72R5001M9/TL', 74990, 'https://drive.google.com/file/d/1XQuBs24LnOvZa9CkhCyj7bb5UbsjDFQu/view?usp=sharing', 1, 2, '1'),
 (4, 'Samsung 192 L RR19T271BR2/NL', 12990, 'https://drive.google.com/file/d/1UabetkLWZKb9IiDlSzKLSOGNfuBGeNil/view?usp=sharing', 1, 2, '1'),
@@ -449,7 +456,7 @@ CREATE TABLE `request` (
   `request_id` int(10) NOT NULL,
   `user_id` int(4) NOT NULL,
   `title` varchar(20) NOT NULL,
-  `description` text,
+  `description` text DEFAULT NULL,
   `name` varchar(35) NOT NULL,
   `address` varchar(75) NOT NULL,
   `city` varchar(15) NOT NULL,
@@ -458,8 +465,19 @@ CREATE TABLE `request` (
   `email` varchar(50) NOT NULL,
   `date` varchar(10) NOT NULL,
   `time` varchar(8) NOT NULL,
+<<<<<<< HEAD
   `status` varchar(5) NOT NULL,
   `otp` int(6) DEFAULT NULL
+=======
+  `service_charge` int(11) NOT NULL,
+  `item_cost` int(11) NOT NULL,
+  `is_discount` varchar(1) NOT NULL,
+  `discount_percent` varchar(5) NOT NULL,
+  `total_amount` int(11) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` int(11) NOT NULL,
+  `otp` int(6) NOT NULL
+>>>>>>> a0911cdc057b3fd48b2136170537dcb9aecca048
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -490,20 +508,28 @@ CREATE TABLE `user_details` (
   `email` varchar(50) NOT NULL,
   `role` int(1) NOT NULL,
   `image` varchar(50) DEFAULT NULL,
-  `is_deleted` varchar(1) DEFAULT NULL,
-  `token` varchar(500) DEFAULT NULL
+  `is_deleted` varchar(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_details`
 --
 
+<<<<<<< HEAD
 INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`, `is_deleted`, `token`) VALUES
 (8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0', 'e_qFpS3eRsaCPyrtaarp6O:APA91bGwu7oQYAMp8IH5dmECHsq1I86XNwU-ZAdSFRKvpRmhr-GO3oAffSeve0SItEwGvhl9TwmGOMS2xQ3evw5zY5gPD-ij3oPU66HOTSRqjBa8kdh4UG9iElQp5v7OW5empambwvQY'),
 (9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL, '0', NULL),
 (10, 'Sanket Deshmukh', '2, Jatadhari Chawl, New Sanjay Niwas, Bhandup (West)', 'Mumbai', '400078', '9702717188', 'meetsanket24@gmail.com', 2, 'http://128.199.30.114:9000/images/sanket.jpg', '0', NULL),
 (11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0', 'e_qFpS3eRsaCPyrtaarp6O:APA91bGwu7oQYAMp8IH5dmECHsq1I86XNwU-ZAdSFRKvpRmhr-GO3oAffSeve0SItEwGvhl9TwmGOMS2xQ3evw5zY5gPD-ij3oPU66HOTSRqjBa8kdh4UG9iElQp5v7OW5empambwvQY'),
 (12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0', NULL);
+=======
+INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contact`, `email`, `role`, `image`, `is_deleted`) VALUES
+(8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0'),
+(9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL, '0'),
+(10, 'Sanket Deshmukh', '2, Jatadhari Chawl, New Sanjay Niwas, Bhandup (West)', 'Mumbai', '400078', '9702717188', 'meetsanket24@gmail.com', 2, 'http://128.199.30.114:9000/images/sanket.jpg', '0'),
+(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0'),
+(12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0');
+>>>>>>> a0911cdc057b3fd48b2136170537dcb9aecca048
 
 -- --------------------------------------------------------
 

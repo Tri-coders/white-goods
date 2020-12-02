@@ -40,20 +40,24 @@ public class InventoryFragment extends Fragment implements View.OnClickListener 
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.fridge:
-                i = new Intent(getActivity(), InventoryDetail.class);
-                startActivity(i);
-                break;
             case R.id.ac:
                 i = new Intent(getActivity(), InventoryDetail.class);
+                i.putExtra("wh_good_category", "1");
                 startActivity(i);
                 break;
-            case R.id.wm:
+            case R.id.fridge:
                 i = new Intent(getActivity(), InventoryDetail.class);
+                i.putExtra("wh_good_category", "2");
                 startActivity(i);
                 break;
             case R.id.oven:
                 i = new Intent(getActivity(), InventoryDetail.class);
+                i.putExtra("wh_good_category", "3");
+                startActivity(i);
+                break;
+            case R.id.wm:
+                i = new Intent(getActivity(), InventoryDetail.class);
+                i.putExtra("wh_good_category", "4");
                 startActivity(i);
                 break;
         }

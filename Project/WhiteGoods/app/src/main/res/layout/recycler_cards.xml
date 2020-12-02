@@ -1,127 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/box"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="0dp">
 
     <LinearLayout
+        android:id="@+id/box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:cardBackgroundColor="@color/elements"
-            android:layout_margin="5dp"
-            app:cardCornerRadius="10dp">
-
-            <ImageView
-                android:id="@+id/pimage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop" />
-
-        </androidx.cardview.widget.CardView>
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/user_id"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:fontFamily="@font/opensans_regular"
-                android:text="User ID"
-                android:textColor="@color/secondary"
-                android:textSize="18sp"
-                android:visibility="gone" />
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                app:cardBackgroundColor="@color/elements"
+                app:cardCornerRadius="10dp">
 
-            <TextView
-                android:id="@+id/name"
+                <ImageView
+                    android:id="@+id/pimage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop" />
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/opensans_semibold"
-                android:text="Product Name"
-                android:textColor="@color/font"
-                android:textSize="20sp" />
+                android:layout_marginStart="20dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/quantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:fontFamily="@font/opensans_regular"
-                android:text="Product Quantity"
-                android:textColor="@color/secondary"
-                android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="User ID"
+                    android:textColor="@color/secondary"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:fontFamily="@font/opensans_regular"
-                android:text="Email"
-                android:textColor="@color/secondary"
-                android:textSize="18sp"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensans_semibold"
+                    android:text="Product Name"
+                    android:textColor="@color/font"
+                    android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/ph_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:fontFamily="@font/opensans_regular"
-                android:text="@string/phone_no"
-                android:textColor="@color/secondary"
-                android:textSize="18sp"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Product Quantity"
+                    android:textColor="@color/secondary"
+                    android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:fontFamily="@font/opensans_regular"
-                android:text="Address"
-                android:textColor="@color/secondary"
-                android:textSize="18sp"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Email"
+                    android:textColor="@color/secondary"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:fontFamily="@font/opensans_regular"
-                android:text="@string/city"
-                android:textColor="@color/secondary"
-                android:textSize="18sp"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/ph_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="@string/phone_no"
+                    android:textColor="@color/secondary"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
-            <TextView
-                android:id="@+id/pin_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10sp"
-                android:fontFamily="@font/opensans_regular"
-                android:text="@string/pincode"
-                android:textColor="@color/secondary"
-                android:textSize="18sp"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="Address"
+                    android:textColor="@color/secondary"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="@string/city"
+                    android:textColor="@color/secondary"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/pin_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10sp"
+                    android:fontFamily="@font/opensans_regular"
+                    android:text="@string/pincode"
+                    android:textColor="@color/secondary"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
 
+            </LinearLayout>
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/elements"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use('/images', express.static(__dirname + '/images'))
+app.use('/model', express.static(__dirname + '/images/model'))
 
 var nodemailer = require('nodemailer');
 
@@ -401,6 +402,7 @@ app.post('/inventory', (req, res) => {
             con.query(sql, function (err, result1) {
                 if (err) throw err;
                 if (result1) {
+                    console.log({"model":result, "parts":result1})
                     res.status(200).send({"model":result, "parts":result1})
                 } else {
                     res.status(400).send({ "error": "Something went wrong" });

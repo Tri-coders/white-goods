@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -34,6 +35,8 @@ public class RegisterEmployee extends AppCompatActivity {
     CheckBox demo, install, upgrade, inventory;
     char isDemo, isInstall, isUpgrade, isInventory;
     Button regEmployee;
+    ImageButton backButton;
+
     ProgressBar progressBar;
 
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
@@ -60,6 +63,7 @@ public class RegisterEmployee extends AppCompatActivity {
         upgrade = findViewById(R.id.upgrade);
 
         progressBar = findViewById(R.id.progressBar_register_page);
+        backButton();
 
         regEmployee = findViewById(R.id.register_emp);
         regEmployee.setOnClickListener(new View.OnClickListener() {
@@ -247,5 +251,9 @@ public class RegisterEmployee extends AppCompatActivity {
 
     }
 
+    private void backButton(){
+        backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(view -> finish());
+    }
 
 }

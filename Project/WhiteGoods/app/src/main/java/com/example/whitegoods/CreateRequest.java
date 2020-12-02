@@ -30,8 +30,10 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
+import android.widget.ImageButton;
 
 public class CreateRequest extends AppCompatActivity {
+    ImageButton backButton;
     EditText title,reqDescription,name,addr,city,pincode,phone,email,time;
     TextView dateText;
     Button register,date;
@@ -53,6 +55,7 @@ public class CreateRequest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         server_url = this.getResources().getString(R.string.host_url) + "/request";
         setContentView(R.layout.activity_create_request);
+        backButton();
 
         title = findViewById(R.id.title);
         reqDescription = findViewById(R.id.description);
@@ -253,4 +256,10 @@ public class CreateRequest extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest); // get response from server
     }
+
+    private void backButton(){
+        backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(view -> finish());
+    }
+
 }

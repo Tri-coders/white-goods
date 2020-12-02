@@ -2,10 +2,13 @@ package com.example.whitegoods;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -40,6 +43,7 @@ public class EmployeeListFragment extends Fragment {
     private ViewEmpListRecylerAdapter mAdapter;
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
     private RequestQueue requestQueue;
+    private EditText searchInput;
 
     String server_url;
 
@@ -55,6 +59,7 @@ public class EmployeeListFragment extends Fragment {
 
         server_url = getString(R.string.host_url) + "/get_employee";
         mRecyclerView = root.findViewById(R.id.employeeRecyclerView);
+        searchInput = root.findViewById(R.id.searchBar);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -63,6 +68,25 @@ public class EmployeeListFragment extends Fragment {
         requestQueue = Volley.newRequestQueue(getActivity());
         parseJSON();
 
+
+        //search code
+
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                mAdapter.getFilter().filter(charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         return root;
     }
 
