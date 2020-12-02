@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 09:38 AM
+-- Generation Time: Dec 02, 2020 at 06:34 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -458,8 +458,8 @@ CREATE TABLE `request` (
   `email` varchar(50) NOT NULL,
   `date` varchar(10) NOT NULL,
   `time` varchar(8) NOT NULL,
-  `status` int(11) NOT NULL,
-  `otp` int(6) NOT NULL
+  `status` varchar(5) NOT NULL,
+  `otp` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -502,7 +502,7 @@ INSERT INTO `user_details` (`user_id`, `name`, `address`, `city`, `pin`, `contac
 (8, 'Admin', 'Automobile Premier Road, Kurla (West)', 'Mumbai', '400070', '9702717188', 'sanketdeveloper00@gmail.com', 0, NULL, '0', 'e_qFpS3eRsaCPyrtaarp6O:APA91bGwu7oQYAMp8IH5dmECHsq1I86XNwU-ZAdSFRKvpRmhr-GO3oAffSeve0SItEwGvhl9TwmGOMS2xQ3evw5zY5gPD-ij3oPU66HOTSRqjBa8kdh4UG9iElQp5v7OW5empambwvQY'),
 (9, 'Sameer SIngh', 'Khindipada, Bhandup (West)', 'Mumbai', '400078', '9082171403', 'sanketdeshmukh880@gmail.com', 1, NULL, '0', NULL),
 (10, 'Sanket Deshmukh', '2, Jatadhari Chawl, New Sanjay Niwas, Bhandup (West)', 'Mumbai', '400078', '9702717188', 'meetsanket24@gmail.com', 2, 'http://128.199.30.114:9000/images/sanket.jpg', '0', NULL),
-(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0', 'f-_r7c0vTpOkgbbwErR4Mc:APA91bFeSUilFwvs0uoBEsBlgTM6uTfk2Ox5-Fq95jjgL5CW9ffOra51WMxTlYAf6jhATu6xjrf2SMauuhoD_fEC5A3g4vO6mpdbT--v-L2df4YtPLWyhP0Fim4-hHeLOZVWc016iWBu'),
+(11, 'Prabodh', 'I.U.D.P. colony washim ', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', 2, NULL, '0', 'e_qFpS3eRsaCPyrtaarp6O:APA91bGwu7oQYAMp8IH5dmECHsq1I86XNwU-ZAdSFRKvpRmhr-GO3oAffSeve0SItEwGvhl9TwmGOMS2xQ3evw5zY5gPD-ij3oPU66HOTSRqjBa8kdh4UG9iElQp5v7OW5empambwvQY'),
 (12, 'Afif Shaikh', 'MK Residency Kurla West', 'Mumbai', '400070', '9769320992', 'shaikhafif48@gmail.com', 2, 'http://128.199.30.114:9000/images/afif.png', '0', NULL);
 
 -- --------------------------------------------------------
@@ -594,8 +594,7 @@ ALTER TABLE `sells`
 -- Indexes for table `user_details`
 --
 ALTER TABLE `user_details`
-  ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `token` (`token`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `whitegoodcategory`
