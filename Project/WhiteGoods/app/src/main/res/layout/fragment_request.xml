@@ -60,15 +60,18 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/newButton"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="@font/opensans_bold"
             android:text="@string/newest"
-            android:textColor="@color/secondary"
+            android:textColor="@color/white"
+            android:background="@color/main"
             android:textSize="12sp" />
 
         <Button
+            android:id="@+id/resButton"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -78,6 +81,7 @@
             android:textSize="12sp" />
 
         <Button
+            android:id="@+id/susButton"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -87,6 +91,7 @@
             android:textSize="12sp" />
 
         <Button
+            android:id="@+id/canButton"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
