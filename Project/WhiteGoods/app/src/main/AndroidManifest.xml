@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme2"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AdminViewEmployeeProfile"></activity>
+        <activity android:name=".AdminViewEmployeeProfile" />
         <activity android:name=".SelectEmployee" />
         <activity android:name=".ProductReport" />
         <activity android:name=".CreateRequest" />
@@ -21,14 +21,16 @@
         <activity android:name=".ViewEmployeeList" />
         <activity android:name=".InventoryDetail" />
         <activity android:name=".EditProfile" />
-        <service android:name=".fcmservice.FcmTokenReceiver"
+
+        <service
+            android:name=".fcmservice.FcmTokenReceiver"
             tools:ignore="MissingClass" />
         <service
             android:name=".fcmservice.FCMMessageReceiver"
             android:exported="false">
-        <intent-filter>
-            <action android:name="com.google.firebase.MESSAGING_EVENT" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
         </service>
 
         <activity
