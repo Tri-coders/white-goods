@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:fontFamily="@font/opensans_semibold"
-                    android:text="Refridgerator"
+                    android:text="@string/fridge"
                     android:textAlignment="center"
                     android:textColor="@color/font"
                     android:textSize="16sp" />
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:fontFamily="@font/opensans_semibold"
-                    android:text="Air Conditioner"
+                    android:text="@string/AC"
                     android:textAlignment="center"
                     android:textColor="@color/font"
                     android:textSize="16sp" />
@@ -139,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:fontFamily="@font/opensans_semibold"
-                    android:text="Washing Machine"
+                    android:text="@string/wm"
                     android:textAlignment="center"
                     android:textColor="@color/font"
                     android:textSize="16sp" />
@@ -176,7 +176,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:fontFamily="@font/opensans_semibold"
-                    android:text="Microwave Oven"
+                    android:text="@string/oven"
                     android:textAlignment="center"
                     android:textColor="@color/font"
                     android:textSize="16sp" />

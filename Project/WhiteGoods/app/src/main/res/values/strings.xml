@@ -34,4 +34,8 @@
     <string name="product_name">Product Name</string>
     <string name="request_date">Request Date</string>
     <string name="product_report">Product Report</string>
+    <string name="AC">Air Conditioner</string>
+    <string name="fridge">Refrigerator</string>
+    <string name="oven">Microwave Oven</string>
+    <string name="wm">Washing Machine</string>
 </resources>

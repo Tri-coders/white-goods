@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -47,8 +48,9 @@ public class InventoryDetail extends AppCompatActivity {
     private RequestQueue requestQueue;
 
     ImageButton filterButton, backButton;
+    ImageView cover;
     SimpleRangeView rangeBar;
-    TextView priceRange;
+    TextView priceRange,coverText;
 
     String server_url, wh_good_category;
     String lower_price;
@@ -67,6 +69,8 @@ public class InventoryDetail extends AppCompatActivity {
         wh_good_category = intent.getStringExtra("wh_good_category");
 
         mRecyclerView = findViewById(R.id.recyclerview);
+        cover = findViewById(R.id.cover);
+        coverText = findViewById(R.id.coverText);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -74,6 +78,7 @@ public class InventoryDetail extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(this);
 
+        coverImageText();
         filter();
         backButton();
 
@@ -95,8 +100,7 @@ public class InventoryDetail extends AppCompatActivity {
             jsonObject.put("higher_price", higher_price);
             jsonObject.put("q_avail", is_available);
             jsonObject.put("brand", brands);
-        }
-        catch (JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
 
@@ -113,10 +117,10 @@ public class InventoryDetail extends AppCompatActivity {
                     JSONArray modelArray = invent.getJSONArray("model");
                     JSONArray partsArray = invent.getJSONArray("parts");
 
-                    for(int i=0; i<modelArray.length(); i++) {
+                    for (int i = 0; i < modelArray.length(); i++) {
                         JSONObject model = modelArray.getJSONObject(i);
 
-                        String prodName  = model.getString("model_no");
+                        String prodName = model.getString("model_no");
                         String prodImageUrl = model.getString("model_img");
                         String prodPrice = model.getString("model_price");
                         String prodQuantity = model.getString("quantity");
@@ -124,10 +128,10 @@ public class InventoryDetail extends AppCompatActivity {
                         mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
                     }
 
-                    for(int i=0; i<partsArray.length(); i++) {
+                    for (int i = 0; i < partsArray.length(); i++) {
                         JSONObject parts = partsArray.getJSONObject(i);
 
-                        String prodName  = parts.getString("part_no");
+                        String prodName = parts.getString("part_no");
                         String prodImageUrl = parts.getString("part_img");
                         String prodPrice = parts.getString("part_price");
                         String prodQuantity = parts.getString("quantity");
@@ -151,8 +155,7 @@ public class InventoryDetail extends AppCompatActivity {
                     Toast.makeText(InventoryDetail.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
 
                     error.printStackTrace();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     Log.i("VolleyABC", e.toString());
                     Toast.makeText(InventoryDetail.this, "Check Network", Toast.LENGTH_SHORT).show();
                 }
@@ -224,9 +227,8 @@ public class InventoryDetail extends AppCompatActivity {
             higher_price = r[1] + "0000"; //adding 4 zeroes... to making it in ten thousands
 
             //check if in stock is selected
-            if (radioGroup.getCheckedRadioButtonId() != -1)
-            {
-                if(inStock.isSelected()) {
+            if (radioGroup.getCheckedRadioButtonId() != -1) {
+                if (inStock.isSelected()) {
                     is_available = "1";
                 } else {
                     is_available = "0";
@@ -239,27 +241,27 @@ public class InventoryDetail extends AppCompatActivity {
                 brands += "1";
             }
             if (lg.isChecked()) {
-                if(brands.equals("")) {
+                if (brands.equals("")) {
                     brands += "2";
                 } else {
                     brands += ", 2";
                 }
             }
             if (godrej.isChecked()) {
-                if(brands.equals("")) {
+                if (brands.equals("")) {
                     brands += "3";
                 } else {
                     brands += ", 3";
                 }
             }
             if (whirlpool.isChecked()) {
-                if(brands.equals("")) {
+                if (brands.equals("")) {
                     brands += "4";
                 } else {
                     brands += ", 4";
                 }
             }
-            if(brands.equals("")) {
+            if (brands.equals("")) {
                 brands = "1, 2, 3, 4";
             }
 
@@ -304,7 +306,28 @@ public class InventoryDetail extends AppCompatActivity {
         });
     }
 
-    private void backButton(){
+    private void coverImageText() {
+        switch (wh_good_category) {
+            case "1":
+                cover.setBackgroundResource(R.drawable.ac2);
+                coverText.setText(R.string.AC);
+                break;
+            case "2":
+                cover.setBackgroundResource(R.drawable.fridge2);
+                coverText.setText(R.string.fridge);
+                break;
+            case "3":
+                cover.setBackgroundResource(R.drawable.oven2);
+                coverText.setText(R.string.oven);
+                break;
+            case "4":
+                cover.setBackgroundResource(R.drawable.wm2);
+                coverText.setText(R.string.wm);
+                break;
+        }
+    }
+
+    private void backButton() {
         backButton = findViewById(R.id.back);
         backButton.setOnClickListener(view -> finish());
     }

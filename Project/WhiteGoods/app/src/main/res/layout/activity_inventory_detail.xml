@@ -64,12 +64,14 @@
             android:foreground="?attr/selectableItemBackground">
 
             <ImageView
+                android:id="@+id/cover"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/fridge2" />
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/coverText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
