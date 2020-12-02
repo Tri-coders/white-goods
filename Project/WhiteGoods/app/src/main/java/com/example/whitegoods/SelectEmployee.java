@@ -1,6 +1,7 @@
 package com.example.whitegoods;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,12 +39,18 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
 
     private static final String SHARED_PREF_NAME = "mypref";
 
+    String userId, userName, title, desc, custName, custAddress, custCity, custPin, custEmail, time, date, custphone;
+    int serviceCharge, itemCost;
+    String discount, totalCost;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_employee);
 
         server_url = getString(R.string.host_url) + "/get_employee";
+
+        getIntentData();
 
         mRecyclerView = findViewById(R.id.employeeRecyclerView);
         mRecyclerView.setHasFixedSize(true);
@@ -53,6 +60,27 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
 
         requestQueue = Volley.newRequestQueue(this);
         parseJSON();
+    }
+
+    private void getIntentData() {
+        Intent intent = getIntent();
+
+        userId = intent.getStringExtra("user_id");
+        title = intent.getStringExtra("title");
+        desc = intent.getStringExtra("description");
+        custName = intent.getStringExtra("name");
+        custAddress = intent.getStringExtra("address");
+        custCity = intent.getStringExtra("city");
+        custPin  = intent.getStringExtra("pincode");
+        custEmail = intent.getStringExtra("email");
+        time = intent.getStringExtra("time");
+        date = intent.getStringExtra("date");
+        custphone = intent.getStringExtra("phone");
+        serviceCharge = intent.getIntExtra("serviceCharge", 0);
+        itemCost = intent.getIntExtra("itemCost", 0);
+        discount = intent.getStringExtra("discount");
+        totalCost = intent.getStringExtra("totalCost");
+
     }
 
     private void parseJSON() {
@@ -128,7 +156,7 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
                     mAdapter = new ViewEmpListRecylerAdapter(SelectEmployee.this, mExampleList);
 //                    mAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(mAdapter);
-//                    mAdapter.setOnItemClickListener(SelectEmployee.this);
+                    mAdapter.setOnItemClickListener(SelectEmployee.this);
                 }
                 catch (JSONException e) {
                     e.printStackTrace();
@@ -175,15 +203,35 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
 
     @Override
     public void onItemClick(int position) {
+        Toast.makeText(this, "hurray", Toast.LENGTH_SHORT).show();
         ViewEmpListRecylerCards clickedCard = mExampleList.get(position);
 
-        String userId = clickedCard.getUserId();
-        String userName = clickedCard.getName();
+        userName = clickedCard.getName();
 
         openDialog();
     }
 
     private void openDialog() {
+        Bundle b = new Bundle();
 
+        b.putString("empName", userName);
+        b.putString("title", title);
+        b.putString("description", desc);
+        b.putString("name", custName);
+        b.putString("address", custAddress);
+        b.putString("city", custCity);
+        b.putString("pincode", custPin);
+        b.putString("email", custEmail);
+        b.putString("time", time);
+        b.putString("date", date);
+        b.putString("phone", custphone);
+        b.putString("serviceCharge", Integer.toString(serviceCharge));
+        b.putString("itemCost", Integer.toString(itemCost));
+        b.putString("discount", discount);
+        b.putString("totalCost", totalCost);
+
+        RequestPreviewDialog d = new RequestPreviewDialog();
+        d.setArguments(b);
+        d.show(getSupportFragmentManager(), "My preview");
     }
 }
