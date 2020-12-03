@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:orientation="vertical">
 
@@ -42,13 +42,13 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="5dp"
-            android:visibility="invisible"
-            android:background="@drawable/ic_notifications_black_24dp" />
+            android:background="@drawable/ic_notifications_black_24dp"
+            android:visibility="invisible" />
     </RelativeLayout>
 
     <EditText
         android:id="@+id/searchBar"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/top"
         android:layout_marginHorizontal="20dp"
