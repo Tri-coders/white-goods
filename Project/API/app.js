@@ -349,7 +349,7 @@ app.post('/request', (req, res) => {
     var timestamp = '2020-01-01 00:00:01'
 
 	console.log(status);
-    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `timestamp`, `status`, `otp`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "'," + service_charge + "'," + item_cost + "'," + is_discount + "'," + discount + "'," + total_cost + "','" + timestamp + "','" + status + "'," + otp + ")";
+    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `timestamp`, `status`, `otp`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "','" + service_charge + "','" + item_cost + "','" + is_discount + "','" + discount + "','" + total_cost + "','" + timestamp + "','" + status + "'," + otp + ")";
     console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
