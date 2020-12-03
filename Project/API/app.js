@@ -3,6 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var cors = require('cors')
 var FCM = require('fcm-node');
+const multer = require('multer');
 
 
 app.use(cors())
@@ -16,8 +17,19 @@ app.use('/model', express.static(__dirname + '/images/model'))
 
 var nodemailer = require('nodemailer');
 
+const storage = multer.diskStorage({
+    destination: (req, file, callBack) => {
+        callBack(null, 'images')
+    },
+    filename: (req, file, callBack) => {
+        callBack(null, `profile_${file.originalname}`)
+    }
+})
+
 var mysql = require('mysql')
 const bcrypt = require('bcrypt');
+
+const upload = multer({ storage: storage })
 
 const saltRounds = 10
 
@@ -35,6 +47,17 @@ con.connect(function (err) {
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
+})
+
+app.post('/file', upload.single('file'), (req, res, next) => {
+    const file = req.file;
+    console.log(file.filename);
+    if (!file) {
+      const error = new Error('No File')
+      error.httpStatusCode = 400
+      return next(error)
+    }
+    res.send(file);
 })
 
 app.get('/some', (req, res) => {
