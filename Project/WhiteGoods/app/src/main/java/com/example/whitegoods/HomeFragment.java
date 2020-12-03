@@ -32,7 +32,6 @@ import java.util.Locale;
 import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment {
-    RangeSeekBar rangeSeekBar;
     CompactCalendarView compactCalendar;
     View root;
     SharedPreferences sharedPreferences;
@@ -67,25 +66,6 @@ public class HomeFragment extends Fragment {
             }
             @Override
             public void onMonthScroll(Date firstDayOfNewMonth) {
-
-            }
-        });
-
-//        rangeSeekBar = root.findViewById(R.id.seekbar);
-
-
-        rangeSeekBar.setSelectedMinValue(0);
-        rangeSeekBar.setSelectedMaxValue(100);
-
-        rangeSeekBar.setOnRangeSeekBarChangeListener(new RangeSeekBar.OnRangeSeekBarChangeListener() {
-            @Override
-            public void onRangeSeekBarValuesChanged(RangeSeekBar bar, Number minValue, Number maxValue) {
-                Number min_value = bar.getSelectedMinValue();
-                Number max_value = bar.getSelectedMaxValue();
-
-                int min = (int) min_value;
-                int max = (int) max_value;
-                Toast.makeText(getContext(), "Min-" + min + "\n" + "Max-" + max, Toast.LENGTH_SHORT).show();
 
             }
         });
