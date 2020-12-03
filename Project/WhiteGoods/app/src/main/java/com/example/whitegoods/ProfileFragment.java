@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -48,6 +49,7 @@ public class ProfileFragment extends Fragment {
     EditText mEmail, mName, mPhone, mAddress, mCity, mPincode;
     CheckBox mInstall, mUpgrade, mInventory, mDemo;
     Button saveEditBottom, delete;
+    TextView profileTitle;
 
     String server_get_employee_data_url, server_edit_data_url, user_id;
     char isDemo, isInstall, isUpgrade, isInventory;
@@ -70,6 +72,8 @@ public class ProfileFragment extends Fragment {
 
         sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         user_id = sharedPreferences.getString(KEY_ID, null);
+
+        profileTitle = root.findViewById(R.id.profile);
 
         setElements();
 
@@ -100,6 +104,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(save_or_edit == 0) {
+                    profileTitle.setText("Edit Profile");
                     saveEditBottom.setText("Save");
                     save_or_edit = 1;
 
@@ -111,6 +116,7 @@ public class ProfileFragment extends Fragment {
 
                 } else {
                     saveEditBottom.setText("Edit");
+                    profileTitle.setText("Profile");
                     save_or_edit = 0;
 
                     mAddress.setEnabled(false);

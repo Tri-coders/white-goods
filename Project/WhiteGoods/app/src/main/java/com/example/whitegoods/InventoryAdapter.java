@@ -47,7 +47,7 @@ public class InventoryAdapter extends RecyclerView.Adapter<InventoryAdapter.Inve
         String prodQuantity = currentCard.getProdQuantity();
 
         holder.mProdName.setText(prodName);
-        holder.mProdPrice.setText(prodPrice);
+        holder.mProdPrice.setText("₹"+prodPrice);
         holder.mProdQuantity.setText(prodQuantity);
 
         Picasso.get().load(prodImage).error(R.drawable.ic_baseline_person_24).into(holder.mProdImage, new Callback() {
