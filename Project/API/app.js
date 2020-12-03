@@ -341,15 +341,15 @@ app.post('/request', (req, res) => {
     var time = req.body.time;
     var status = req.body.status;
     var otp = null;
-    var service_charge = req.body.service;
-    var item_cost = req.body.itemCost;
+    var service_charge = parseInt(req.body.service);
+    var item_cost = parseInt(req.body.itemCost);
     var discount = req.body.discount;
     var is_discount = req.body.isDiscount;
-    var total_cost = req.body.totalCost;
+    var total_cost = parseInt(req.body.totalCost);
     var timestamp = '2020-01-01 00:00:01'
 
 	console.log(status);
-    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `timestamp`, `status`, `otp`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "','" + service_charge + "','" + item_cost + "','" + is_discount + "','" + discount + "','" + total_cost + "','" + timestamp + "','" + status + "'," + otp + ")";
+    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `timestamp`, `status`, `otp`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "'," + service_charge + "," + item_cost + ",'" + is_discount + "','" + discount + "'," + total_cost + ",'" + timestamp + "','" + status + "'," + otp + ")";
     console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
