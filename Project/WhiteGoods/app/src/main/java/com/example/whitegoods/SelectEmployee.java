@@ -12,6 +12,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -35,6 +36,8 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
     private ViewEmpListRecylerAdapter mAdapter;
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
     private RequestQueue requestQueue;
+    ImageButton backButton;
+
 
     String server_url;
 
@@ -55,6 +58,7 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
         server_url = getString(R.string.host_url) + "/get_employee";
 
         getIntentData();
+        backButton();
 
         //search code
         searchInput = findViewById(R.id.searchBar);
@@ -258,4 +262,10 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
         d.setArguments(b);
         d.show(getSupportFragmentManager(), "My preview");
     }
+
+    private void backButton() {
+        backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(view -> finish());
+    }
+
 }
