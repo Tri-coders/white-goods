@@ -345,7 +345,8 @@ app.post('/request', (req, res) => {
     var item_cost = parseInt(req.body.itemCost);
     var discount = req.body.discount;
     var is_discount = req.body.isDiscount;
-    var total_cost = parseInt(req.body.totalCost);
+    var total_cost = 25000;
+    //var total_cost = parseInt(req.body.totalCost);
     var timestamp = '2020-01-01 00:00:01'
 
 	console.log(status);
