@@ -155,6 +155,34 @@
             android:paddingHorizontal="15dp"
             android:textColor="@color/font" />
 
+        <EditText
+            android:id="@+id/cphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_phone_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Customer Phone No"
+            android:inputType="phone"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input"
+            android:drawableStart="@drawable/ic_baseline_mail_outline_24"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/opensans_regular"
+            android:hint="Customer Email"
+            android:inputType="text"
+            android:paddingHorizontal="15dp"
+            android:textColor="@color/font" />
+
         <RelativeLayout
             android:layout_width="350dp"
             android:layout_height="wrap_content"
@@ -220,33 +248,6 @@
             android:paddingHorizontal="15dp"
             android:textColor="@color/font" />
 
-        <EditText
-            android:id="@+id/cphone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/input"
-            android:drawableStart="@drawable/ic_baseline_phone_24"
-            android:drawablePadding="10dp"
-            android:fontFamily="@font/opensans_regular"
-            android:hint="Customer Phone No"
-            android:inputType="phone"
-            android:paddingHorizontal="15dp"
-            android:textColor="@color/font" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/input"
-            android:drawableStart="@drawable/ic_baseline_mail_outline_24"
-            android:drawablePadding="10dp"
-            android:fontFamily="@font/opensans_regular"
-            android:hint="Customer Email"
-            android:inputType="text"
-            android:paddingHorizontal="15dp"
-            android:textColor="@color/font" />
 
         <EditText
             android:id="@+id/tiime"
@@ -312,7 +313,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:text="Total Cost Will be Shown Here"
             android:textColor="@color/font"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/date"
@@ -333,7 +334,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:text="Date Will be Shown Here"
             android:textColor="@color/font"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/register_emp"

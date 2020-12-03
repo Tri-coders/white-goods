@@ -343,6 +343,7 @@ app.post('/request', (req, res) => {
     var otp = null;
 	console.log(status);
     var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `status`, `otp`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "','" + status + "'," + otp + ")";
+    console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
