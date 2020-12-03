@@ -242,17 +242,17 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
     private void openDialog() {
         Bundle b = new Bundle();
 
-        b.putString("empName", "Emp Name: "+userName);
+        b.putString("empName", userName);
         b.putString("title", "Title: "+title);
         b.putString("description", "Description: "+desc);
-        b.putString("name", "Customer Name: "+custName);
-        b.putString("address", "Customer Address: "+custAddress);
-        b.putString("city", "Customer City: "+custCity);
-        b.putString("pincode", "Customer Pincode: "+custPin);
-        b.putString("email", "Customer Email: "+custEmail);
-        b.putString("time", "Time: "+time);
-        b.putString("date", "Date: "+date);
-        b.putString("phone", "Customer Phone: "+custphone);
+        b.putString("name", "Name: "+custName);
+        b.putString("address", "Address: "+custAddress);
+        b.putString("city", "City: "+custCity);
+        b.putString("pincode", "Pincode: "+custPin);
+        b.putString("email", "Email: "+custEmail);
+        b.putString("time", time);
+        b.putString("date", date);
+        b.putString("phone", "Phone: "+custphone);
         b.putString("serviceCharge", "Service Charge: "+Integer.toString(serviceCharge));
         b.putString("itemCost", "Item Cost: " + Integer.toString(itemCost));
         b.putString("discount", "Discount: "+discount);
