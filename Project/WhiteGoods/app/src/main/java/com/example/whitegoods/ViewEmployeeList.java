@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -34,6 +37,7 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
     private ViewEmpListRecylerAdapter mAdapter;
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
     private RequestQueue requestQueue;
+    private EditText searchInput;
 
     String server_url;
 
@@ -47,6 +51,26 @@ public class ViewEmployeeList extends AppCompatActivity implements ViewEmpListRe
         setContentView(R.layout.activity_view_employee_list);
 
         LogOut();
+
+        //search code
+        searchInput = findViewById(R.id.searchBar);
+
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                mAdapter.getFilter().filter(charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         server_url = getString(R.string.host_url) + "/get_employee";
 
