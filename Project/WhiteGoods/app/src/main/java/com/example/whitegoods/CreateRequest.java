@@ -91,7 +91,7 @@ public class CreateRequest extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(CreateRequest.this, android.R.style.Theme_DeviceDefault_Dialog, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int date) {
-                        dateText.setText(date+"-"+month+"-"+year);
+                        dateText.setText(year+"/"+month+"/"+date);
                     }
                 },mYear,mMonth,mDate);
                 datePickerDialog.show();
@@ -147,9 +147,8 @@ public class CreateRequest extends AppCompatActivity {
         double discount = Double.parseDouble(String.valueOf(this.discount.getText()));
 
         String dateText = String.valueOf(this.dateText.getText());
-        String totalCost = "Rs. "+ ((itemCost + serviceCharge) - ((itemCost + serviceCharge) * discount / 100));
+        String totalCost = String.valueOf((itemCost + serviceCharge) - ((itemCost + serviceCharge) * discount / 100));
         Log.d("Totalcost", "TotalCost : "+totalCost);
-
 
         if(titleTxt.length()>0){
             if(description.length()>0){

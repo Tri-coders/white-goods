@@ -340,17 +340,14 @@ app.post('/request', (req, res) => {
     var date = req.body.date;
     var time = req.body.time;
     var status = req.body.status;
-    var otp = null;
-    var service_charge = parseInt(req.body.service);
-    var item_cost = parseInt(req.body.itemCost);
+    var service_charge = (req.body.service);
+    var item_cost = (req.body.itemCost);
     var discount = req.body.discount;
     var is_discount = req.body.isDiscount;
-    var total_cost = 25000;
-    //var total_cost = parseInt(req.body.totalCost);
-    var timestamp = '2020-01-01 00:00:01'
-
-	console.log(status);
-    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `timestamp`, `status`, `otp`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "'," + service_charge + "," + item_cost + ",'" + is_discount + "','" + discount + "'," + total_cost + ",'" + timestamp + "','" + status + "'," + otp + ")";
+    var total_cost = parseFloat(req.body.totalCost);
+    
+	
+    var sql = "INSERT INTO `request`(`user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `status`) VALUES (" + user_id + ",'" + title + "','" + description + "','" + name + "','" + address + "','" + city + "','" + pin + "','" + contact + "','" + email + "','" + date + "','" + time + "'," + service_charge + "," + item_cost + ",'" + is_discount + "','" + discount + "'," + total_cost + ",'" + status + "');";
     console.log(sql);
     con.query(sql, function (err, result) {
         if (err) throw err;
@@ -446,6 +443,20 @@ app.post('/inventory', (req, res) => {
         }
     });
 
+});
+
+app.post('/schedules',(req,res)=>{
+    var user_id = req.body.user_id;
+    var sql = "Select date, time from request where user_id="+user_id+";";
+    con.query(sql,function(err,result){
+        if(err) throw err;
+        if(result){
+            console.log(result);
+            res.status(200).send(result);
+        }else{
+            res.status(400).send({"error":"Something went wrong"});
+        }
+    });
 });
 
 //Port Listenings
