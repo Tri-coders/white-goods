@@ -234,6 +234,7 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
         Toast.makeText(this, "hurray", Toast.LENGTH_SHORT).show();
         ViewEmpListRecylerCards clickedCard = mExampleList.get(position);
 
+        userId = clickedCard.getUserId();
         userName = clickedCard.getName();
 
         openDialog();
@@ -242,6 +243,7 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
     private void openDialog() {
         Bundle b = new Bundle();
 
+        b.putString("empId", userId);
         b.putString("empName", userName);
         b.putString("title", "Title: "+title);
         b.putString("description", "Description: "+desc);
