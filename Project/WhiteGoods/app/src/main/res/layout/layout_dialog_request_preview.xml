@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bottom_sheet_background"
     android:orientation="vertical">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:paddingHorizontal="20dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:gravity="center"
             android:text="REVIEW"
             android:textColor="@color/font"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textSize="25sp" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:text="Request Title"
             android:textColor="@color/font"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_marginTop="20dp"/>
 
         <TextView
@@ -41,7 +41,7 @@
             android:text="Request Description"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/request_cust_name"
@@ -50,8 +50,8 @@
             android:text="Customer Name"
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+            android:layout_marginTop="15dp"
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/request_cust_address"
@@ -61,7 +61,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/request_cust_city"
@@ -71,7 +71,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/request_cust_pin"
@@ -81,7 +81,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/request_cust_phone"
@@ -92,7 +92,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/request_cust_email"
@@ -103,7 +103,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/request_date"
@@ -112,8 +112,8 @@
             android:text="Request Date"
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"/>
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/request_time"
@@ -124,7 +124,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/request_service"
@@ -133,8 +133,8 @@
             android:text="Service Charge"
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"/>
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/item_cost"
@@ -144,7 +144,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/discount"
@@ -154,7 +154,7 @@
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
             android:layout_marginTop="5dp"
-            android:textSize="20sp"/>
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/total_cost"
@@ -163,8 +163,8 @@
             android:text="Total Cost"
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"/>
+            android:layout_marginTop="15dp"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/emp_name"
@@ -173,7 +173,7 @@
             android:text="Employee Name"
             android:fontFamily="@font/opensans_semibold"
             android:textColor="@color/font"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp" />
+            android:layout_marginTop="15dp"
+            android:textSize="18sp" />
     </LinearLayout>
 </ScrollView>

@@ -30,7 +30,6 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
         setElements(view);
 
         builder.setView(view)
-                .setTitle("Preview")
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -68,13 +67,13 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
         mTitle.setText(this.getArguments().getString("title"));
         mDesc.setText(this.getArguments().getString("description"));
         mCustName.setText(this.getArguments().getString("name"));
+        mCustphone.setText(this.getArguments().getString("phone"));
+        mCustEmail.setText(this.getArguments().getString("email"));
         mCustAddress.setText(this.getArguments().getString("address"));
         mCustCity.setText(this.getArguments().getString("city"));
         mCustPin.setText(this.getArguments().getString("pincode"));
-        mCustEmail.setText(this.getArguments().getString("email"));
         mTime.setText(this.getArguments().getString("time"));
         mDate.setText(this.getArguments().getString("date"));
-        mCustphone.setText(this.getArguments().getString("phone"));
         mServiceCharge.setText(this.getArguments().getString("serviceCharge"));
         mItemCost.setText(this.getArguments().getString("itemCost"));
         mDiscount.setText(this.getArguments().getString("discount"));
