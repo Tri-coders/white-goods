@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -42,6 +45,7 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
     String userId, userName, title, desc, custName, custAddress, custCity, custPin, custEmail, time, date, custphone;
     int serviceCharge, itemCost;
     String discount, totalCost;
+    private EditText searchInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,26 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
         server_url = getString(R.string.host_url) + "/get_employee";
 
         getIntentData();
+
+        //search code
+        searchInput = findViewById(R.id.searchBar);
+
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                mAdapter.getFilter().filter(charSequence);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         mRecyclerView = findViewById(R.id.employeeRecyclerView);
         mRecyclerView.setHasFixedSize(true);
