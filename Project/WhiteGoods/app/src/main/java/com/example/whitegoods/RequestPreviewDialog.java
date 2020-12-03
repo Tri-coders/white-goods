@@ -16,9 +16,11 @@ import androidx.appcompat.app.AppCompatDialogFragment;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +35,9 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
 
     String server_url, user_id;
     String title, desc, empName, custName, custAddress, custPin, custCity, custEmail;
-    String custPhone, date, time, service, itemCost, discount, totalCost;
+    String custPhone, date, time, service, itemCost, discount, totalCost, isDiscount;
+
+    private RequestQueue requestQueue;
 
     @NonNull
     @Override
@@ -45,6 +49,7 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
         View view = inflater.inflate(R.layout.layout_dialog_request_preview, null);
 
         server_url = getString(R.string.host_url) + "/request";
+        requestQueue = Volley.newRequestQueue(getContext());
 
         setElements(view);
 
@@ -84,7 +89,7 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
         mDiscount = view.findViewById(R.id.discount);
         mTotalCost = view.findViewById(R.id.total_cost);
 
-        user_id = this.getArguments().getString("user_id");
+        user_id = this.getArguments().getString("empId");
         title = this.getArguments().getString("title");
         desc = this.getArguments().getString("description");
         custName = this.getArguments().getString("name");
@@ -98,23 +103,26 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
         service = this.getArguments().getString("serviceCharge");
         itemCost = this.getArguments().getString("itemCost");
         discount = this.getArguments().getString("discount");
+        isDiscount = this.getArguments().getString("isDiscount");
         totalCost = this.getArguments().getString("totalCost");
         empName = this.getArguments().getString("empName");
 
-        mTitle.setText(title);
-        mDesc.setText(desc);
-        mCustName.setText(custName);
-        mCustphone.setText(custPhone);
-        mCustEmail.setText(custEmail);
-        mCustAddress.setText(custAddress);
-        mCustCity.setText(custCity);
-        mCustPin.setText(custPin);
+        Log.i("sanky_user_id", user_id);
+
+        mTitle.setText("Title: " + title);
+        mDesc.setText("Description: " + desc);
+        mCustName.setText("Name: " + custName);
+        mCustphone.setText("Phone: " + custPhone);
+        mCustEmail.setText("Email: " + custEmail);
+        mCustAddress.setText("Address: " + custAddress);
+        mCustCity.setText("City: " + custCity);
+        mCustPin.setText("Pincode: " + custPin);
         mTime.setText(time);
         mDate.setText(date);
-        mServiceCharge.setText(service);
-        mItemCost.setText(itemCost);
-        mDiscount.setText(discount);
-        mTotalCost.setText(totalCost);
+        mServiceCharge.setText("Service Charge: " + service);
+        mItemCost.setText("Item Cost: " + itemCost);
+        mDiscount.setText("Discount: " + discount);
+        mTotalCost.setText("Total Cost: " + totalCost);
         mEmpName.setText(empName);
     }
 
@@ -133,6 +141,11 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
             jsonObject.put("email", custEmail);
             jsonObject.put("date", date);
             jsonObject.put("time", time);
+            jsonObject.put("service", service);
+            jsonObject.put("itemCost", itemCost);
+            jsonObject.put("isDiscount", isDiscount);
+            jsonObject.put("discount", discount);
+            jsonObject.put("totalCost", totalCost);
             jsonObject.put("status", "00");
         }
         catch (JSONException e) {
@@ -147,7 +160,7 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
             public void onResponse(String response) {
                 Log.i("VolleyABC", "got response " + response);
 
-                Toast.makeText(getActivity(), "Request Created Successfully", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), "Request Created Successfully", Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -181,6 +194,8 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
                 return "application/json; charset=utf-8";
             }
         };
+
+        requestQueue.add(stringRequest);
 
     }
 }

@@ -71,7 +71,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        rangeSeekBar = root.findViewById(R.id.seekbar);
+//        rangeSeekBar = root.findViewById(R.id.seekbar);
 
 
         rangeSeekBar.setSelectedMinValue(0);

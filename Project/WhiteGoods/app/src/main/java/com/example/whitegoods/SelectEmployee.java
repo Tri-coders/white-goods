@@ -47,7 +47,7 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
 
     String userId, userName, title, desc, custName, custAddress, custCity, custPin, custEmail, time, date, custphone;
     int serviceCharge, itemCost;
-    String discount, totalCost;
+    String discount, is_discount, totalCost;
     private EditText searchInput;
 
     @Override
@@ -56,6 +56,7 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
         setContentView(R.layout.activity_select_employee);
 
         server_url = getString(R.string.host_url) + "/get_employee";
+        is_discount = "1";
 
         getIntentData();
         backButton();
@@ -245,20 +246,21 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
 
         b.putString("empId", userId);
         b.putString("empName", userName);
-        b.putString("title", "Title: "+title);
-        b.putString("description", "Description: "+desc);
-        b.putString("name", "Name: "+custName);
-        b.putString("address", "Address: "+custAddress);
-        b.putString("city", "City: "+custCity);
-        b.putString("pincode", "Pincode: "+custPin);
-        b.putString("email", "Email: "+custEmail);
+        b.putString("title", title);
+        b.putString("description", desc);
+        b.putString("name", custName);
+        b.putString("address", custAddress);
+        b.putString("city", custCity);
+        b.putString("pincode", custPin);
+        b.putString("email", custEmail);
         b.putString("time", time);
         b.putString("date", date);
-        b.putString("phone", "Phone: "+custphone);
-        b.putString("serviceCharge", "Service Charge: "+Integer.toString(serviceCharge));
-        b.putString("itemCost", "Item Cost: " + Integer.toString(itemCost));
-        b.putString("discount", "Discount: "+discount);
-        b.putString("totalCost","Total Cost: " + totalCost);
+        b.putString("phone", custphone);
+        b.putString("serviceCharge", Integer.toString(serviceCharge));
+        b.putString("itemCost", Integer.toString(itemCost));
+        b.putString("discount", discount);
+        b.putString("isDiscount", is_discount);
+        b.putString("totalCost",totalCost);
 
         RequestPreviewDialog d = new RequestPreviewDialog();
         d.setArguments(b);
