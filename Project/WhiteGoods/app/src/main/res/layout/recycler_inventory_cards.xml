@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingHorizontal="16dp"
         android:paddingTop="16dp">
 
         <LinearLayout
@@ -32,8 +31,8 @@
 
                 <ImageView
                     android:id="@+id/pimage"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:padding="2dp" />
 
             </androidx.cardview.widget.CardView>
@@ -51,7 +50,7 @@
                     android:fontFamily="@font/opensans_semibold"
                     android:text="Product Name"
                     android:textColor="@color/font"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/prod_price"
@@ -61,7 +60,7 @@
                     android:fontFamily="@font/opensans_regular"
                     android:text="Product Price"
                     android:textColor="@color/secondary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/quantity"
@@ -71,7 +70,7 @@
                     android:fontFamily="@font/opensans_regular"
                     android:text="Quantity"
                     android:textColor="@color/secondary"
-                    android:textSize="18sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </LinearLayout>
