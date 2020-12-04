@@ -459,6 +459,26 @@ app.post('/schedules',(req,res)=>{
     });
 });
 
+app.post('/allrequests',(req,res)=>{
+    var role = req.body.role;
+    if(role==2){
+        var user_id = req.body.user_id;
+        var sql = "Select * from request where user_id="+user_id+" and status='00' or status='10';";
+    }else{
+        var status = req.body.status;
+        var sql = "Select * from request where status='"+status+"';";
+    }
+    con.query(sql,function(err,result){
+        if(err) throw err;
+        if(result){
+            console.log(result);
+            res.status(200).send(result);
+        }else{
+            res.status(400).send({"error":"Something went wrong"});
+        }
+    });
+});
+
 //Port Listenings
 app.listen(9000, (req, res) => {
     console.log("Listening on 9000");
