@@ -71,22 +71,22 @@ public class RequestDetails extends AppCompatActivity {
                 try {
                     JSONObject request = new JSONObject(response);
 
-                    rId.setText(request.getString("request_id"));
-                    rTitle.setText(request.getString("title"));
-                    rDesc.setText(request.getString("description"));
+                    rId.setText("Id: "+request.getString("request_id"));
+                    rTitle.setText("Title: "+request.getString("title"));
+                    rDesc.setText("Description: "+request.getString("description"));
                     empName.setText(EmpName);
                     rDate.setText(request.getString("date"));
                     rTime.setText(request.getString("time"));
-                    cName.setText(request.getString("name"));
-                    cAddress.setText(request.getString("address"));
-                    cCity.setText(request.getString("city"));
-                    cPin.setText(request.getString("pin"));
-                    cPhone.setText(request.getString("contact"));
-                    cEmail.setText(request.getString("email"));
-                    service.setText(request.getString("service_charge"));
-                    itemCost.setText(request.getString("item_cost"));
-                    discount.setText(request.getString("discount_percent"));
-                    total.setText(request.getString("total_amount"));
+                    cName.setText("Name: "+request.getString("name"));
+                    cAddress.setText("Address: "+request.getString("address"));
+                    cCity.setText("City: "+request.getString("city"));
+                    cPin.setText("Pincode: "+request.getString("pin"));
+                    cPhone.setText("Phone: "+request.getString("contact"));
+                    cEmail.setText("Email id: "+request.getString("email"));
+                    service.setText("Service Charge: ₹"+request.getString("service_charge"));
+                    itemCost.setText("Item Cost: ₹"+request.getString("item_cost"));
+                    discount.setText("Discount: "+request.getString("discount_percent")+"%");
+                    total.setText("Total Cost: ₹"+request.getString("total_amount"));
                 }
                 catch (JSONException e) {
                     e.printStackTrace();
