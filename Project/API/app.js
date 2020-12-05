@@ -487,7 +487,7 @@ app.post('/request_details', (req, res) => {
         if(err) throw err;
         if(result){
             console.log(result);
-            res.status(200).send(result);
+            res.status(200).send(result[0]);
         }else{
             res.status(400).send({"error":"Something went wrong"});
         }
