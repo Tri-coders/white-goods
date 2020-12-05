@@ -479,6 +479,22 @@ app.post('/allrequests',(req,res)=>{
     });
 });
 
+app.post('/request_details', (req, res) => {
+    var id = parseInt(req.body.request_id);
+    
+    var sql = "SELECT * FROM request where request_id=" + id + ";";
+    con.query(sql,function(err,result){
+        if(err) throw err;
+        if(result){
+            console.log(result);
+            res.status(200).send(result);
+        }else{
+            res.status(400).send({"error":"Something went wrong"});
+        }
+    });
+
+});
+
 //Port Listenings
 app.listen(9000, (req, res) => {
     console.log("Listening on 9000");
