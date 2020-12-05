@@ -32,7 +32,7 @@ import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
-public class RequestFragment extends Fragment implements View.OnClickListener {
+public class RequestFragment extends Fragment implements View.OnClickListener, RequestAdapter.OnItemClickListener {
     View root;
     Button newButton, resButton, susButton, canButton;
 
@@ -106,7 +106,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
                     mRequestAdapter = new RequestAdapter(getActivity(), mRequestList);
 //                    mAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(mRequestAdapter);
-//                    mAdapter.setOnItemClickListener(ViewEmployeeList.this);
+                    mRequestAdapter.setOnItemClickListener(getActivity());
                 }
                 catch (JSONException e) {
                     e.printStackTrace();
@@ -231,4 +231,14 @@ public class RequestFragment extends Fragment implements View.OnClickListener {
 
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Intent detailRequest = new Intent(getActivity(), RequestDetails.class);
+        RequestCard clickedItem = mRequestList.get(position);
+
+        detailRequest.putExtra("requestId", clickedItem.getRequestId());
+        detailRequest.putExtra("empName", clickedItem.getEmpName());
+
+        startActivity(detailRequest);
+    }
 }

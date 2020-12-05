@@ -15,6 +15,15 @@ import java.util.ArrayList;
 public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestViewHolder> {
     private Context mContext;
     private ArrayList<RequestCard> mRequestList;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mListener = listener;
+    }
 
     public RequestAdapter(Context context, ArrayList<RequestCard> RequestList) {
         mContext = context;
@@ -57,6 +66,18 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
             mTime = itemView.findViewById(R.id.time);
             mLocation = itemView.findViewById(R.id.city);
             mEmpName = itemView.findViewById(R.id.eName);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(mListener!=null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }
