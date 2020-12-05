@@ -109,9 +109,13 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
                     mRequestAdapter.setOnItemClickListener(new RequestAdapter.OnItemClickListener() {
                         @Override
                         public void onItemClick(int position) {
-                            Intent it= new Intent(getActivity(),RequestDetails.class);
-                            //it.putExtra("requestId", mRequestList.get(position));
-                            startActivity(it);
+                            Intent detailRequest = new Intent(getActivity(), RequestDetails.class);
+                            RequestCard clickedItem = mRequestList.get(position);
+
+                            detailRequest.putExtra("requestId", clickedItem.getRequestId());
+                            detailRequest.putExtra("empName", clickedItem.getEmpName());
+
+                            startActivity(detailRequest);
                         }
                     });
                 }

@@ -74,7 +74,7 @@ public class RequestDetails extends AppCompatActivity {
                     rId.setText(request.getString("request_id"));
                     rTitle.setText(request.getString("title"));
                     rDesc.setText(request.getString("description"));
-                    empName.setText(request.getString(EmpName));
+                    empName.setText(EmpName);
                     rDate.setText(request.getString("date"));
                     rTime.setText(request.getString("time"));
                     cName.setText(request.getString("name"));
