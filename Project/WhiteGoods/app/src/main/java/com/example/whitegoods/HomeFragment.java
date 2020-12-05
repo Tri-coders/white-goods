@@ -2,6 +2,7 @@ package com.example.whitegoods;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -51,6 +54,13 @@ public class HomeFragment extends Fragment {
     View root;
     SharedPreferences sharedPreferences;
 
+    String server_url_request, user_id, EmpName;
+
+    private RecyclerView mRecyclerView;
+    private RequestAdapter mRequestAdapter;
+    private ArrayList<RequestCard> mRequestList;
+    private RequestQueue mRequestQueue;
+
     private static final String SHARED_PREF_NAME = "mypref";
     String server_url;
     private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMM - yyyy", Locale.getDefault());
@@ -60,6 +70,8 @@ public class HomeFragment extends Fragment {
 
         root = inflater.inflate(R.layout.fragment_home, container, false);
 
+        server_url_request = getString(R.string.host_url) + "/allrequests";
+
         LogOut();
 
         try {
@@ -67,6 +79,15 @@ public class HomeFragment extends Fragment {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        mRecyclerView = root.findViewById(R.id.requestsRecyclerView);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        mRequestList = new ArrayList<>();
+
+        mRequestQueue = Volley.newRequestQueue(getContext());
+        parseJSON();
 
 
         return root;
@@ -76,7 +97,7 @@ public class HomeFragment extends Fragment {
         server_url = getString(R.string.host_url)+"/schedules";
         final JSONObject jsonObject = new JSONObject();
         try {
-            String user_id = getActivity().getSharedPreferences("mypref", Context.MODE_PRIVATE).getString("user_id",null);
+            user_id = getActivity().getSharedPreferences("mypref", Context.MODE_PRIVATE).getString("user_id",null);
             jsonObject.put("user_id",user_id);
         }
         catch (JSONException e) {
@@ -180,5 +201,102 @@ public class HomeFragment extends Fragment {
             getActivity().finish();
 
         });
+    }
+
+    private void parseJSON() {
+
+        //EmpName = getActivity().getSharedPreferences("mypref", Context.MODE_PRIVATE).getString("user_id",null);
+        EmpName = "Tera hi Naam hai";
+
+        final JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("role", 2);
+            jsonObject.put("user_id", user_id);
+        }
+        catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        final String requestBody = jsonObject.toString();
+        Log.i("VolleyABC", requestBody);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url_request, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("VolleyABC", "got response " + response);
+                try {
+                    JSONArray jsonArray = new JSONArray(response);
+
+                    mRequestList.clear();
+
+                    for(int i=0; i< jsonArray.length(); i++) {
+                        JSONObject requests = jsonArray.getJSONObject(i);
+
+                        String RequestId = requests.getString("request_id");
+                        String RequestTitle = requests.getString("title");
+                        String date = requests.getString("date");
+                        String time = requests.getString("time");
+                        String location = requests.getString("city");
+
+                        mRequestList.add(new RequestCard(RequestId, RequestTitle, EmpName, date, time, location));
+                    }
+
+                    RequestAdapter mRequestAdapter = new RequestAdapter(root.getContext(), mRequestList);
+                    mRequestAdapter.notifyDataSetChanged();
+                    mRecyclerView.setAdapter(mRequestAdapter);
+                    mRequestAdapter.setOnItemClickListener(new RequestAdapter.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(int position) {
+                            Intent detailRequest = new Intent(getActivity(), RequestDetails.class);
+                            RequestCard clickedItem = mRequestList.get(position);
+
+                            detailRequest.putExtra("requestId", clickedItem.getRequestId());
+                            detailRequest.putExtra("empName", clickedItem.getEmpName());
+
+                            startActivity(detailRequest);
+                        }
+                    });
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                Toast.makeText(getActivity(), "Logged IN", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                try {
+                    Log.i("VolleyABC", error.toString());
+                    Log.i("VolleyABC", Integer.toString(error.networkResponse.statusCode));
+                    Toast.makeText(getActivity(), "Invalid Credentials", Toast.LENGTH_SHORT).show();
+
+                    error.printStackTrace();
+                }
+                catch (Exception e) {
+                    Log.i("VolleyABC", e.toString());
+                    Toast.makeText(getActivity(), "Check Network", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }) {
+            //sending JSONObject String to server starts
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                    return null;
+                }
+            }
+
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
+        };
+        //sending JSONObject String to server ends
+
+        mRequestQueue.add(stringRequest); // get response from server
+
     }
 }
