@@ -34,7 +34,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
     @Override
     public RequestViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(mContext).inflate(R.layout.recycler_requests_card, parent, false);
-        return new RequestViewHolder(v);
+        return new RequestViewHolder(v,mListener);
     }
 
     @Override
@@ -54,10 +54,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
         return mRequestList.size();
     }
 
-    public class RequestViewHolder extends RecyclerView.ViewHolder {
+    public static class RequestViewHolder extends RecyclerView.ViewHolder {
         public TextView mRequestId, mRequestTitle, mDate, mTime, mLocation, mEmpName;
 
-        public RequestViewHolder(@NonNull View itemView) {
+        public RequestViewHolder(@NonNull View itemView, OnItemClickListener listner) {
             super(itemView);
 
             mRequestId = itemView.findViewById(R.id.request_id);
@@ -70,10 +70,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestV
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(mListener!=null) {
+                    if(listner!=null) {
                         int position = getAdapterPosition();
                         if(position != RecyclerView.NO_POSITION) {
-                            mListener.onItemClick(position);
+                            listner.onItemClick(position);
                         }
                     }
                 }

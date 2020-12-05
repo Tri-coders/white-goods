@@ -103,10 +103,17 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
                         mRequestList.add(new RequestCard(RequestId, RequestTitle, EmpName, date, time, location));
                     }
 
-                    mRequestAdapter = new RequestAdapter(getActivity(), mRequestList);
+                    RequestAdapter mRequestAdapter = new RequestAdapter(root.getContext(), mRequestList);
 //                    mAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(mRequestAdapter);
-                    mRequestAdapter.setOnItemClickListener(getActivity());
+                    mRequestAdapter.setOnItemClickListener(new RequestAdapter.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(int position) {
+                            Intent it= new Intent(getActivity(),RequestDetails.class);
+                            //it.putExtra("requestId", mRequestList.get(position));
+                            startActivity(it);
+                        }
+                    });
                 }
                 catch (JSONException e) {
                     e.printStackTrace();
