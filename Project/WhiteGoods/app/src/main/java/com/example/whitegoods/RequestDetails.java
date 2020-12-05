@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class RequestDetails extends AppCompatActivity {
     TextView rId, rTitle, rDesc, empName, rDate, rTime, cName, cAddress, cCity, cPin;
     TextView cPhone, cEmail, service, itemCost, discount, total;
 
+    ImageButton backButton;
     RequestQueue requestQueue;
 
     @Override
@@ -46,6 +48,7 @@ public class RequestDetails extends AppCompatActivity {
         EmpName = intent.getStringExtra("empName");
 
         setElementId();
+        backButton();
 
         parseJSON();
 
@@ -147,5 +150,10 @@ public class RequestDetails extends AppCompatActivity {
         itemCost = findViewById(R.id.item_cost);
         discount = findViewById(R.id.discount);
         total = findViewById(R.id.total_amount);
+    }
+
+    private void backButton() {
+        backButton = findViewById(R.id.back);
+        backButton.setOnClickListener(view -> finish());
     }
 }
