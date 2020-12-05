@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme2"
         android:usesCleartextTraffic="true">
+        <activity android:name=".RequestDetails"></activity>
         <activity android:name=".AdminViewEmployeeProfile" />
         <activity android:name=".SelectEmployee" />
         <activity android:name=".ProductReport" />
