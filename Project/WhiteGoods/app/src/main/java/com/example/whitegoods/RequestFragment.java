@@ -36,7 +36,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
     View root;
     Button newButton, resButton, susButton, canButton;
 
-    String server_url;
+    String server_url, status="00";
 
     private RecyclerView mRecyclerView;
     private RequestAdapter mRequestAdapter;
@@ -74,7 +74,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
         final JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("role", 1);
-            jsonObject.put("status", "00");
+            jsonObject.put("status", status);
         }
         catch (JSONException e) {
             e.printStackTrace();
@@ -90,6 +90,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
+                    mRequestList.clear();
+
                     for(int i=0; i< jsonArray.length(); i++) {
                         JSONObject requests = jsonArray.getJSONObject(i);
 
@@ -104,7 +106,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
                     }
 
                     RequestAdapter mRequestAdapter = new RequestAdapter(root.getContext(), mRequestList);
-//                    mAdapter.notifyDataSetChanged();
+                    mRequestAdapter.notifyDataSetChanged();
                     mRecyclerView.setAdapter(mRequestAdapter);
                     mRequestAdapter.setOnItemClickListener(new RequestAdapter.OnItemClickListener() {
                         @Override
@@ -195,6 +197,9 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
 
                 canButton.setBackgroundResource(R.color.elements);
                 canButton.setTextColor(Color.parseColor("#B9C2CB"));
+
+                status = "00";
+                parseJSON();
                 break;
 
             case R.id.resButton:
@@ -209,6 +214,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
 
                 canButton.setBackgroundResource(R.color.elements);
                 canButton.setTextColor(Color.parseColor("#B9C2CB"));
+                status = "10";
+                parseJSON();
                 break;
 
                 case R.id.susButton:
@@ -223,6 +230,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
 
                 canButton.setBackgroundResource(R.color.elements);
                 canButton.setTextColor(Color.parseColor("#B9C2CB"));
+                status = "01";
+                parseJSON();
                 break;
 
                 case R.id.canButton:
@@ -237,6 +246,8 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
 
                 resButton.setBackgroundResource(R.color.elements);
                 resButton.setTextColor(Color.parseColor("#B9C2CB"));
+                status = "11";
+                parseJSON();
                 break;
         }
 
