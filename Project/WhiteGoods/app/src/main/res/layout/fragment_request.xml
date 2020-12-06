@@ -1,115 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginTop="0dp"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:paddingBottom="50dp">
+    android:background="@color/white"
+    android:orientation="vertical">
 
     <RelativeLayout
+        android:id="@+id/top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp">
 
-<!--        <ImageButton-->
-<!--            android:id="@+id/back"-->
-<!--            android:layout_width="35dp"-->
-<!--            android:layout_height="35dp"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:background="@drawable/ic_baseline_arrow_back_24" />-->
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/back"-->
+        <!--            android:layout_width="35dp"-->
+        <!--            android:layout_height="35dp"-->
+        <!--            android:layout_alignParentStart="true"-->
+        <!--            android:layout_alignParentTop="true"-->
+        <!--            android:layout_marginStart="20dp"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:background="@drawable/ic_baseline_arrow_back_24" />-->
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="20dp"
-            android:layout_toStartOf="@+id/filter"
             android:fontFamily="@font/opensans_bold"
             android:gravity="center"
             android:text="@string/requests"
             android:textColor="@color/font"
             android:textSize="25sp" />
 
-        <ImageButton
-            android:id="@+id/filter"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/ic_filter" />
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/filter"-->
+        <!--            android:layout_width="28dp"-->
+        <!--            android:layout_height="28dp"-->
+        <!--            android:layout_alignParentTop="true"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_marginTop="28dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:background="@drawable/ic_filter" />-->
     </RelativeLayout>
 
 
     <HorizontalScrollView
-        android:layout_width="wrap_content"
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginTop="20dp">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/elements"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/newButton"
-            style="?android:attr/borderlessButtonStyle"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/opensans_bold"
-            android:text="@string/newest"
-            android:textColor="@color/white"
-            android:background="@color/main"
-            android:textSize="12sp" />
+            android:layout_height="wrap_content"
+            android:background="@color/elements"
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/resButton"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/opensans_bold"
-            android:text="@string/rescheduled"
-            android:textColor="@color/secondary"
-            android:textSize="12sp" />
+            <Button
+                android:id="@+id/newButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/main"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@string/newest"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
 
-        <Button
-            android:id="@+id/susButton"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/opensans_bold"
-            android:text="@string/suspended"
-            android:textColor="@color/secondary"
-            android:textSize="12sp" />
+            <Button
+                android:id="@+id/resButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@string/rescheduled"
+                android:textColor="@color/secondary"
+                android:textSize="12sp" />
 
-        <Button
-            android:id="@+id/canButton"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/opensans_bold"
-            android:text="@string/cancelled"
-            android:textColor="@color/secondary"
-            android:textSize="12sp" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/susButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@string/suspended"
+                android:textColor="@color/secondary"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/canButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/opensans_bold"
+                android:text="@string/cancelled"
+                android:textColor="@color/secondary"
+                android:textSize="12sp" />
+        </LinearLayout>
     </HorizontalScrollView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/requestsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp" />
+        android:layout_below="@+id/tabs"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp"
+        android:paddingHorizontal="10dp" />
 
-    <FrameLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_req"
@@ -120,5 +130,8 @@
             android:backgroundTint="@color/elements"
             android:src="@drawable/ic_baseline_add_24" />
 
-    </FrameLayout>
-</LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>
+
+    <!--    android:id="@+id/add_req"-->
