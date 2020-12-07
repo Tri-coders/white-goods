@@ -40,7 +40,7 @@
                 android:fontFamily="@font/opensans_bold"
                 android:gravity="center_horizontal"
                 android:text="@string/profile"
-                android:textColor="@color/font"
+                android:textColor="@drawable/font_selector"
                 android:textSize="25sp" />
 
             <ImageButton
@@ -92,7 +92,7 @@
                 android:hint="@string/user_id"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font"
+                android:textColor="@drawable/font_selector"
                 android:visibility="gone" />
 
             <EditText
@@ -108,7 +108,7 @@
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font" />
+                android:textColor="@drawable/font_selector" />
 
 
             <EditText
@@ -124,7 +124,7 @@
                 android:hint="@string/name"
                 android:inputType="text"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font" />
+                android:textColor="@drawable/font_selector" />
 
             <EditText
                 android:id="@+id/phone_admin"
@@ -139,7 +139,7 @@
                 android:hint="Phone No"
                 android:inputType="phone"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font" />
+                android:textColor="@drawable/font_selector" />
 
             <EditText
                 android:id="@+id/address_admin"
@@ -154,7 +154,7 @@
                 android:hint="@string/address"
                 android:inputType="textPostalAddress"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font" />
+                android:textColor="@drawable/font_selector" />
 
             <EditText
                 android:id="@+id/city_admin"
@@ -169,7 +169,7 @@
                 android:hint="@string/city"
                 android:inputType="text"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font" />
+                android:textColor="@drawable/font_selector" />
 
             <EditText
                 android:id="@+id/pincode_admin"
@@ -184,7 +184,7 @@
                 android:hint="@string/pincode"
                 android:inputType="number"
                 android:paddingHorizontal="15dp"
-                android:textColor="@color/font" />
+                android:textColor="@drawable/font_selector" />
 
 
             <TextView
