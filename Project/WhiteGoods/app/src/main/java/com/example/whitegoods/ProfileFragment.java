@@ -97,9 +97,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "PIC Clicked", Toast.LENGTH_SHORT).show();
                 checkPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE, STORAGE_PERMISSION_CODE);
-                checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
-                Intent intent = new Intent((MediaStore.ACTION_IMAGE_CAPTURE));
-                startActivityForResult(intent, 100);
+
             }
         });
         return root;
@@ -108,8 +106,13 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode ==100){
-            Bitmap captureImg = (Bitmap) data.getExtras().get("data");
-            profilePic.setImageBitmap(captureImg);
+            try {
+                Bitmap captureImg = (Bitmap) data.getExtras().get("data");
+                profilePic.setImageBitmap(captureImg);
+            } catch (Exception e) {
+//                Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
+            }
+
 
         }
     }
@@ -122,6 +125,12 @@ public class ProfileFragment extends Fragment {
         }
         else {
             Toast.makeText(this.getContext(),"Permission already granted", Toast.LENGTH_SHORT).show();
+            if(requestCode == STORAGE_PERMISSION_CODE) {
+                checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
+            } else if (requestCode == CAMERA_PERMISSION_CODE) {
+                Intent intent = new Intent((MediaStore.ACTION_IMAGE_CAPTURE));
+                startActivityForResult(intent, 100);
+            }
         }
     }
     @Override
@@ -132,15 +141,17 @@ public class ProfileFragment extends Fragment {
         if (requestCode == CAMERA_PERMISSION_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this.getContext(), "Camera Permission Granted", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent((MediaStore.ACTION_IMAGE_CAPTURE));
+                startActivityForResult(intent, 100);
             }
             else {
                 Toast.makeText(this.getContext(), "Camera Permission Denied", Toast.LENGTH_SHORT).show();
             }
         }
         else if (requestCode == STORAGE_PERMISSION_CODE) {
-            if (grantResults.length > 0
-                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this.getContext(), "Storage Permission Granted", Toast.LENGTH_SHORT).show();
+                checkPermission(Manifest.permission.CAMERA, CAMERA_PERMISSION_CODE);
             }
             else {
                 Toast.makeText(this.getContext(), "Storage Permission Denied", Toast.LENGTH_SHORT).show();
