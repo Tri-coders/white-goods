@@ -1,12 +1,15 @@
 package com.example.whitegoods;
 
 import android.Manifest;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +43,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.UnsupportedEncodingException;
+
+import retrofit2.Call;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -71,6 +77,8 @@ public class ProfileFragment extends Fragment {
 
     private static final int CAMERA_PERMISSION_CODE = 100;
     private static final int STORAGE_PERMISSION_CODE = 101;
+
+    private Bitmap bitmap;
 
     @Nullable
     @Override
@@ -107,14 +115,36 @@ public class ProfileFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         if(requestCode ==100){
             try {
-                Bitmap captureImg = (Bitmap) data.getExtras().get("data");
-                profilePic.setImageBitmap(captureImg);
+                bitmap = (Bitmap) data.getExtras().get("data");
+                profilePic.setImageBitmap(bitmap);
+                uploadImage();
             } catch (Exception e) {
 //                Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_SHORT).show();
             }
 
 
         }
+    }
+
+    private void uploadImage() {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, byteArrayOutputStream);
+        byte[] imageInByte = byteArrayOutputStream.toByteArray();
+
+        String encodedImage = Base64.encodeToString(imageInByte,Base64.DEFAULT);
+        Call<Response_POJO> call = RetroClient.getInstance().getApi().uploadImage(encodedImage,Integer.parseInt(user_id));
+        call.enqueue(new retrofit2.Callback<Response_POJO>() {
+            @Override
+            public void onResponse(Call<Response_POJO> call, retrofit2.Response<Response_POJO> response) {
+                Toast.makeText(getContext(),response.body().getRemarks(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<Response_POJO> call, Throwable t) {
+                Toast.makeText(getContext(),"Network Failure", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     public void checkPermission(String permission, int requestCode)
