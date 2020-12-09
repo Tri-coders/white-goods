@@ -487,7 +487,7 @@ app.post('/allrequests',(req,res)=>{
     if(role==2){
         var user_id = req.body.user_id;
         //var sql = "Select * from request where user_id="+user_id+" and status='00' or status='10';";
-	var sql = "SELECT request.request_id, request.title, request.date, request.time, request.name, request.city FROM user_details INNER JOIN request ON user_details.user_id = request.user_id where user_details.user_id = "+user_id+" and (status='00' or status='10') ";
+	var sql = "SELECT request.request_id, request.title, request.date, request.time, request.name, request.city, user_details.name as empName FROM user_details INNER JOIN request ON user_details.user_id = request.user_id where user_details.user_id = "+user_id+" and (status='00' or status='10') ";
     }else{
         var status = req.body.status;
         var sql = "SELECT request.request_id, request.title, user_details.name, request.date, request.time, request.city FROM request INNER JOIN user_details ON request.user_id = user_details.user_id WHERE request.status = '"+status+"';";
