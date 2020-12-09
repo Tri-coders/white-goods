@@ -3,6 +3,7 @@ package com.example.whitegoods;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,7 +29,13 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class RequestPreviewDialog extends AppCompatDialogFragment {
+
+    private static final String SHARED_PREF_NAME = "mypref";
+    private static final String KEY_FLAG = "flag";
+    SharedPreferences sharedPreferences;
 
     TextView mEmpName, mTitle, mDesc, mCustName, mCustAddress, mCustCity, mCustPin, mCustEmail, mTime, mDate, mCustphone;
     TextView mServiceCharge, mItemCost, mDiscount, mTotalCost;
@@ -44,6 +51,8 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        sharedPreferences = getActivity().getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
 
         LayoutInflater inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.layout_dialog_request_preview, null);
@@ -65,6 +74,10 @@ public class RequestPreviewDialog extends AppCompatDialogFragment {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         parseJSON();
                         Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString(KEY_FLAG, "1");
+                        editor.apply();
+                        getActivity().finish();
                     }
                 });
 

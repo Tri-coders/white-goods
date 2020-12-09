@@ -36,6 +36,13 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
     private ViewEmpListRecylerAdapter mAdapter;
     private ArrayList<ViewEmpListRecylerCards> mExampleList;
     private RequestQueue requestQueue;
+
+    @Override
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        Toast.makeText(this, "resume fragments", Toast.LENGTH_SHORT).show();
+    }
+
     ImageButton backButton;
 
 
@@ -89,6 +96,18 @@ public class SelectEmployee extends AppCompatActivity implements ViewEmpListRecy
 
         requestQueue = Volley.newRequestQueue(this);
         parseJSON();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(this, "resumed", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(this, "pause re", Toast.LENGTH_SHORT).show();
     }
 
     private void getIntentData() {

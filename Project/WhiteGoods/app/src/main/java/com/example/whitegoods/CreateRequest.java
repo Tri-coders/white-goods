@@ -34,6 +34,8 @@ import java.util.Calendar;
 import android.widget.ImageButton;
 
 public class CreateRequest extends AppCompatActivity {
+    boolean is_finish = false;
+
     ImageButton backButton;
     EditText title,reqDescription,name,addr,city,pincode,phone,email,time,serviceCharge,cost,discount;
     TextView dateText,totalCost;
@@ -50,6 +52,17 @@ public class CreateRequest extends AppCompatActivity {
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String user_id;
     String server_url = "";
+
+    private static final String KEY_FLAG = "flag";
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String FLAG = sharedPreferences.getString(KEY_FLAG, null);
+        if(FLAG == "1") {
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

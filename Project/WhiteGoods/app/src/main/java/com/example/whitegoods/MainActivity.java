@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_EMAIL = "email";
     private static final String KEY_PASSWORD = "password";
     private static final String KEY_ROLE = "role";
+    private static final String KEY_FLAG = "flag";
     private static final String KEY_ID = "user_id";
 
     @Override
@@ -149,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString(KEY_PASSWORD, password);
                     editor.putString(KEY_ROLE, Integer.toString(UROLE));
                     editor.putString(KEY_ID, Integer.toString(USER_ID));
+                    editor.putString(KEY_FLAG, "0");
                     editor.apply();
 
                     Intent intent = new Intent(MainActivity.this, FcmTokenReceiver.class);
