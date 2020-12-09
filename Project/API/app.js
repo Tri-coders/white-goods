@@ -375,6 +375,13 @@ app.post('/request', (req, res) => {
     con.query(sql, function (err, result) {
         if (err) throw err;
         if (result) {
+            var sql1 = "select token from user_details where user_id="+user_id+";";
+            con.query(sql1,function(err,result){
+                if(err) throw err;
+                if(result){
+                    requestFCM(result[0].token,"Request Placed.");
+                }
+            });
             res.status(200).send("OK")
         } else {
             res.status(400).send({ "error": "Something went wrong" });
@@ -486,8 +493,7 @@ app.post('/allrequests',(req,res)=>{
     var role = req.body.role;
     if(role==2){
         var user_id = req.body.user_id;
-        //var sql = "Select * from request where user_id="+user_id+" and status='00' or status='10';";
-	var sql = "SELECT request.request_id, request.title, request.date, request.time, request.name, request.city, user_details.name as empName FROM user_details INNER JOIN request ON user_details.user_id = request.user_id where user_details.user_id = "+user_id+" and (status='00' or status='10') ";
+        var sql = "Select * from request where user_id="+user_id+" and status='00' or status='10';";
     }else{
         var status = req.body.status;
         var sql = "SELECT request.request_id, request.title, user_details.name, request.date, request.time, request.city FROM request INNER JOIN user_details ON request.user_id = user_details.user_id WHERE request.status = '"+status+"';";
@@ -518,6 +524,23 @@ app.post('/request_details', (req, res) => {
     });
 
 });
+
+app.post('/graph_details', (req, res) => {
+    
+    var sql = "SELECT date,item_cost FROM request;";
+    con.query(sql,function(err,result){
+        if(err) throw err;
+        if(result){
+            console.log(result);
+            res.status(200).send(result);
+        }else{
+            res.status(400).send({"error":"Something went wrong"});
+        }
+    });
+
+});
+
+
 
 //Port Listenings
 app.listen(9000, (req, res) => {

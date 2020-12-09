@@ -43,8 +43,8 @@ public class FCMMessageReceiver extends FirebaseMessagingService {
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
-                .setContentText("Check your updated details!!")
-                .setContentInfo("Successfully update details")
+                .setContentText("Notification from WHITEGOOD...")
+                .setContentInfo("WHITEGOOD")
                 .setSubText("Tap to open App")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
