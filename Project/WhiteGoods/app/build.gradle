@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
@@ -52,5 +53,13 @@ dependencies {
     implementation "org.florescu.android.rangeseekbar:rangeseekbar-library:0.4.0"
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
+    
+    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+    implementation platform('com.google.firebase:firebase-bom:26.1.0')
+    implementation 'me.bendik.simplerangeview:simplerangeview:0.2.0'
+    implementation 'com.google.firebase:firebase-analytics'
+    
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 
 }
