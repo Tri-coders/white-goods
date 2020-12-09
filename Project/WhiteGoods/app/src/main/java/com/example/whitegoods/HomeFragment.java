@@ -206,7 +206,6 @@ public class HomeFragment extends Fragment {
     private void parseJSON() {
 
         //EmpName = getActivity().getSharedPreferences("mypref", Context.MODE_PRIVATE).getString("user_id",null);
-        EmpName = "Tera hi Naam hai";
 
         final JSONObject jsonObject = new JSONObject();
         try {
@@ -236,9 +235,11 @@ public class HomeFragment extends Fragment {
                         String RequestTitle = requests.getString("title");
                         String date = requests.getString("date");
                         String time = requests.getString("time");
+                        String name = requests.getString("name");
                         String location = requests.getString("city");
+                        EmpName = requests.getString("empName");
 
-                        mRequestList.add(new RequestCard(RequestId, RequestTitle, EmpName, date, time, location));
+                        mRequestList.add(new RequestCard(RequestId, RequestTitle, name, date, time, location));
                     }
 
                     RequestAdapter mRequestAdapter = new RequestAdapter(root.getContext(), mRequestList);
@@ -251,7 +252,7 @@ public class HomeFragment extends Fragment {
                             RequestCard clickedItem = mRequestList.get(position);
 
                             detailRequest.putExtra("requestId", clickedItem.getRequestId());
-                            detailRequest.putExtra("empName", clickedItem.getEmpName());
+                            detailRequest.putExtra("empName", EmpName);
 
                             startActivity(detailRequest);
                         }
