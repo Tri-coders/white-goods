@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetroClient {
-    private static final  String BASE_URL="http://172.16.6.174/whitegoods/"; //URL for php files
+    private static final  String BASE_URL="http://128.199.30.114:9000/"; //URL for php files
     private static RetroClient myClient;
     private Retrofit retrofit;
 

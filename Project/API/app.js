@@ -49,15 +49,38 @@ app.get('/', (req, res) => {
     res.sendStatus(200)
 })
 
-app.post('/file', upload.single('file'), (req, res, next) => {
-    const file = req.file;
-    console.log(file.filename);
+app.post('/file', (req, res, next) => {
+    var file = req.body.file;
+    var user_id = req.body.user_id;
+    console.log(user_id);
+    
     if (!file) {
       const error = new Error('No File')
       error.httpStatusCode = 400
       return next(error)
+    }else{
+        var temp = file.replace(/^data:image\/png;base64,/,"");
+        var locationImg="images/"+user_id+"Profile.png";
+        try{
+            require("fs").unlinkSync(locationImg);
+        }catch(err){
+            console.log(err);
+        }
+        require("fs").writeFile(locationImg,temp,'base64',function(err){
+            console.log(err);
+        });
+        var sql = "Update user_details set image='http://128.199.30.114:9000/"+locationImg+"' where user_id="+user_id+";";
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            if (result) {
+                res.send({"status":true,"remark":"upload successfully"});
+            }
+            else {
+                res.status(400).send({ "error": "Username or Password is incorrect" })
+            }
+        });
     }
-    res.send(file);
+    
 })
 
 app.get('/some', (req, res) => {
