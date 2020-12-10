@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,17 +54,18 @@ public class HomeFragment extends Fragment {
     CompactCalendarView compactCalendar;
     View root;
     SharedPreferences sharedPreferences;
-
+    TextView cm;
     String server_url_request, user_id, EmpName;
 
     private RecyclerView mRecyclerView;
     private RequestAdapter mRequestAdapter;
     private ArrayList<RequestCard> mRequestList;
     private RequestQueue mRequestQueue;
+    SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMM - yyyy", Locale.getDefault());
 
     private static final String SHARED_PREF_NAME = "mypref";
     String server_url;
-    private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMM - yyyy", Locale.getDefault());
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -94,13 +96,12 @@ public class HomeFragment extends Fragment {
     }
 
     private void calendar() throws ParseException {
-        server_url = getString(R.string.host_url)+"/schedules";
+        server_url = getString(R.string.host_url) + "/schedules";
         final JSONObject jsonObject = new JSONObject();
         try {
-            user_id = getActivity().getSharedPreferences("mypref", Context.MODE_PRIVATE).getString("user_id",null);
-            jsonObject.put("user_id",user_id);
-        }
-        catch (JSONException e) {
+            user_id = getActivity().getSharedPreferences("mypref", Context.MODE_PRIVATE).getString("user_id", null);
+            jsonObject.put("user_id", user_id);
+        } catch (JSONException e) {
             e.printStackTrace();
         }
 
@@ -109,6 +110,21 @@ public class HomeFragment extends Fragment {
 
         compactCalendar = (CompactCalendarView) root.findViewById(R.id.compactcalendar_view);
         compactCalendar.setUseThreeLetterAbbreviation(true);
+        cm = root.findViewById(R.id.cmonth);
+        SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMM - yyyy", Locale.getDefault());
+        cm.setText(dateFormatForMonth.format(compactCalendar.getFirstDayOfCurrentMonth()));
+
+        compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+                cm.setText(dateFormatForMonth.format(firstDayOfNewMonth));
+            }
+        });
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, server_url, new Response.Listener<String>() {
             @Override
@@ -117,7 +133,7 @@ public class HomeFragment extends Fragment {
                 try {
                     JSONArray jsonArray = new JSONArray(response);
 
-                    for(int i=0; i< jsonArray.length(); i++) {
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject data = jsonArray.getJSONObject(i);
 
                         String date1 = data.getString("date");
@@ -131,23 +147,23 @@ public class HomeFragment extends Fragment {
                         assert date != null;
                         long millis = date.getTime();
 
-                        Event ev1 = new Event(Color.RED, millis,"Microwave Repair");
+                        Event ev1 = new Event(Color.RED, millis, "Microwave Repair");
                         compactCalendar.addEvent(ev1);
                         compactCalendar.setListener(new CompactCalendarView.CompactCalendarViewListener() {
                             @Override
                             public void onDayClick(Date dateClicked) {
                                 Context context = getActivity();
-                                Toast.makeText(context, dateClicked.toString() , Toast.LENGTH_SHORT).show();
+                                Toast.makeText(context, dateClicked.toString(), Toast.LENGTH_SHORT).show();
 
                             }
+
                             @Override
                             public void onMonthScroll(Date firstDayOfNewMonth) {
 
                             }
                         });
                     }
-                }
-                catch (JSONException | ParseException e) {
+                } catch (JSONException | ParseException e) {
                     e.printStackTrace();
                 }
             }
@@ -157,8 +173,7 @@ public class HomeFragment extends Fragment {
                 try {
                     Toast.makeText(getActivity(), "No Schedule", Toast.LENGTH_SHORT).show();
                     error.printStackTrace();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     Log.i("VolleyABC", e.toString());
                     Toast.makeText(getActivity(), "Check Network", Toast.LENGTH_SHORT).show();
                 }
@@ -189,6 +204,7 @@ public class HomeFragment extends Fragment {
         requestQueue.add(stringRequest); // get response from server
 
     }
+
     private void LogOut() {
         ImageButton logOut = root.findViewById(R.id.log_out);
 
@@ -211,8 +227,7 @@ public class HomeFragment extends Fragment {
         try {
             jsonObject.put("role", 2);
             jsonObject.put("user_id", user_id);
-        }
-        catch (JSONException e) {
+        } catch (JSONException e) {
             e.printStackTrace();
         }
 
@@ -228,7 +243,7 @@ public class HomeFragment extends Fragment {
 
                     mRequestList.clear();
 
-                    for(int i=0; i< jsonArray.length(); i++) {
+                    for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject requests = jsonArray.getJSONObject(i);
 
                         String RequestId = requests.getString("request_id");
@@ -257,8 +272,7 @@ public class HomeFragment extends Fragment {
                             startActivity(detailRequest);
                         }
                     });
-                }
-                catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 Toast.makeText(getActivity(), "Logged IN", Toast.LENGTH_SHORT).show();
@@ -272,8 +286,7 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getActivity(), "Invalid Credentials", Toast.LENGTH_SHORT).show();
 
                     error.printStackTrace();
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     Log.i("VolleyABC", e.toString());
                     Toast.makeText(getActivity(), "Check Network", Toast.LENGTH_SHORT).show();
                 }
