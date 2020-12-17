@@ -69,9 +69,6 @@ public class EmployeeNav extends AppCompatActivity {
                         case R.id.navigation_inventory:
                             selectedFragment = new InventoryFragment();
                             break;
-                        case R.id.navigation_discount:
-                            selectedFragment = new DiscountFragment();
-                            break;
                         case R.id.navigation_home:
                             selectedFragment = new ManagerHomeFragment();
                             break;

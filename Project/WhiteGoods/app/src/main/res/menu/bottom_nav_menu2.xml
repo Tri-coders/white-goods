@@ -7,11 +7,6 @@
         android:title="@string/inventory" />
 
     <item
-        android:id="@+id/navigation_discount"
-        android:icon="@drawable/ic_icon_awesome_percent"
-        android:title="@string/discount" />
-
-    <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
