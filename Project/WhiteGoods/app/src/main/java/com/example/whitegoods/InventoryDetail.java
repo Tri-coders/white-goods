@@ -50,7 +50,7 @@ public class InventoryDetail extends AppCompatActivity {
     ImageButton filterButton, backButton;
     ImageView cover;
     SimpleRangeView rangeBar;
-    TextView priceRange,coverText;
+    TextView priceRange, coverText;
 
     String server_url, wh_good_category;
     String lower_price;
@@ -280,20 +280,23 @@ public class InventoryDetail extends AppCompatActivity {
         rangeBar.setOnChangeRangeListener(new SimpleRangeView.OnChangeRangeListener() {
             @Override
             public void onRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i, int i1) {
-                priceRange.setText(String.valueOf(i) + "-" + String.valueOf(i1));
+                priceRange.setText(String.valueOf(i) + " - " + String.valueOf(i1) + "k");
             }
         });
 
         rangeBar.setOnTrackRangeListener(new SimpleRangeView.OnTrackRangeListener() {
             @Override
             public void onStartRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i) {
-                priceRange.setText(String.valueOf(i));
-
+                if (i != 0) {
+                    priceRange.setText(String.valueOf(i) + "k");
+                } else {
+                    priceRange.setText(String.valueOf(i));
+                }
             }
 
             @Override
             public void onEndRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i) {
-                priceRange.setText(String.valueOf(i));
+                priceRange.setText(String.valueOf(i) + "k");
             }
         });
 
