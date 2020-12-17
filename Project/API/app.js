@@ -446,6 +446,8 @@ app.post('/inventory', (req, res) => {
 
     var sql = "SELECT * FROM model WHERE whitegoodcategory_id = " + wh_good_category + " AND brand_id IN(" + brand_range + ") AND model_price BETWEEN " + lower_price + " AND " + higher_price;
 
+    console.log(sql);
+
     if (q_avail == "1") {
         sql += " AND quantity > 0";
     }
@@ -454,6 +456,7 @@ app.post('/inventory', (req, res) => {
         if (result) {
 
             var sql = "SELECT * FROM parts WHERE whitegoodcategory_id = " + wh_good_category + " AND brand_id IN(" + brand_range + ") AND part_price BETWEEN " + lower_price + " AND " + higher_price;
+            console.log(sql);
 
             if (q_avail == "1") {
                 sql += " AND quantity > 0";
