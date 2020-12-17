@@ -217,18 +217,19 @@ public class InventoryDetail extends AppCompatActivity {
             RadioGroup radioGroup = bottomSheetView.findViewById(R.id.radio_group);
             RadioButton low_to_high = bottomSheetView.findViewById(R.id.radio_lh);
             RadioButton high_to_low = bottomSheetView.findViewById(R.id.radio_hl);
-            RadioButton inStock = bottomSheetView.findViewById(R.id.inStock);
+            CheckBox inStock = bottomSheetView.findViewById(R.id.inStock);
 
             //check for range given by user
             String range = String.valueOf(priceRange.getText());
+            Log.i("range_sankey", range);
             String[] r = new String[2];
-            r = range.split("-");
+            r = range.split(" - ");
             lower_price = r[0] + "000"; // adding 3 zeros... to making it in thousands
             higher_price = r[1] + "0000"; //adding 4 zeroes... to making it in ten thousands
 
             //check if in stock is selected
             if (radioGroup.getCheckedRadioButtonId() != -1) {
-                if (inStock.isSelected()) {
+                if (inStock.isChecked()) {
                     is_available = "1";
                 } else {
                     is_available = "0";
@@ -280,7 +281,7 @@ public class InventoryDetail extends AppCompatActivity {
         rangeBar.setOnChangeRangeListener(new SimpleRangeView.OnChangeRangeListener() {
             @Override
             public void onRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i, int i1) {
-                priceRange.setText(String.valueOf(i) + " - " + String.valueOf(i1) + "k");
+                priceRange.setText(String.valueOf(i) + " - " + String.valueOf(i1));
             }
         });
 
@@ -288,7 +289,7 @@ public class InventoryDetail extends AppCompatActivity {
             @Override
             public void onStartRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i) {
                 if (i != 0) {
-                    priceRange.setText(String.valueOf(i) + "k");
+                    priceRange.setText(String.valueOf(i));
                 } else {
                     priceRange.setText(String.valueOf(i));
                 }
@@ -296,7 +297,7 @@ public class InventoryDetail extends AppCompatActivity {
 
             @Override
             public void onEndRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i) {
-                priceRange.setText(String.valueOf(i) + "k");
+                priceRange.setText(String.valueOf(i));
             }
         });
 
