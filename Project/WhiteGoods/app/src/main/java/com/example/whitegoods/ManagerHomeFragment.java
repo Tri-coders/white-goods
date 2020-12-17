@@ -179,16 +179,16 @@ public class ManagerHomeFragment extends Fragment {
         String[] xAxisLables = new String[]{"Nothing","Jan","Feb", "Mar", "Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
         barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLables));
 
-        BarDataSet barDataSet = new BarDataSet(visitors, "visitors");
+        BarDataSet barDataSet = new BarDataSet(visitors, "Sales");
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         barDataSet.setValueTextColor(Color.BLACK);
         barDataSet.setValueTextSize(10f);
 
         BarData barData = new BarData(barDataSet);
 
-        barChart.setFitBars(true);
+        barChart.setFitBars(false);
         barChart.setData(barData);
-        barChart.getDescription().setText("Bar Chart Example");
+        barChart.getDescription().setText("Sales Report");
         barChart.animateY(2000);
 
     }
