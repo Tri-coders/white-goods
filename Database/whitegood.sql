@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 17, 2020 at 06:18 PM
+-- Generation Time: Dec 18, 2020 at 12:44 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -465,6 +465,7 @@ CREATE TABLE `request` (
   `total_amount` double NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `status` varchar(5) NOT NULL,
+  `reason` text DEFAULT NULL,
   `otp` int(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -472,28 +473,28 @@ CREATE TABLE `request` (
 -- Dumping data for table `request`
 --
 
-INSERT INTO `request` (`request_id`, `user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `timestamp`, `status`, `otp`) VALUES
-(1, 11, 'Refridgerator install', 'Install samsung 253 LRT28T3032SE/HL model refridgerator and give demo to customer', 'Sarthak Patil', '32/A, Sai Apartments, M.G. Nagar, Kurla (W.)', 'Mumbai', '400070', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '12:20', 200, 20490, '1', '5', 19656, '2020-12-17 17:16:25', '00', NULL),
-(2, 11, 'AC repair', 'Repairing of AC of model AR18TV5HLTU. The problem is of cooling system.', 'Aren Buttler', 'Room NO. 5, Ganesh Chawl, Samarth Nagar, Kalwa(E)', 'Mumbai', '432008', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/20', '12:20', 20, 20, '1', '5', 20, '2020-12-17 17:16:47', '00', NULL),
-(3, 11, 'Wahing Machine Install', 'description1', 'Shankar Khanna', 'address', 'Mumbai', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/28', '20:20', 20, 20, '1', '50', 20, '2020-12-17 17:17:04', '00', NULL),
-(4, 11, 'title1', 'description1', 'name', 'address', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '5', 38, '2020-12-04 15:25:41', '11', NULL),
-(5, 11, 'refridgerator repair', 'description1', 'Samar Kadam', 'address', 'Mumbai', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-17 17:17:28', '00', NULL),
-(6, 11, 'title1', 'description1234', 'prabodh', 'iudp', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/11/11', '18:30', 50, 1000, '1', '33.0', 703.5, '2020-12-04 15:25:27', '10', NULL),
-(7, 11, 'Oven Repair', 'New des', 'Pra', 'prabodh cha ghar', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-17 17:12:03', '00', NULL),
-(8, 10, 'AC installation', 'sanket desc', 'Sanket', 'sanket ka ghar', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-17 17:12:22', '00', NULL),
-(9, 11, 'Title11', 'Description11', 'Prabodh', 'I.U.D.P 11', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '15:40', 20, 20, '5', '1', 20, '2020-12-16 18:30:00', '11', NULL),
-(10, 11, 'New 11', 'New des', 'Pra', 'prabodh cha ghar 11', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-09 12:09:38', '11', NULL),
-(11, 11, 'title11title', 'description111', 'name', 'address11', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-03 12:23:19', '11', NULL),
-(12, 11, 'new11Prab', 'Prabodh11 desc', 'Prabodh', 'prabodh11 house', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-17 09:51:40', '11', NULL),
-(13, 11, 'Title10', 'Description10', 'Prabodh', 'I.U.D.P 10', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '15:40', 20, 20, '5', '1', 20, '2020-12-17 09:53:47', '10', NULL),
-(14, 11, 'New 10', 'New des 10', 'Pra', 'prabodh cha ghar 10', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-09 12:09:38', '10', NULL),
-(15, 11, 'title10title', 'description110', 'name', 'address10', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-03 12:23:19', '10', NULL),
-(16, 11, 'new10Prab', 'Prabodh10 desc', 'Prabodh', 'prabodh10 house', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-09 12:16:58', '10', NULL),
-(17, 11, 'Title01', 'Description01', 'Prabodh', 'I.U.D.P 01', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '15:40', 20, 20, '5', '1', 20, '2020-12-17 09:53:47', '01', NULL),
-(18, 11, 'pra', 'New des 01', 'Pra', 'prabodh cha ghar 01', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-09 12:09:38', '01', NULL),
-(19, 11, 'title01title', 'description01', 'name', 'address01', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-03 12:23:19', '01', NULL),
-(20, 11, 'new01Prab', 'Prabodh01 desc', 'Prabodh', 'prabodh10 house', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-09 12:16:58', '01', NULL),
-(21, 11, 'title1', 'description1234', 'prabodh', 'iudp', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/11/11', '18:30', 50, 1000, '1', '33.0', 703.5, '2020-12-04 15:25:27', '01', NULL);
+INSERT INTO `request` (`request_id`, `user_id`, `title`, `description`, `name`, `address`, `city`, `pin`, `contact`, `email`, `date`, `time`, `service_charge`, `item_cost`, `is_discount`, `discount_percent`, `total_amount`, `timestamp`, `status`, `reason`, `otp`) VALUES
+(1, 11, 'Refridgerator install', 'Install samsung 253 LRT28T3032SE/HL model refridgerator and give demo to customer', 'Sarthak Patil', '32/A, Sai Apartments, M.G. Nagar, Kurla (W.)', 'Mumbai', '400070', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '12:20', 200, 20490, '1', '5', 19656, '2020-12-17 17:16:25', '00', NULL, NULL),
+(2, 11, 'AC repair', 'Repairing of AC of model AR18TV5HLTU. The problem is of cooling system.', 'Aren Buttler', 'Room NO. 5, Ganesh Chawl, Samarth Nagar, Kalwa(E)', 'Mumbai', '432008', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/20', '12:20', 20, 20, '1', '5', 20, '2020-12-17 17:16:47', '00', NULL, NULL),
+(3, 11, 'Wahing Machine Install', 'description1', 'Shankar Khanna', 'address', 'Mumbai', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/28', '20:20', 20, 20, '1', '50', 20, '2020-12-17 17:17:04', '00', NULL, NULL),
+(4, 11, 'title1', 'description1', 'name', 'address', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '5', 38, '2020-12-04 15:25:41', '11', NULL, NULL),
+(5, 11, 'refridgerator repair', 'description1', 'Samar Kadam', 'address', 'Mumbai', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-17 17:17:28', '00', NULL, NULL),
+(6, 11, 'title1', 'description1234', 'prabodh', 'iudp', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/11/11', '18:30', 50, 1000, '1', '33.0', 703.5, '2020-12-04 15:25:27', '10', NULL, NULL),
+(7, 11, 'Oven Repair', 'New des', 'Pra', 'prabodh cha ghar', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-17 17:12:03', '00', NULL, NULL),
+(8, 10, 'AC installation', 'sanket desc', 'Sanket', 'sanket ka ghar', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-17 17:12:22', '00', NULL, NULL),
+(9, 11, 'Title11', 'Description11', 'Prabodh', 'I.U.D.P 11', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '15:40', 20, 20, '5', '1', 20, '2020-12-16 18:30:00', '11', NULL, NULL),
+(10, 11, 'New 11', 'New des', 'Pra', 'prabodh cha ghar 11', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-09 12:09:38', '11', NULL, NULL),
+(11, 11, 'title11title', 'description111', 'name', 'address11', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-03 12:23:19', '11', NULL, NULL),
+(12, 11, 'new11Prab', 'Prabodh11 desc', 'Prabodh', 'prabodh11 house', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-17 09:51:40', '11', NULL, NULL),
+(13, 11, 'Title10', 'Description10', 'Prabodh', 'I.U.D.P 10', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '15:40', 20, 20, '5', '1', 20, '2020-12-17 09:53:47', '10', NULL, NULL),
+(14, 11, 'New 10', 'New des 10', 'Pra', 'prabodh cha ghar 10', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-09 12:09:38', '10', NULL, NULL),
+(15, 11, 'title10title', 'description110', 'name', 'address10', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-03 12:23:19', '10', NULL, NULL),
+(16, 11, 'new10Prab', 'Prabodh10 desc', 'Prabodh', 'prabodh10 house', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-09 12:16:58', '10', NULL, NULL),
+(17, 11, 'Title01', 'Description01', 'Prabodh', 'I.U.D.P 01', 'Washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/12/05', '15:40', 20, 20, '5', '1', 20, '2020-12-17 09:53:47', '01', NULL, NULL),
+(18, 11, 'pra', 'New des 01', 'Pra', 'prabodh cha ghar 01', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/10/17', '07:20', 20, 500, '1', '9.0', 473.2, '2020-12-09 12:09:38', '01', NULL, NULL),
+(19, 11, 'title01title', 'description01', 'name', 'address01', 'city', '444505', '1234567890', 'prabodh.shewalkar@gmail.com', '2020/12/18', '20:20', 20, 20, '1', '3', 38.8, '2020-12-03 12:23:19', '01', NULL, NULL),
+(20, 11, 'new01Prab', 'Prabodh01 desc', 'Prabodh', 'prabodh10 house', 'mumbai', '444505', '1234567890', 'sanket@gmail.com', '2020/10/14', '11:00', 60, 650, '1', '20.0', 568, '2020-12-09 12:16:58', '01', NULL, NULL),
+(21, 11, 'title1', 'description1234', 'prabodh', 'iudp', 'washim', '444505', '8208023919', 'prabodh.shewalkar@gmail.com', '2020/11/11', '18:30', 50, 1000, '1', '33.0', 703.5, '2020-12-04 15:25:27', '01', NULL, NULL);
 
 -- --------------------------------------------------------
 
