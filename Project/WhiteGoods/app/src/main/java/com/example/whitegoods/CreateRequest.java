@@ -89,6 +89,26 @@ public class CreateRequest extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
         user_id = sharedPreferences.getString(KEY_ID, null);
 
+        Intent intent = getIntent();
+        String from = intent.getStringExtra("from");
+        if(from.equals("reschedule")){
+            title.setText(intent.getStringExtra("title"));
+            reqDescription.setText(intent.getStringExtra("desc"));
+            name.setText(intent.getStringExtra("name"));
+            phone.setText(intent.getStringExtra("phone"));
+            email.setText(intent.getStringExtra("email"));
+            addr.setText(intent.getStringExtra("address"));
+            city.setText(intent.getStringExtra("city"));
+            pincode.setText(intent.getStringExtra("pincode"));
+            time.setText(intent.getStringExtra("time"));
+            serviceCharge.setText(intent.getStringExtra("charge"));
+            cost.setText(intent.getStringExtra("cost"));
+            discount.setText(intent.getStringExtra("discount"));
+            dateText.setText(intent.getStringExtra("date"));
+            String d = intent.getStringExtra("total");
+            totalCost.setText(d);
+        }
+
         date = findViewById(R.id.date);
         register = findViewById(R.id.register_emp);
 
