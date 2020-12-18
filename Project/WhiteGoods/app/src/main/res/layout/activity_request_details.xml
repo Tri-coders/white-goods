@@ -49,8 +49,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_marginTop="10dp"
+            android:orientation="vertical"
             android:paddingHorizontal="16dp">
 
             <TextView
@@ -286,5 +286,50 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/suspend"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Suspend"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/reschedule"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@drawable/button"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Reschedule"
+                android:textColor="#fff"
+                android:layout_marginStart="10dp"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/cancle"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="Cancle"
+            android:textColor="#fff"
+            android:textSize="14sp" />
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>
