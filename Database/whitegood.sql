@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 18, 2020 at 08:03 PM
+-- Generation Time: Dec 18, 2020 at 08:28 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -159,10 +159,10 @@ INSERT INTO `model` (`model_id`, `model_no`, `model_price`, `model_img`, `brand_
 (14, 'Whirlpool 265 L IF INV CNV 278', 24240, 'http://128.199.30.114:9000/model/14.jpg', 4, 2, '1'),
 (15, 'Whirlpool 340 L IF INV CNV 355', 30990, 'http://128.199.30.114:9000/model/15.jpg', 4, 2, '1'),
 (16, 'Whirlpool 245 L NEO 258H ROY WINE ABYSS (2S)-N', 19490, 'http://128.199.30.114:9000/model/16.jpg', 4, 2, '1'),
-(17, 'AR18TV5HLTU Split AC powered by Triple Inverter with Convertible Mode 5.00kW (1.5T)', 34990, 'https://drive.google.com/file/d/1H6cFW9JE51vEYV3foqKQuiyfjRHkyJhW/view?usp=sharing', 1, 1, '1'),
-(18, 'AR18TY3CAWK Inverter Split AC powered by AI Auto Cooling 5.00kW (1.5T)', 52000, 'https://drive.google.com/file/d/10kVpHKzts-W35_odKAbwpJP9wwpNti5I/view?usp=sharing', 1, 1, '1'),
-(19, 'AR18TY3QBBU Inverter Split AC powered by Digital Inverter with Faster Cooling 4.98kW (1.5T)', 39000, 'https://drive.google.com/file/d/1hmT-TdpzKFSEVs8pgJovuuvtooljTaPR/view?usp=sharing', 1, 1, '1'),
-(20, 'AR12RG3BAWK On-Off Split AC powered by long lasting cooling 3.30kW (1.0T)', 45000, 'https://drive.google.com/file/d/1HhWqdaheA00aI0LU7U8WlWf8jM175h7J/view?usp=sharing', 1, 1, '1'),
+(17, 'AR18TV5HLTU Split AC powered by Triple Inverter with Convertible Mode 5.00kW (1.5T)', 34990, 'http://128.199.30.114:9000/model/17.jpg', 1, 1, '1'),
+(18, 'AR18TY3CAWK Inverter Split AC powered by AI Auto Cooling 5.00kW (1.5T)', 52000, 'http://128.199.30.114:9000/model/18.jpg', 1, 1, '1'),
+(19, 'AR18TY3QBBU Inverter Split AC powered by Digital Inverter with Faster Cooling 4.98kW (1.5T)', 39000, 'http://128.199.30.114:9000/model/19.jpg', 1, 1, '1'),
+(20, 'AR12RG3BAWK On-Off Split AC powered by long lasting cooling 3.30kW (1.0T)', 45000, 'http://128.199.30.114:9000/model/20.jpg', 1, 1, '1'),
 (21, 'Whirlpool 0.8 Ton 3 Star Split Inverter AC - White (0.8T MAGICOOL INVERTER 3S COPR-W-I/ODU, Copper C', 34990, 'https://drive.google.com/file/d/1oJBOTKnV40Vo1qpF_DTO3iDWiK0mIlzD/view?usp=sharing', 4, 1, '1'),
 (22, 'Whirlpool 1 Ton 3 Star Split AC - White, Grey', 52000, 'https://drive.google.com/file/d/1QWYKW8T1-1iGw1TByM6PJEqIdtPYfwSr/view?usp=sharing', 4, 1, '1'),
 (23, 'Whirlpool 1.5 Ton 3 Star Window AC ', 39000, 'https://drive.google.com/file/d/1fcFEczijWgZ5lSk_YBIJJC4l2OwDC8Ga/view?usp=sharing', 4, 1, '1'),
