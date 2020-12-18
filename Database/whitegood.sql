@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 18, 2020 at 03:23 PM
+-- Generation Time: Dec 18, 2020 at 03:33 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -234,27 +234,27 @@ INSERT INTO `parts` (`part_id`, `part_no`, `part_name`, `part_price`, `part_img`
 (2, 'SMR02', 'Compressor', 3000, 'http://128.199.30.114:9000/part/Refrigerator_Compressor.jpg', 1, 2, '1'),
 (3, 'SMR03', 'Compressor', 3500, 'http://128.199.30.114:9000/part/Refrigerator_Compressor.jpg', 1, 2, '1'),
 (4, 'SMR04', 'Compressor', 1500, 'http://128.199.30.114:9000/part/Refrigerator_Compressor.jpg', 1, 2, '1'),
-(5, 'SMR10', 'Condenser Coil', 300, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 1, 2, '1'),
-(6, 'SMR11', 'Condenser Coil', 500, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 1, 2, '1'),
-(7, 'SMR12', 'Condenser Coil', 800, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 1, 2, '1'),
-(8, 'SMR13', 'Condenser Coil', 1500, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 1, 2, '1'),
-(9, 'SMR20', 'Refrigerator Lamp', 50, 'https://drive.google.com/file/d/1zf0RwXIYjnnTuwEYp3MJQSdgxi1912Qe/view?usp=sharing', 1, 2, '1'),
-(10, 'SMR21', 'Refrigerator Lamp', 80, 'https://drive.google.com/file/d/1zf0RwXIYjnnTuwEYp3MJQSdgxi1912Qe/view?usp=sharing', 1, 2, '1'),
-(11, 'SMR22', 'Refrigerator Lamp', 100, 'https://drive.google.com/file/d/1zf0RwXIYjnnTuwEYp3MJQSdgxi1912Qe/view?usp=sharing', 1, 2, '1'),
-(12, 'SMR30', 'Refrigerator Thermostat', 300, 'https://drive.google.com/file/d/1t6nJgaGhCdeBYNHlPAfy4kiOmQtTQ8XP/view?usp=sharing', 1, 2, '1'),
-(13, 'SMR31', 'Refrigerator Thermostat', 500, 'https://drive.google.com/file/d/1t6nJgaGhCdeBYNHlPAfy4kiOmQtTQ8XP/view?usp=sharing', 1, 2, '1'),
-(14, 'SMR23', 'Refrigerator Lamp', 150, 'https://drive.google.com/file/d/1zf0RwXIYjnnTuwEYp3MJQSdgxi1912Qe/view?usp=sharing', 1, 2, '1'),
-(15, 'SMR32', 'Refrigerator Thermostat', 550, 'https://drive.google.com/file/d/1t6nJgaGhCdeBYNHlPAfy4kiOmQtTQ8XP/view?usp=sharing', 1, 2, '1'),
-(16, 'SMR33', 'Refrigerator Thermostat', 750, 'https://drive.google.com/file/d/1t6nJgaGhCdeBYNHlPAfy4kiOmQtTQ8XP/view?usp=sharing', 1, 2, '1'),
+(5, 'SMR10', 'Condenser Coil', 300, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 1, 2, '1'),
+(6, 'SMR11', 'Condenser Coil', 500, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 1, 2, '1'),
+(7, 'SMR12', 'Condenser Coil', 800, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 1, 2, '1'),
+(8, 'SMR13', 'Condenser Coil', 1500, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 1, 2, '1'),
+(9, 'SMR20', 'Refrigerator Lamp', 50, 'http://128.199.30.114:9000/part/Refrigerator_Lamp.jpg', 1, 2, '1'),
+(10, 'SMR21', 'Refrigerator Lamp', 80, 'http://128.199.30.114:9000/part/Refrigerator_Lamp.jpg', 1, 2, '1'),
+(11, 'SMR22', 'Refrigerator Lamp', 100, 'http://128.199.30.114:9000/part/Refrigerator_Lamp.jpg', 1, 2, '1'),
+(12, 'SMR30', 'Refrigerator Thermostat', 300, 'http://128.199.30.114:9000/part/Refrigerator_Thermostat.jpg', 1, 2, '1'),
+(13, 'SMR31', 'Refrigerator Thermostat', 500, 'http://128.199.30.114:9000/part/Refrigerator_Thermostat.jpg', 1, 2, '1'),
+(14, 'SMR23', 'Refrigerator Lamp', 150, 'http://128.199.30.114:9000/part/Refrigerator_Lamp.jpg', 1, 2, '1'),
+(15, 'SMR32', 'Refrigerator Thermostat', 550, 'http://128.199.30.114:9000/part/Refrigerator_Thermostat.jpg', 1, 2, '1'),
+(16, 'SMR33', 'Refrigerator Thermostat', 750, 'http://128.199.30.114:9000/part/Refrigerator_Thermostat.jpg', 1, 2, '1'),
 (17, 'LGR01', 'Compressor', 2500, 'http://128.199.30.114:9000/part/Refrigerator_Compressor.jpg', 2, 2, '1'),
 (18, 'LGR02', 'Compressor', 3000, 'http://128.199.30.114:9000/part/Refrigerator_Compressor.jpg', 2, 2, '1'),
 (19, 'LGR03', 'Compressor', 3500, 'http://128.199.30.114:9000/part/Refrigerator_Compressor.jpg', 2, 2, '1'),
 (20, 'LGR04', 'Compressor', 1500, 'http://128.199.30.114:9000/part/Refrigerator_Compressor.jpg', 2, 2, '1'),
-(21, 'LGR10', 'Condenser Coil', 300, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 2, 2, '1'),
-(22, 'LGR11', 'Condenser Coil', 500, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 2, 2, '1'),
-(23, 'LGR12', 'Condenser Coil', 550, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 2, 2, '1'),
-(24, 'LGR13', 'Condenser Coil', 800, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 2, 2, '1'),
-(25, 'LGR20', 'Refrigerator Lamp', 50, 'https://drive.google.com/file/d/1zf0RwXIYjnnTuwEYp3MJQSdgxi1912Qe/view?usp=sharing', 2, 2, '1'),
+(21, 'LGR10', 'Condenser Coil', 300, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 2, 2, '1'),
+(22, 'LGR11', 'Condenser Coil', 500, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 2, 2, '1'),
+(23, 'LGR12', 'Condenser Coil', 550, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 2, 2, '1'),
+(24, 'LGR13', 'Condenser Coil', 800, 'http://128.199.30.114:9000/part/Refrigerator_Condenser_Coil.jpeg', 2, 2, '1'),
+(25, 'LGR20', 'Refrigerator Lamp', 50, 'http://128.199.30.114:9000/part/Refrigerator_Lamp.jpg', 2, 2, '1'),
 (26, 'LGR21', 'Refrigerator Lamp', 80, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 2, 2, '1'),
 (27, 'LGR22', 'Refrigerator Lamp', 100, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 2, 2, '1'),
 (28, 'LGR23', 'Refrigerator Lamp', 150, 'https://drive.google.com/file/d/16lnnROojVFFK8TTzIOIBppAb3h32_2Hf/view?usp=sharing', 2, 2, '1'),
