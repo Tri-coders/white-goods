@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({
 
 app.use('/images', express.static(__dirname + '/images'))
 app.use('/model', express.static(__dirname + '/images/model'))
+app.use('/part', express.static(__dirname + '/images/part'))
 
 var nodemailer = require('nodemailer');
 
