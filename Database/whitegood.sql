@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 18, 2020 at 09:06 PM
+-- Generation Time: Dec 18, 2020 at 09:14 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -163,18 +163,18 @@ INSERT INTO `model` (`model_id`, `model_no`, `model_price`, `model_img`, `brand_
 (18, 'AR18TY3CAWK Inverter Split AC powered by AI Auto Cooling 5.00kW (1.5T)', 52000, 'http://128.199.30.114:9000/model/18.jpg', 1, 1, '1'),
 (19, 'AR18TY3QBBU Inverter Split AC powered by Digital Inverter with Faster Cooling 4.98kW (1.5T)', 39000, 'http://128.199.30.114:9000/model/19.jpg', 1, 1, '1'),
 (20, 'AR12RG3BAWK On-Off Split AC powered by long lasting cooling 3.30kW (1.0T)', 45000, 'http://128.199.30.114:9000/model/20.jpg', 1, 1, '1'),
-(21, 'Whirlpool 0.8 Ton 3 Star Split Inverter AC - White (0.8T MAGICOOL INVERTER 3S COPR-W-I/ODU, Copper C', 34990, 'https://drive.google.com/file/d/1oJBOTKnV40Vo1qpF_DTO3iDWiK0mIlzD/view?usp=sharing', 4, 1, '1'),
-(22, 'Whirlpool 1 Ton 3 Star Split AC - White, Grey', 52000, 'https://drive.google.com/file/d/1QWYKW8T1-1iGw1TByM6PJEqIdtPYfwSr/view?usp=sharing', 4, 1, '1'),
-(23, 'Whirlpool 1.5 Ton 3 Star Window AC ', 39000, 'https://drive.google.com/file/d/1fcFEczijWgZ5lSk_YBIJJC4l2OwDC8Ga/view?usp=sharing', 4, 1, '1'),
-(24, 'Whirlpool 1 Ton 3 Star Split Inverter AC - White', 45000, 'https://drive.google.com/file/d/1mPQOS65NszCBkhx2YLeXdVGqPj_nZSiJ/view?usp=sharing', 4, 1, '1'),
-(25, 'GIC 24 MGP5 WRA', 34990, 'https://drive.google.com/file/d/19PObl_TDc02R8M5P3yHXDduuTiiQD3_4/view?usp=sharing', 3, 1, '1'),
-(26, 'GSC 12NTC3 WTA', 52000, 'https://drive.google.com/file/d/12XEXDd0MKgiBfA6hjjqo_n7BXVdTAbCO/view?usp=sharing', 3, 1, '1'),
-(27, 'GIC 12FTC3-WSA', 39000, 'https://drive.google.com/file/d/1BcYfLZPmN-pW1iCN3u4Cb1-_Pc_JreD-/view?usp=sharing', 3, 1, '1'),
-(28, 'GIC 18JTC3-WTA', 45000, 'https://drive.google.com/file/d/1H7Qn8qTNa_htPgtCUUt5fY7xD9aB8bqa/view?usp=sharing', 3, 1, '1'),
-(29, 'Dual Inverter Hot & Cold Split Air Conditioner with 4 Way Swing LS-H18VNXD', 34990, 'https://drive.google.com/file/d/1YEj7O5IgMJheo0VxJOaj9EQRuAk-fmaq/view?usp=sharing', 2, 1, '1'),
-(30, 'DUAL Inverter Window Air Conditioner with Ocean Black Protection JW-Q09WUZA', 52000, 'https://drive.google.com/file/d/1Zn6GWNDnxh4M71-bJS2YUbK3l4-1_0ZA/view?usp=sharing', 2, 1, '1'),
-(31, 'Dual Inverter 3 Star Split Air Conditioner with 4-in-1 Convertible Cooling & Ocean Black Fin LS-Q18P', 39000, 'https://drive.google.com/file/d/1YEj7O5IgMJheo0VxJOaj9EQRuAk-fmaq/view?usp=sharing', 2, 1, '1'),
-(32, 'Dual Inverter 5 Star Split Air Conditioner with Anti Allergic Filter & 4-in1 Convertible Cooling LS-', 45000, 'https://drive.google.com/file/d/1B5NAISe_vNfKH_yINBRwOHWkuhyvZC9q/view?usp=sharing', 2, 1, '1'),
+(21, 'Whirlpool 0.8 Ton 3 Star Split Inverter AC - White (0.8T MAGICOOL INVERTER 3S COPR-W-I/ODU, Copper C', 34990, 'http://128.199.30.114:9000/model/21.jpg', 4, 1, '1'),
+(22, 'Whirlpool 1 Ton 3 Star Split AC - White, Grey', 52000, 'http://128.199.30.114:9000/model/22.jpg', 4, 1, '1'),
+(23, 'Whirlpool 1.5 Ton 3 Star Window AC ', 39000, 'http://128.199.30.114:9000/model/23.jpg', 4, 1, '1'),
+(24, 'Whirlpool 1 Ton 3 Star Split Inverter AC - White', 45000, 'http://128.199.30.114:9000/model/24.jpg', 4, 1, '1'),
+(25, 'GIC 24 MGP5 WRA', 34990, 'http://128.199.30.114:9000/model/25.jpg', 3, 1, '1'),
+(26, 'GSC 12NTC3 WTA', 52000, 'http://128.199.30.114:9000/model/26.jpg', 3, 1, '1'),
+(27, 'GIC 12FTC3-WSA', 39000, 'http://128.199.30.114:9000/model/27.jpg', 3, 1, '1'),
+(28, 'GIC 18JTC3-WTA', 45000, 'http://128.199.30.114:9000/model/28.jpg', 3, 1, '1'),
+(29, 'Dual Inverter Hot & Cold Split Air Conditioner with 4 Way Swing LS-H18VNXD', 34990, 'http://128.199.30.114:9000/model/29.png', 2, 1, '1'),
+(30, 'DUAL Inverter Window Air Conditioner with Ocean Black Protection JW-Q09WUZA', 52000, 'http://128.199.30.114:9000/model/30.png', 2, 1, '1'),
+(31, 'Dual Inverter 3 Star Split Air Conditioner with 4-in-1 Convertible Cooling & Ocean Black Fin LS-Q18P', 39000, 'http://128.199.30.114:9000/model/31.png', 2, 1, '1'),
+(32, 'Dual Inverter 5 Star Split Air Conditioner with Anti Allergic Filter & 4-in1 Convertible Cooling LS-', 45000, 'http://128.199.30.114:9000/model/32.png', 2, 1, '1'),
 (33, 'CE78JDM Convection MWO with SlimFry™, 21L', 11900, 'https://drive.google.com/file/d/1FnlpouTn4peNdOUuEQcwP8AHJ1YXMI4v/view?usp=sharing', 1, 3, '1'),
 (34, 'MC28M6036CK Convection MWO with Masala & Sun-Dry, 28L', 16800, 'https://drive.google.com/file/d/1v1qUEdvznlPokYIYS1O3tH0H9n2bap_i/view?usp=sharing', 1, 3, '1'),
 (35, 'MC28H5013AK Convection MWO with Curd Any Time 28L', 9990, 'https://drive.google.com/file/d/14pppot6-sFduea5_VrppPp6Tx2tn9O0W/view?usp=sharing', 1, 3, '1'),
