@@ -7,3 +7,6 @@
 </td>
 </tr>
 </table>
+
+# Flow Chart
+![Flow](https://github.com/Tri-coders/white-goods/blob/master/Project/AAD%20Use%20Case%20Diagram.png)
