@@ -76,14 +76,14 @@ public class RequestDetails extends AppCompatActivity {
             cancle.setVisibility(View.VISIBLE);
         }
 
-        //manipulating buttons
-        if(req_status.equals("01")) {
-            suspend.setEnabled(false);
-        } else if(req_status.equals("11")) {
-            suspend.setVisibility(View.GONE);
-            cancle.setVisibility(View.GONE);
-            reschedule.setVisibility(View.GONE);
-        }
+//        //manipulating buttons
+//        if(req_status.equals("01")) {
+//            suspend.setEnabled(false);
+//        } else if(req_status.equals("11")) {
+//            suspend.setVisibility(View.GONE);
+//            cancle.setVisibility(View.GONE);
+//            reschedule.setVisibility(View.GONE);
+//        }
 
         backButton();
 
