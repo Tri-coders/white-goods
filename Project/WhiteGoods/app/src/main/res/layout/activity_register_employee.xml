@@ -135,7 +135,7 @@
             android:layout_marginTop="30dp">
 
             <EditText
-                android:id="@+id/cAddr"
+                android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_alignParentStart="true"
