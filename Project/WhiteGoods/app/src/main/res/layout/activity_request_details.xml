@@ -284,8 +284,52 @@
                 android:textColor="@color/font"
                 android:textSize="18sp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/opensans_semibold"
+            android:text="Reason"
+            android:textColor="@color/font"
+            android:textSize="20sp" />
         </LinearLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="15dp">
 
+            <EditText
+                android:id="@+id/reason"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/input"
+                android:focusable="true"
+                android:fontFamily="@font/opensans_regular"
+                android:gravity="start"
+                android:hint="Type Reason here.."
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:paddingStart="45dp"
+                android:paddingTop="20dp"
+                android:paddingEnd="15dp"
+                android:scrollbarSize="5dp"
+                android:scrollbarStyle="insideOverlay"
+                android:scrollbars="vertical"
+                android:textColor="@color/font" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="23dp"
+                android:src="@drawable/ic_baseline_description_24" />
+
+        </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
