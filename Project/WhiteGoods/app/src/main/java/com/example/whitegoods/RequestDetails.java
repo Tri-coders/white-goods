@@ -39,7 +39,7 @@ public class RequestDetails extends AppCompatActivity {
     String updaterequest_url;
 
     TextView rId, rTitle, rDesc, empName, rDate, rTime, cName, cAddress, cCity, cPin;
-    TextView cPhone, cEmail, service, itemCost, discount, total;
+    TextView cPhone, cEmail, service, itemCost, discount, total, req_reason;
 
     JSONObject request;
     ImageButton backButton;
@@ -83,6 +83,8 @@ public class RequestDetails extends AppCompatActivity {
             suspend.setVisibility(View.GONE);
             cancle.setVisibility(View.GONE);
             reschedule.setVisibility(View.GONE);
+        } else if(req_status.equals("00")) {
+            req_reason.setVisibility(View.VISIBLE);
         }
 
         backButton();
@@ -372,6 +374,7 @@ public class RequestDetails extends AppCompatActivity {
                     itemCost.setText("Item Cost: ₹"+request.getString("item_cost"));
                     discount.setText("Discount: "+request.getString("discount_percent")+"%");
                     total.setText("Total Cost: ₹"+request.getString("total_amount"));
+                    req_reason.setText(request.getString("reason"));
 
                 }
                 catch (JSONException e) {
@@ -436,6 +439,7 @@ public class RequestDetails extends AppCompatActivity {
         cancle = findViewById(R.id.cancle);
         reschedule= findViewById(R.id.reschedule);
         suspend = findViewById(R.id.suspend);
+        req_reason = findViewById(R.id.req_reason);
     }
 
     private void backButton() {
