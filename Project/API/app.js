@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({
 
 app.use('/images', express.static(__dirname + '/images'))
 app.use('/model', express.static(__dirname + '/images/model'))
-app.use('/part', express.static(__dirname + '/images/part'))
 
 var nodemailer = require('nodemailer');
 
@@ -447,8 +446,6 @@ app.post('/inventory', (req, res) => {
 
     var sql = "SELECT * FROM model WHERE whitegoodcategory_id = " + wh_good_category + " AND brand_id IN(" + brand_range + ") AND model_price BETWEEN " + lower_price + " AND " + higher_price;
 
-    console.log(sql);
-
     if (q_avail == "1") {
         sql += " AND quantity > 0";
     }
@@ -457,7 +454,6 @@ app.post('/inventory', (req, res) => {
         if (result) {
 
             var sql = "SELECT * FROM parts WHERE whitegoodcategory_id = " + wh_good_category + " AND brand_id IN(" + brand_range + ") AND part_price BETWEEN " + lower_price + " AND " + higher_price;
-            console.log(sql);
 
             if (q_avail == "1") {
                 sql += " AND quantity > 0";
@@ -530,6 +526,35 @@ app.post('/request_details', (req, res) => {
 
 });
 
+app.post('/requestUpdate',(req,res)=>{
+    var id = parseInt(req.body.request_id);
+    var type = req.body.type;
+    if(type!='10'){
+        var reason = req.body.reason;
+    }
+    
+    var sql = ""
+    if(type=="01"){
+        sql = "Update request SET status='01',reason='"+reason+"' WHERE request_id=" + id + ";";//suspend
+    }else if(type=="10"){
+        sql = "Update request SET status='10' WHERE request_id=" + id + ";";//reschedule
+    
+    }else if(type=="11"){
+        sql = "Update request SET status='11',reason='"+reason+"' WHERE request_id=" + id + ";";//cancle
+    }
+    con.query(sql,function(err,result){
+        console.log("aya0")
+        if(err) throw err;
+        if(result){
+            console.log("aya1")
+            res.status(200).send("ok");
+        }else{
+            console.log("aya2")
+            res.status(400).send({"error":"Something went wrong"});
+        }
+    });
+});
+
 app.post('/graph_details', (req, res) => {
     
     var sql = "SELECT date,item_cost FROM request;";
@@ -551,3 +576,10 @@ app.post('/graph_details', (req, res) => {
 app.listen(9000, (req, res) => {
     console.log("Listening on 9000");
 });
+
+/*
+00=>new
+01=>suspend
+10=>reschedule
+11=>cancle
+*/ 
