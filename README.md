@@ -20,3 +20,9 @@
 - [Android Studio](https://developer.android.com/studio) - Android Studio provides the fastest tools for building apps on every type of Android device.
 - [NodeJs](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
 - [MySQL](https://www.mysql.com) - The world's most popular open source database .
+
+## Team
+
+[<img src="https://i.imgur.com/SeSznJA.png" alt="Afif's Pic" width="120">](https://afif79.github.io/) | [<img src="https://raw.githubusercontent.com/CSI-DBIT/CSI-ManagementSystem/master/Android/app/src/main/res/drawable/sanket.png" alt="Sanket's Pic" width="120">](https://github.com/sanket1305)|[<img src="https://github.com/Tri-coders/white-goods/blob/master/Project/circle-cropped.png" alt="Prabodh's Pic" width="120">](https://github.com/Prabodh12)
+|:---:|:---:|:---:|
+[Afif Shaikh](https://github.com/afif79)|[Sanket Deshmukh](https://github.com/sanket1305) |[Prabodh Shewalkar](https://github.com/Prabodh12) |
