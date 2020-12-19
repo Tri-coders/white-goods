@@ -10,3 +10,7 @@
 
 # Flow Chart
 ![Flow](https://github.com/Tri-coders/white-goods/blob/master/Project/AAD%20Use%20Case%20Diagram.png)
+
+# Design Interface
+![Design](https://github.com/Tri-coders/white-goods/blob/master/Project/Screenshot%202020-12-19%20155525.png)
+![Design](https://github.com/Tri-coders/white-goods/blob/master/Project/Screenshot%202020-12-19%20155535.png)
