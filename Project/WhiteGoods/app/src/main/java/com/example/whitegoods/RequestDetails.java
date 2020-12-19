@@ -34,7 +34,7 @@ import java.io.UnsupportedEncodingException;
 
 public class RequestDetails extends AppCompatActivity {
 
-    String requestId, EmpName;
+    String requestId, EmpName, req_status;
     String server_url;
     String updaterequest_url;
 
@@ -62,6 +62,7 @@ public class RequestDetails extends AppCompatActivity {
         Intent intent = getIntent();
         requestId = intent.getStringExtra("requestId");
         EmpName = intent.getStringExtra("empName");
+        req_status = intent.getStringExtra("req_status");
 
         setElementId();
         sharedPreferences = getSharedPreferences(SHARED_PREF_NAME, MODE_PRIVATE);
@@ -73,8 +74,17 @@ public class RequestDetails extends AppCompatActivity {
         }else{
             reschedule.setVisibility(View.VISIBLE);
             cancle.setVisibility(View.VISIBLE);
-
         }
+
+        //manipulating buttons
+        if(req_status.equals("01")) {
+            suspend.setEnabled(false);
+        } else if(req_status.equals("11")) {
+            suspend.setVisibility(View.GONE);
+            cancle.setVisibility(View.GONE);
+            reschedule.setVisibility(View.GONE);
+        }
+
         backButton();
 
         parseJSON();

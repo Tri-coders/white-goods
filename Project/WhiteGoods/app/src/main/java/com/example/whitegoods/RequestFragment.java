@@ -260,6 +260,7 @@ public class RequestFragment extends Fragment implements View.OnClickListener, R
 
         detailRequest.putExtra("requestId", clickedItem.getRequestId());
         detailRequest.putExtra("empName", clickedItem.getEmpName());
+        detailRequest.putExtra("req_status", status);
 
         startActivity(detailRequest);
     }

@@ -38,6 +38,11 @@ import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 import me.bendik.simplerangeview.SimpleRangeView;
 
@@ -57,6 +62,7 @@ public class InventoryDetail extends AppCompatActivity {
     String higher_price;
     String is_available;
     String brands;
+    String low="0",high="0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,30 +120,164 @@ public class InventoryDetail extends AppCompatActivity {
 
                 try {
                     JSONObject invent = new JSONObject(response);
+
                     JSONArray modelArray = invent.getJSONArray("model");
                     JSONArray partsArray = invent.getJSONArray("parts");
 
-                    for (int i = 0; i < modelArray.length(); i++) {
-                        JSONObject model = modelArray.getJSONObject(i);
+                    if(low.equals("1")){
+                        List<JSONObject> myJsonArrayAsList = new ArrayList<JSONObject>();
+                        for (int i = 0; i < modelArray.length(); i++)
+                            myJsonArrayAsList.add(modelArray.getJSONObject(i));
+                        Collections.sort(myJsonArrayAsList, new Comparator<JSONObject>() {
+                            @Override
+                            public int compare(JSONObject jsonObjectA, JSONObject jsonObjectB) {
+                                int compare = 0;
+                                try
+                                {
+                                    int keyA = jsonObjectA.getInt("model_price");
+                                    int keyB = jsonObjectB.getInt("model_price");
+                                    compare = Integer.compare(keyA, keyB);
+                                }
+                                catch(JSONException e)
+                                {
+                                    e.printStackTrace();
+                                }
+                                return compare;
+                            }
+                        });
 
-                        String prodName = model.getString("model_no");
-                        String prodImageUrl = model.getString("model_img");
-                        String prodPrice = model.getString("model_price");
-                        String prodQuantity = model.getString("quantity");
+                        List<JSONObject> myJsonArrayAsListpart = new ArrayList<JSONObject>();
+                        for (int i = 0; i < partsArray.length(); i++)
+                            myJsonArrayAsListpart.add(partsArray.getJSONObject(i));
+                        Collections.sort(myJsonArrayAsListpart, new Comparator<JSONObject>() {
+                            @Override
+                            public int compare(JSONObject jsonObjectA, JSONObject jsonObjectB) {
+                                int compare = 0;
+                                try
+                                {
+                                    int keyA = jsonObjectA.getInt("part_price");
+                                    int keyB = jsonObjectB.getInt("part_price");
+                                    compare = Integer.compare(keyA, keyB);
+                                }
+                                catch(JSONException e)
+                                {
+                                    e.printStackTrace();
+                                }
+                                return compare;
+                            }
+                        });
+                        modelArray = new JSONArray(myJsonArrayAsList);
+                        partsArray = new JSONArray(myJsonArrayAsListpart);
 
-                        mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
+                        for (int i = 0; i < myJsonArrayAsList.get(0).length(); i++) {
+                            JSONObject model = modelArray.getJSONObject(i);
+
+                            String prodName = model.getString("model_no");
+                            String prodImageUrl = model.getString("model_img");
+                            String prodPrice = model.getString("model_price");
+                            String prodQuantity = model.getString("quantity");
+
+                            mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
+                        }
+                        for (int i = 0; i < partsArray.length(); i++) {
+                            JSONObject parts = partsArray.getJSONObject(i);
+
+                            String prodName = parts.getString("part_no");
+                            String prodImageUrl = parts.getString("part_img");
+                            String prodPrice = parts.getString("part_price");
+                            String prodQuantity = parts.getString("quantity");
+
+                            mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
+                        }
+                    }else if(high.equals("1")){
+                        List<JSONObject> myJsonArrayAsList = new ArrayList<JSONObject>();
+                        for (int i = 0; i < modelArray.length(); i++)
+                            myJsonArrayAsList.add(modelArray.getJSONObject(i));
+                        Collections.sort(myJsonArrayAsList, new Comparator<JSONObject>() {
+                            @Override
+                            public int compare(JSONObject jsonObjectA, JSONObject jsonObjectB) {
+                                int compare = 0;
+                                try
+                                {
+                                    int keyA = jsonObjectA.getInt("model_price");
+                                    int keyB = jsonObjectB.getInt("model_price");
+                                    compare = Integer.compare(keyB,keyA);
+                                }
+                                catch(JSONException e)
+                                {
+                                    e.printStackTrace();
+                                }
+                                return compare;
+                            }
+                        });
+                        List<JSONObject> myJsonArrayAsListpart = new ArrayList<JSONObject>();
+                        for (int i = 0; i < partsArray.length(); i++)
+                            myJsonArrayAsListpart.add(partsArray.getJSONObject(i));
+                        Collections.sort(myJsonArrayAsListpart, new Comparator<JSONObject>() {
+                            @Override
+                            public int compare(JSONObject jsonObjectA, JSONObject jsonObjectB) {
+                                int compare = 0;
+                                try
+                                {
+                                    int keyA = jsonObjectA.getInt("part_price");
+                                    int keyB = jsonObjectB.getInt("part_price");
+                                    compare = Integer.compare(keyB,keyA);
+                                }
+                                catch(JSONException e)
+                                {
+                                    e.printStackTrace();
+                                }
+                                return compare;
+                            }
+                        });
+                        modelArray = new JSONArray(myJsonArrayAsList);
+                        partsArray = new JSONArray(myJsonArrayAsListpart);
+
+                        for (int i = 0; i < myJsonArrayAsList.get(0).length(); i++) {
+                            JSONObject model = modelArray.getJSONObject(i);
+
+                            String prodName = model.getString("model_no");
+                            String prodImageUrl = model.getString("model_img");
+                            String prodPrice = model.getString("model_price");
+                            String prodQuantity = model.getString("quantity");
+
+                            mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
+                        }
+                        for (int i = 0; i < partsArray.length(); i++) {
+                            JSONObject parts = partsArray.getJSONObject(i);
+
+                            String prodName = parts.getString("part_no");
+                            String prodImageUrl = parts.getString("part_img");
+                            String prodPrice = parts.getString("part_price");
+                            String prodQuantity = parts.getString("quantity");
+
+                            mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
+                        }
+                    }
+                    else {
+                        for (int i = 0; i < modelArray.length(); i++) {
+                            JSONObject model = modelArray.getJSONObject(i);
+
+                            String prodName = model.getString("model_no");
+                            String prodImageUrl = model.getString("model_img");
+                            String prodPrice = model.getString("model_price");
+                            String prodQuantity = model.getString("quantity");
+
+                            mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
+                        }
+                        for (int i = 0; i < partsArray.length(); i++) {
+                            JSONObject parts = partsArray.getJSONObject(i);
+
+                            String prodName = parts.getString("part_no");
+                            String prodImageUrl = parts.getString("part_img");
+                            String prodPrice = parts.getString("part_price");
+                            String prodQuantity = parts.getString("quantity");
+
+                            mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
+                        }
                     }
 
-                    for (int i = 0; i < partsArray.length(); i++) {
-                        JSONObject parts = partsArray.getJSONObject(i);
 
-                        String prodName = parts.getString("part_no");
-                        String prodImageUrl = parts.getString("part_img");
-                        String prodPrice = parts.getString("part_price");
-                        String prodQuantity = parts.getString("quantity");
-
-                        mInventoryList.add(new InventoryCards(prodImageUrl, prodName, prodPrice, prodQuantity));
-                    }
 
                     mAdapter = new InventoryAdapter(InventoryDetail.this, mInventoryList);
                     mRecyclerView.setAdapter(mAdapter);
@@ -272,6 +412,16 @@ public class InventoryDetail extends AppCompatActivity {
             Log.i("sanky", is_available);
             Log.i("sanky", brands);
 
+            if(low_to_high.isChecked()){
+                low="1";
+            }else{
+                low="0";
+            }
+            if(high_to_low.isChecked()){
+                high="1";
+            }else{
+                high="0";
+            }
             //Toast.makeText(this, lower_price + " " + higher_price + " " + is_available + " " + brands, Toast.LENGTH_SHORT).show();
             parseJSON();
         });
@@ -288,11 +438,7 @@ public class InventoryDetail extends AppCompatActivity {
         rangeBar.setOnTrackRangeListener(new SimpleRangeView.OnTrackRangeListener() {
             @Override
             public void onStartRangeChanged(@NotNull SimpleRangeView simpleRangeView, int i) {
-                if (i != 0) {
-                    priceRange.setText(String.valueOf(i));
-                } else {
-                    priceRange.setText(String.valueOf(i));
-                }
+                priceRange.setText(String.valueOf(i));
             }
 
             @Override
